@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptly — Privacy Policy & Support</title>
+    <meta name="description" content="Symptly privacy policy, terms of service, and support. Your health data stays on your device.">
+    <meta name="theme-color" content="#00C49A">
+    <meta property="og:title" content="Symptly — Privacy & Support">
+    <meta property="og:description" content="Your health data is yours. Symptly is built privacy-first with on-device AI.">
+    <meta property="og:type" content="website">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+    <style>
+        :root {
+            --teal: #00C49A;
+            --teal-light: #33DFBB;
+            --teal-dark: #009977;
+            --violet: #7C5CFC;
+            --violet-light: #9B82FA;
+            --bg: #FAF9F6;
+            --bg-dark: #111318;
+            --surface: #FFFFFF;
+            --surface-dark: #1A1D24;
+            --text: #1C2534;
+            --text-secondary: #4A5568;
+            --text-tertiary: #8896AB;
+            --separator: #E6E3DD;
+            --error: #EF4444;
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Helvetica Neue', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 249, 246, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--separator);
+            z-index: 100;
+            padding: 0 24px;
+        }
+        nav .nav-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 56px;
+        }
+        nav .logo {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        nav .logo .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--teal), var(--violet));
+        }
+        nav .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+        nav .nav-links a {
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        nav .nav-links a:hover { color: var(--teal); }
+        nav .nav-links a.active { color: var(--teal); font-weight: 500; }
+
+        /* Hero */
+        .hero {
+            padding: 120px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,196,154,0.04) 0%, transparent 100%);
+        }
+        .hero h1 {
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+        .hero h1 span {
+            background: linear-gradient(135deg, var(--teal), var(--violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero p {
+            font-size: 17px;
+            color: var(--text-secondary);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Main content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px 80px;
+        }
+
+        /* Section navigation tabs */
+        .page-tabs {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 48px;
+            padding: 4px;
+            background: var(--surface);
+            border-radius: 12px;
+            border: 1px solid var(--separator);
+            overflow-x: auto;
+        }
+        .page-tabs button {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            background: transparent;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+        .page-tabs button:hover { background: rgba(0,196,154,0.06); }
+        .page-tabs button.active {
+            background: var(--teal);
+            color: white;
+        }
+
+        /* Content sections */
+        .content-section { display: none; }
+        .content-section.active { display: block; }
+
+        .section {
+            margin-bottom: 40px;
+        }
+        .section h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text);
+        }
+        .section h3 {
+            font-size: 17px;
+            font-weight: 600;
+            margin: 24px 0 8px;
+            color: var(--text);
+        }
+        .section p, .section li {
+            font-size: 15px;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        .section ul, .section ol {
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .section li { margin-bottom: 6px; }
+
+        /* Info cards */
+        .info-card {
+            background: var(--surface);
+            border: 1px solid var(--separator);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+        .info-card.accent {
+            border-color: rgba(0,196,154,0.2);
+            background: rgba(0,196,154,0.03);
+        }
+        .info-card h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .info-card p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+
+        /* Data table */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 14px;
+        }
+        .data-table th, .data-table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--separator);
+        }
+        .data-table th {
+            font-weight: 600;
+            color: var(--text);
+            background: rgba(0,0,0,0.02);
+        }
+        .data-table td { color: var(--text-secondary); }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .badge.green { background: rgba(34,197,94,0.1); color: #16a34a; }
+        .badge.red { background: rgba(239,68,68,0.1); color: var(--error); }
+
+        /* Contact form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 6px;
+        }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--separator);
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: inherit;
+            background: var(--surface);
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+        .form-group textarea { resize: vertical; min-height: 120px; }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+            color: white;
+        }
+        .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,196,154,0.3); }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--separator);
+            padding: 40px 24px;
+            text-align: center;
+        }
+        footer p {
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 4px;
+        }
+        footer a { color: var(--teal); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 28px; }
+            .page-tabs { gap: 4px; }
+            .page-tabs button { padding: 8px 12px; font-size: 13px; }
+            nav .nav-links { gap: 16px; }
+            nav .nav-links a { font-size: 13px; }
+        }
+
+        /* Print styles */
+        @media print {
+            nav, .page-tabs { display: none; }
+            .content-section { display: block !important; }
+            .hero { padding-top: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="#" class="logo">
+            <span class="dot"></span>
+            Symptly
+        </a>
+        <ul class="nav-links">
+            <li><a href="#" class="active" onclick="showTab('privacy')">Privacy</a></li>
+            <li><a href="#" onclick="showTab('terms')">Terms</a></li>
+            <li><a href="#" onclick="showTab('support')">Support</a></li>
+            <li><a href="#" onclick="showTab('contact')">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="hero">
+    <h1>Your health data is <span>yours</span>.</h1>
+    <p>Symptly is built privacy-first. Your symptoms, journals, and health data stay on your device and sync only through your personal iCloud.</p>
+</div>
+
+<main>
+    <div class="page-tabs">
+        <button class="active" onclick="showTab('privacy')">Privacy Policy</button>
+        <button onclick="showTab('terms')">Terms of Service</button>
+        <button onclick="showTab('support')">Support</button>
+        <button onclick="showTab('contact')">Contact Us</button>
+        <button onclick="showTab('data')">Your Data</button>
+    </div>
+
+    <!-- PRIVACY POLICY -->
+    <div id="privacy" class="content-section active">
+        <div class="section">
+            <p style="font-size:13px;color:var(--text-tertiary);margin-bottom:24px;">Last updated: March 18, 2026</p>
+
+            <h2>Privacy Policy</h2>
+            <p>Symptly ("we," "our," or "the app") is a health and wellness tracking application. We take your privacy seriously. This policy explains what data we collect, how we use it, and your rights.</p>
+        </div>
+
+        <div class="section">
+            <h3>1. Data We Collect</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>Data Type</th><th>Purpose</th><th>Stored</th><th>Shared</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Symptom logs</td><td>Track and analyze your symptoms over time</td><td>On-device + iCloud</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>Daily check-ins</td><td>Monitor mood, energy, sleep, and stress</td><td>On-device + iCloud</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>Journal entries</td><td>Personal health diary</td><td>On-device + iCloud</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>Medications</td><td>Track medication adherence and correlations</td><td>On-device + iCloud</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>HealthKit data</td><td>Correlate sleep, steps, heart rate with symptoms</td><td>On-device + iCloud</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>Weather data</td><td>Correlate weather patterns with symptoms</td><td>On-device + iCloud</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>Onboarding profile</td><td>Calculate your personalized wellness baseline</td><td>On-device</td><td><span class="badge green">Never</span></td></tr>
+                    <tr><td>Purchase history</td><td>Manage your subscription</td><td>Apple (StoreKit)</td><td><span class="badge green">Never</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>2. Apple HealthKit</h3>
+            <div class="info-card accent">
+                <h4>&#9825; HealthKit Data Protection</h4>
+                <p>If you grant permission, Symptly reads sleep, heart rate, step count, and active minutes from Apple Health. This data is used <strong>exclusively on your device</strong> to generate health correlations and insights. We never upload, transmit, sell, or share HealthKit data with any third party, advertising network, or data broker. HealthKit data is never used for marketing or advertising purposes.</p>
+            </div>
+            <p>You can revoke HealthKit access at any time in Settings &gt; Privacy &amp; Security &gt; Health &gt; Symptly.</p>
+        </div>
+
+        <div class="section">
+            <h3>3. iCloud Sync</h3>
+            <p>Your health data syncs across your Apple devices through your personal iCloud account using Apple's CloudKit framework. This means:</p>
+            <ul>
+                <li>Data is encrypted in transit and at rest by Apple</li>
+                <li>Only devices signed into your Apple ID can access your data</li>
+                <li>We cannot access, read, or decrypt your iCloud data</li>
+                <li>You can disable iCloud sync in your device's iCloud settings</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>4. Data We Do NOT Collect</h3>
+            <ul>
+                <li>We do <strong>not</strong> collect your name, email, or any account credentials</li>
+                <li>We do <strong>not</strong> use analytics, tracking pixels, or third-party SDKs</li>
+                <li>We do <strong>not</strong> serve advertisements</li>
+                <li>We do <strong>not</strong> sell, rent, or share any data with third parties</li>
+                <li>We do <strong>not</strong> use your data for machine learning model training</li>
+                <li>We have <strong>no servers</strong> that receive your health information</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>5. On-Device Processing</h3>
+            <p>All analysis, correlations, wellness scoring, and predictions run entirely on your device using Apple's CoreML framework. No health data is ever sent to external servers or cloud APIs for processing.</p>
+        </div>
+
+        <div class="section">
+            <h3>6. Data Storage &amp; Security</h3>
+            <ul>
+                <li>Local data is stored using Apple's SwiftData framework with device-level encryption</li>
+                <li>Data is protected by your device passcode, Face ID, or Touch ID</li>
+                <li>iCloud data is encrypted using Apple's security infrastructure</li>
+                <li>We use no custom encryption — we rely on Apple's proven, audited security stack</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>7. Data Retention &amp; Deletion</h3>
+            <p>Your data exists only as long as you keep it. You can:</p>
+            <ul>
+                <li><strong>Export</strong> all data as CSV from Settings &gt; Data &gt; Export Data</li>
+                <li><strong>Delete individual entries</strong> by swiping left in History</li>
+                <li><strong>Clear all data</strong> from Settings &gt; Data &gt; Clear All Data</li>
+                <li><strong>Reset the app</strong> from Settings &gt; Account &gt; Reset App</li>
+                <li><strong>Delete the app</strong> to remove all local data permanently</li>
+            </ul>
+            <p>When you delete data, it is removed from your device and your iCloud storage. Due to iCloud propagation, deletion may take up to 7 days to sync across all devices.</p>
+        </div>
+
+        <div class="section">
+            <h3>8. Children's Privacy</h3>
+            <p>Symptly is not directed at children under 13. We do not knowingly collect data from children. If you believe a child has used the app, the data exists only on that device and can be deleted by removing the app.</p>
+        </div>
+
+        <div class="section">
+            <h3>9. Third-Party Services</h3>
+            <p>Symptly uses the following Apple system services only:</p>
+            <ul>
+                <li><strong>Apple HealthKit</strong> — read health data (with your permission)</li>
+                <li><strong>Apple CloudKit</strong> — sync data via your iCloud account</li>
+                <li><strong>Apple StoreKit</strong> — process subscription purchases</li>
+                <li><strong>Apple WeatherKit / Open-Meteo</strong> — fetch weather data for correlations</li>
+            </ul>
+            <p>No other third-party services, SDKs, or analytics tools are used.</p>
+        </div>
+
+        <div class="section">
+            <h3>10. Changes to This Policy</h3>
+            <p>If we update this policy, we'll post the revised version here with an updated date. Material changes will be communicated through the app. Continued use after changes constitutes acceptance.</p>
+        </div>
+
+        <div class="section">
+            <h3>11. Contact</h3>
+            <p>Questions about privacy? Reach us at <a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a></p>
+        </div>
+    </div>
+
+    <!-- TERMS OF SERVICE -->
+    <div id="terms" class="content-section">
+        <div class="section">
+            <p style="font-size:13px;color:var(--text-tertiary);margin-bottom:24px;">Last updated: March 18, 2026</p>
+
+            <h2>Terms of Service</h2>
+            <p>By downloading or using Symptly, you agree to these terms. Please read them carefully.</p>
+        </div>
+
+        <div class="section">
+            <h3>1. Medical Disclaimer</h3>
+            <div class="info-card" style="border-color:rgba(239,68,68,0.2);background:rgba(239,68,68,0.03);">
+                <h4>&#9888; Important</h4>
+                <p>Symptly is <strong>not a medical device</strong>. It is not intended to diagnose, treat, cure, or prevent any disease or medical condition. The wellness scores, insights, correlations, and predictions provided by the app are informational only. Always consult a qualified healthcare provider for medical advice. Do not rely on this app for health decisions.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>2. Subscriptions &amp; Billing</h3>
+            <ul>
+                <li>Symptly offers auto-renewable subscriptions: Weekly ($4.99/week), Monthly ($9.99/month), and Yearly ($39.99/year)</li>
+                <li>All subscriptions include a <strong>3-day free trial</strong> for new subscribers</li>
+                <li>Payment is charged to your Apple ID account at confirmation of purchase</li>
+                <li>Subscriptions <strong>auto-renew</strong> unless cancelled at least 24 hours before the end of the current period</li>
+                <li>Your account will be charged for renewal within 24 hours prior to the end of the current period at the same rate</li>
+                <li>You can manage and cancel subscriptions in your Apple ID settings (Settings &gt; [Your Name] &gt; Subscriptions)</li>
+                <li>Any unused portion of a free trial is forfeited when you purchase a subscription</li>
+                <li>Prices may vary by region and are subject to change</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>3. Acceptable Use</h3>
+            <p>You agree to use Symptly only for personal health tracking. You may not:</p>
+            <ul>
+                <li>Reverse-engineer, decompile, or disassemble the app</li>
+                <li>Use the app for any commercial diagnostic or medical purpose</li>
+                <li>Attempt to access data belonging to other users</li>
+                <li>Distribute modified versions of the app</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>4. Intellectual Property</h3>
+            <p>The app, including its design, code, icons, and content, is owned by the Symptly team and protected by copyright. Your health data belongs to you — we claim no ownership of user-generated content.</p>
+        </div>
+
+        <div class="section">
+            <h3>5. Limitation of Liability</h3>
+            <p>Symptly is provided "as is" without warranties of any kind. We are not liable for:</p>
+            <ul>
+                <li>Health decisions made based on app insights</li>
+                <li>Data loss due to device failure, iCloud issues, or app deletion</li>
+                <li>Inaccuracies in wellness scores, correlations, or predictions</li>
+                <li>Service interruptions or bugs</li>
+            </ul>
+            <p>Our total liability shall not exceed the amount you paid for the app in the 12 months preceding the claim.</p>
+        </div>
+
+        <div class="section">
+            <h3>6. Termination</h3>
+            <p>You can stop using Symptly at any time by deleting the app. We reserve the right to terminate access for violations of these terms.</p>
+        </div>
+
+        <div class="section">
+            <h3>7. Governing Law</h3>
+            <p>These terms are governed by the laws of the United States. Disputes will be resolved through binding arbitration.</p>
+        </div>
+
+        <div class="section">
+            <h3>8. Contact</h3>
+            <p>Questions about these terms? Email <a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a></p>
+        </div>
+    </div>
+
+    <!-- SUPPORT -->
+    <div id="support" class="content-section">
+        <div class="section">
+            <h2>Support &amp; Help Center</h2>
+            <p>Find answers to common questions below. Can't find what you need? <a href="#" onclick="showTab('contact')">Contact us</a>.</p>
+        </div>
+
+        <div class="section">
+            <h3>Getting Started</h3>
+            <div class="info-card">
+                <h4>How do I log a symptom?</h4>
+                <p>Tap the + button on the home screen. Select your symptom, rate its severity (1-10), add optional triggers and notes, then save. Your entry appears in History immediately.</p>
+            </div>
+            <div class="info-card">
+                <h4>What's the Wellness Score?</h4>
+                <p>Your Wellness Score (0-100) is calculated from your onboarding answers and daily tracking data. It reflects your overall symptom burden, lifestyle factors, and trends. Higher is better. The score updates as you log more data.</p>
+            </div>
+            <div class="info-card">
+                <h4>How does the daily check-in work?</h4>
+                <p>Each day, the home screen prompts you to rate your mood and energy level. You can also log sleep hours, stress level, and water intake. These feed into your lifestyle correlations.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Insights &amp; Correlations</h3>
+            <div class="info-card">
+                <h4>How are correlations calculated?</h4>
+                <p>Symptly uses statistical methods (Pearson correlation, Welch's t-test) to find patterns in your data. You need at least 5 data points over 30 days for meaningful correlations. More data = better insights.</p>
+            </div>
+            <div class="info-card">
+                <h4>What is a flare-up alert?</h4>
+                <p>When your recent 3-day symptom severity exceeds your 14-day baseline by 1.5+ points, or your logging frequency doubles, Symptly flags a potential flare-up with severity tiers (mild, moderate, severe).</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Data &amp; Privacy</h3>
+            <div class="info-card">
+                <h4>How do I export my data?</h4>
+                <p>Go to Settings &gt; Data &gt; Export Data. Your symptom entries, check-ins, and medications are exported as a CSV file that you can share with your healthcare provider.</p>
+            </div>
+            <div class="info-card">
+                <h4>Does my data sync across devices?</h4>
+                <p>Yes. If you're signed into iCloud, your data automatically syncs across all your Apple devices. This uses Apple's CloudKit — we never see your data.</p>
+            </div>
+            <div class="info-card">
+                <h4>How do I delete all my data?</h4>
+                <p>Settings &gt; Data &gt; Clear All Data removes all symptom entries, journals, and medications. Settings &gt; Account &gt; Reset App also clears your onboarding profile. Deleting the app removes everything from the device.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Subscriptions</h3>
+            <div class="info-card">
+                <h4>How do I cancel my subscription?</h4>
+                <p>Open the Settings app on your iPhone &gt; Tap your name &gt; Subscriptions &gt; Symptly &gt; Cancel Subscription. You'll keep access until the end of your billing period.</p>
+            </div>
+            <div class="info-card">
+                <h4>How do I restore my purchase on a new device?</h4>
+                <p>Sign into the same Apple ID. Symptly automatically detects your active subscription via StoreKit. If it doesn't appear, go to the paywall screen and tap "Restore Purchases."</p>
+            </div>
+            <div class="info-card">
+                <h4>Can I get a refund?</h4>
+                <p>Refunds are handled by Apple. Visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener">reportaproblem.apple.com</a> to request one.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Troubleshooting</h3>
+            <div class="info-card">
+                <h4>HealthKit data isn't showing up</h4>
+                <p>Go to Settings &gt; Privacy &amp; Security &gt; Health &gt; Symptly and make sure all categories are enabled. Then reopen Symptly — it fetches the latest data on launch.</p>
+            </div>
+            <div class="info-card">
+                <h4>My data disappeared after updating</h4>
+                <p>Your data migrates automatically from the old storage format. If something went wrong, your iCloud backup may have your data. Contact us and we'll help troubleshoot.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="content-section">
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>We typically respond within 24 hours.</p>
+        </div>
+
+        <div class="section">
+            <form class="contact-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="contact-email">Your email</label>
+                    <input type="email" id="contact-email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-topic">Topic</label>
+                    <select id="contact-topic" required>
+                        <option value="">Select a topic...</option>
+                        <option value="bug">Bug report</option>
+                        <option value="feature">Feature request</option>
+                        <option value="subscription">Subscription issue</option>
+                        <option value="data">Data or privacy question</option>
+                        <option value="health">Health data concern</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contact-device">Device &amp; iOS version</label>
+                    <input type="text" id="contact-device" placeholder="e.g. iPhone 15 Pro, iOS 18.2">
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" placeholder="Describe your issue or question..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+                <div id="form-success" style="display:none;padding:16px;background:rgba(0,196,154,0.08);border-radius:10px;text-align:center;color:var(--teal-dark);font-weight:500;">
+                    Message sent! We'll get back to you within 24 hours.
+                </div>
+            </form>
+        </div>
+
+        <div class="section" style="margin-top:40px;">
+            <h3>Other ways to reach us</h3>
+            <div class="info-card">
+                <h4>&#9993; Email</h4>
+                <p><a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a> — General support<br>
+                <a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a> — Privacy questions<br>
+                <a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a> — Legal inquiries</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- YOUR DATA -->
+    <div id="data" class="content-section">
+        <div class="section">
+            <h2>Your Data Rights</h2>
+            <p>You have complete control over your health data.</p>
+        </div>
+
+        <div class="section">
+            <h3>Right to Access</h3>
+            <p>All your data is visible directly in the app. Use Settings &gt; Data &gt; Export Data to download a complete CSV of your symptom history, check-ins, and medications.</p>
+        </div>
+
+        <div class="section">
+            <h3>Right to Deletion</h3>
+            <p>You can delete individual entries, clear all data, or reset the entire app. We don't retain backups of your data — once deleted, it's gone.</p>
+            <div class="info-card accent">
+                <h4>&#128274; Data deletion is permanent</h4>
+                <p>When you clear your data or reset the app, it's removed from your device and iCloud. There is no recovery option. Export your data first if you want a backup.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Right to Portability</h3>
+            <p>Your data can be exported as CSV at any time. This standard format is compatible with spreadsheet apps, healthcare portals, and other health tracking tools.</p>
+        </div>
+
+        <div class="section">
+            <h3>Right to Restrict Processing</h3>
+            <p>You can disable individual features:</p>
+            <ul>
+                <li><strong>HealthKit</strong> — toggle off in Settings &gt; Tracking &gt; Apple Health</li>
+                <li><strong>Notifications</strong> — toggle off in Settings &gt; Tracking &gt; Reminders</li>
+                <li><strong>iCloud sync</strong> — disable in your device's iCloud settings</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>GDPR &amp; CCPA Compliance</h3>
+            <p>While Symptly processes all data on-device with no server-side storage, we respect the principles of GDPR and CCPA:</p>
+            <ul>
+                <li>We collect the minimum data necessary for the app's function</li>
+                <li>We provide full transparency about what data is used and why</li>
+                <li>You can access, export, and delete your data at any time</li>
+                <li>We do not sell personal information under any circumstances</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>California Residents (CCPA)</h3>
+            <p>Under the California Consumer Privacy Act, you have the right to know what personal information we collect, request deletion, and opt out of the sale of personal information. Since we do not sell any personal information, the right to opt out does not apply. For questions, email <a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a>.</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2026 Symptly. All rights reserved.</p>
+    <p><a href="#" onclick="showTab('privacy')">Privacy Policy</a> &middot; <a href="#" onclick="showTab('terms')">Terms of Service</a> &middot; <a href="mailto:keshav-krishnan@outlook.com">keshav-krishnan@outlook.com</a></p>
+    <p style="margin-top:12px;">Made with care for your health.</p>
+</footer>
+
+<script>
+function showTab(tabId) {
+    // Hide all sections
+    document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.page-tabs button').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('nav .nav-links a').forEach(a => a.classList.remove('active'));
+
+    // Show selected section
+    document.getElementById(tabId).classList.add('active');
+
+    // Highlight tab button
+    const tabs = document.querySelectorAll('.page-tabs button');
+    const tabMap = { privacy: 0, terms: 1, support: 2, contact: 3, data: 4 };
+    if (tabMap[tabId] !== undefined) tabs[tabMap[tabId]].classList.add('active');
+
+    // Highlight nav link
+    const navMap = { privacy: 0, terms: 1, support: 2, contact: 3 };
+    const navLinks = document.querySelectorAll('nav .nav-links a');
+    if (navMap[tabId] !== undefined) navLinks[navMap[tabId]].classList.add('active');
+
+    // Scroll to top of content
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    return false;
+}
+
+function handleSubmit(e) {
+    e.preventDefault();
+    const email = document.getElementById('contact-email').value;
+    const topic = document.getElementById('contact-topic').value;
+    const device = document.getElementById('contact-device').value;
+    const message = document.getElementById('contact-message').value;
+
+    // In production, replace with actual form submission (e.g., Formspree, Netlify Forms)
+    const mailtoLink = `mailto:keshav-krishnan@outlook.com?subject=${encodeURIComponent('Symptly Support: ' + topic)}&body=${encodeURIComponent('From: ' + email + '\nDevice: ' + device + '\n\n' + message)}`;
+    window.location.href = mailtoLink;
+
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+}
+
+// Handle URL hash navigation
+if (window.location.hash) {
+    const tab = window.location.hash.substring(1);
+    if (['privacy', 'terms', 'support', 'contact', 'data'].includes(tab)) {
+        showTab(tab);
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Xcode — per-user state (not source)
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+
+# Build output
+DerivedData/
+build/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# Python (icon/screenshot generators)
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Secrets / credentials
+*.env
+.env
+.env.*
+*.p12
+*.mobileprovision
+*.pem

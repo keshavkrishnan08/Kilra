@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Symptly — Instagram Carousel Studio</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<style>
+  :root {
+    --ss-accent: #00C49A;
+    --ss-accent-light: #33DFBB;
+    --ss-accent-dark: #009977;
+    --ss-violet: #7C5CFC;
+    --ss-violet-light: #9B82FA;
+    --ss-bg: #FAF9F6;
+    --ss-surface: #FFFFFF;
+    --ss-surface2: #F4F3F0;
+    --ss-surface3: #E9E7E2;
+    --ss-text1: #1C2534;
+    --ss-text2: #4A5568;
+    --ss-text3: #8896AB;
+    --ss-separator: #E6E3DD;
+    --ss-success: #22C55E;
+    --ss-warning: #F59E0B;
+    --ss-error: #EF4444;
+    --ss-info: #3B82F6;
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #F0EFEC;
+    color: var(--ss-text1);
+  }
+
+  /* ─── TOP BAR ─── */
+  .top-bar {
+    background: var(--ss-surface);
+    border-bottom: 1px solid var(--ss-separator);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .top-bar h1 {
+    font-size: 18px; font-weight: 700;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .logo-dot {
+    width: 26px; height: 26px;
+    background: linear-gradient(135deg, var(--ss-accent), var(--ss-violet));
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 800; font-size: 13px;
+  }
+
+  /* ─── NAV TABS ─── */
+  .carousel-nav {
+    display: flex; gap: 8px; padding: 16px 28px;
+    overflow-x: auto; background: var(--ss-surface);
+    border-bottom: 1px solid var(--ss-separator);
+  }
+  .carousel-tab {
+    padding: 9px 18px; border-radius: 100px;
+    border: 1.5px solid var(--ss-separator); background: var(--ss-surface);
+    font-family: inherit; font-size: 13px; font-weight: 600;
+    color: var(--ss-text2); cursor: pointer; white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .carousel-tab:hover { border-color: var(--ss-accent); color: var(--ss-accent); }
+  .carousel-tab.active { background: var(--ss-accent); border-color: var(--ss-accent); color: white; }
+
+  /* ─── MAIN ─── */
+  .main-area { max-width: 1500px; margin: 0 auto; padding: 28px; }
+  .controls-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px; flex-wrap: wrap; gap: 12px;
+  }
+  .carousel-title-display { font-size: 20px; font-weight: 800; }
+  .carousel-subtitle { font-size: 12px; color: var(--ss-text3); margin-top: 2px; }
+
+  .btn {
+    font-family: inherit; font-weight: 600; font-size: 13px;
+    border: none; border-radius: 10px; padding: 9px 18px;
+    cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary { background: var(--ss-accent); color: white; }
+  .btn-primary:hover { background: var(--ss-accent-dark); }
+  .btn-secondary { background: var(--ss-surface); color: var(--ss-text1); border: 1.5px solid var(--ss-separator); }
+  .btn-secondary:hover { border-color: var(--ss-accent); }
+  .btn-violet { background: var(--ss-violet); color: white; }
+  .btn-group { display: flex; gap: 8px; }
+
+  /* ─── SLIDE STRIP ─── */
+  .slide-strip {
+    display: flex; gap: 18px; overflow-x: auto; padding-bottom: 16px;
+    scroll-snap-type: x mandatory; scroll-behavior: smooth;
+  }
+  .slide-strip::-webkit-scrollbar { height: 5px; }
+  .slide-strip::-webkit-scrollbar-track { background: var(--ss-surface2); border-radius: 3px; }
+  .slide-strip::-webkit-scrollbar-thumb { background: var(--ss-accent); border-radius: 3px; }
+
+  .slide-wrapper { flex-shrink: 0; scroll-snap-align: start; position: relative; }
+  .slide-label {
+    font-size: 10px; font-weight: 700; color: var(--ss-text3);
+    text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 6px; text-align: center;
+  }
+
+  .ig-slide {
+    width: 360px; height: 450px; border-radius: 12px; overflow: hidden;
+    position: relative; box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+    cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .ig-slide:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(0,0,0,0.11); }
+
+  .slide-canvas {
+    width: 1080px; height: 1350px;
+    transform: scale(0.3333); transform-origin: top left;
+    position: relative; overflow: hidden;
+  }
+
+  /* ═══════════════════════════════════════════════════════
+     SLIDE TYPES — Clean, Light, High-Converting
+     ═══════════════════════════════════════════════════════ */
+
+  /* ── HOOK SLIDES (1, 2, 3) — Each standalone entry point ── */
+  .slide-hook {
+    background: var(--ss-bg);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 90px 80px; text-align: center;
+    width: 1080px; height: 1350px;
+    position: relative;
+  }
+  .slide-hook .hook-eyebrow {
+    font-size: 26px; font-weight: 700; letter-spacing: 4px;
+    text-transform: uppercase; color: var(--ss-accent);
+    margin-bottom: 32px;
+  }
+  .slide-hook .hook-headline {
+    font-size: 76px; font-weight: 900; line-height: 1.08;
+    color: var(--ss-text1); letter-spacing: -2.5px; max-width: 920px;
+  }
+  .slide-hook .hook-headline .acc { color: var(--ss-accent); }
+  .slide-hook .hook-headline .vio { color: var(--ss-violet); }
+  .slide-hook .hook-headline .err { color: var(--ss-error); }
+  .slide-hook .hook-sub {
+    font-size: 34px; font-weight: 500; color: var(--ss-text3);
+    margin-top: 36px; line-height: 1.45; max-width: 800px;
+  }
+  .slide-hook .hook-swipe {
+    position: absolute; bottom: 56px; left: 50%; transform: translateX(-50%);
+    font-size: 24px; font-weight: 600; color: var(--ss-text3);
+    display: flex; align-items: center; gap: 8px;
+    opacity: 0.7;
+  }
+  .slide-hook .hook-swipe .arrow { font-size: 28px; color: var(--ss-accent); }
+
+  /* Visual accent blobs for hooks */
+  .slide-hook .blob-tl {
+    position: absolute; top: -80px; left: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(0,196,154,0.07) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .slide-hook .blob-br {
+    position: absolute; bottom: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(124,92,252,0.05) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  /* ── NARRATIVE SLIDES (4-8) — Problem + solution arc ── */
+  .slide-narrative {
+    background: var(--ss-bg);
+    display: flex; flex-direction: column;
+    padding: 80px; justify-content: center;
+    width: 1080px; height: 1350px;
+    position: relative;
+  }
+  .slide-narrative .narr-eyebrow {
+    font-size: 24px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 28px;
+  }
+  .slide-narrative .narr-eyebrow.teal { color: var(--ss-accent); }
+  .slide-narrative .narr-eyebrow.red { color: var(--ss-error); }
+  .slide-narrative .narr-eyebrow.violet { color: var(--ss-violet); }
+  .slide-narrative .narr-title {
+    font-size: 62px; font-weight: 800; line-height: 1.12;
+    color: var(--ss-text1); letter-spacing: -1.5px; margin-bottom: 32px;
+    max-width: 920px;
+  }
+  .slide-narrative .narr-title .acc { color: var(--ss-accent); }
+  .slide-narrative .narr-title .err { color: var(--ss-error); }
+  .slide-narrative .narr-title .vio { color: var(--ss-violet); }
+  .slide-narrative .narr-body {
+    font-size: 35px; line-height: 1.55; color: var(--ss-text2); max-width: 900px;
+  }
+  .slide-narrative .narr-body strong { color: var(--ss-text1); font-weight: 700; }
+
+  /* Cliffhanger at bottom of narrative slides */
+  .slide-narrative .cliffhanger {
+    position: absolute; bottom: 56px; left: 80px; right: 80px;
+    padding: 28px 36px;
+    background: var(--ss-surface);
+    border-radius: 16px;
+    border: 2px solid var(--ss-separator);
+    font-size: 30px; font-weight: 600; color: var(--ss-text2);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .slide-narrative .cliffhanger .cliff-arrow {
+    font-size: 32px; color: var(--ss-accent); font-weight: 800;
+  }
+
+  /* Bullet points for narrative */
+  .narr-bullets { margin-top: 36px; }
+  .narr-bullets .bullet {
+    display: flex; align-items: flex-start; gap: 20px;
+    margin-bottom: 28px; font-size: 33px; color: var(--ss-text2); line-height: 1.4;
+  }
+  .narr-bullets .bullet .b-dot {
+    flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-top: 2px;
+  }
+  .narr-bullets .bullet .b-dot.red { background: rgba(239,68,68,0.08); color: var(--ss-error); }
+  .narr-bullets .bullet .b-dot.teal { background: rgba(0,196,154,0.08); color: var(--ss-accent); }
+  .narr-bullets .bullet .b-dot.violet { background: rgba(124,92,252,0.08); color: var(--ss-violet); }
+
+  /* Stat callout box */
+  .narr-stat {
+    margin-top: 44px; padding: 32px 36px;
+    background: var(--ss-surface); border-radius: 16px;
+    border-left: 6px solid var(--ss-error);
+    display: flex; align-items: center; gap: 24px;
+  }
+  .narr-stat .stat-num { font-size: 54px; font-weight: 900; color: var(--ss-error); }
+  .narr-stat .stat-text { font-size: 29px; color: var(--ss-text2); line-height: 1.35; }
+
+  /* ── PIVOT SLIDE — Teal gradient turn ── */
+  .slide-pivot {
+    background: linear-gradient(155deg, var(--ss-accent) 0%, #009977 100%);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 90px; text-align: center;
+    width: 1080px; height: 1350px;
+  }
+  .slide-pivot .pivot-headline {
+    font-size: 70px; font-weight: 900; color: white;
+    line-height: 1.12; letter-spacing: -2px; max-width: 900px;
+  }
+  .slide-pivot .pivot-sub {
+    font-size: 34px; font-weight: 500;
+    color: rgba(255,255,255,0.8); margin-top: 36px;
+    line-height: 1.45; max-width: 780px;
+  }
+
+  /* ── NEED SLIDE (second to last) — "Here's what you need" ── */
+  .slide-need {
+    background: var(--ss-bg);
+    display: flex; flex-direction: column;
+    padding: 80px; justify-content: center;
+    width: 1080px; height: 1350px;
+  }
+  .slide-need .need-eyebrow {
+    font-size: 24px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--ss-violet);
+    margin-bottom: 28px;
+  }
+  .slide-need .need-title {
+    font-size: 58px; font-weight: 800; line-height: 1.12;
+    color: var(--ss-text1); letter-spacing: -1.5px; margin-bottom: 44px;
+  }
+  .slide-need .need-title .acc { color: var(--ss-accent); }
+  .need-features { display: flex; flex-direction: column; gap: 24px; }
+  .need-feat {
+    display: flex; align-items: center; gap: 24px;
+    padding: 28px 32px;
+    background: var(--ss-surface); border-radius: 16px;
+    border: 1.5px solid var(--ss-separator);
+  }
+  .need-feat .nf-icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px; flex-shrink: 0;
+  }
+  .need-feat .nf-icon.teal { background: rgba(0,196,154,0.1); }
+  .need-feat .nf-icon.violet { background: rgba(124,92,252,0.1); }
+  .need-feat .nf-icon.blue { background: rgba(59,130,246,0.1); }
+  .need-feat .nf-icon.green { background: rgba(34,197,94,0.1); }
+  .need-feat .nf-text { font-size: 30px; color: var(--ss-text2); line-height: 1.35; }
+  .need-feat .nf-text strong { color: var(--ss-text1); font-weight: 700; }
+
+  /* ── CTA SLIDE (last) — Calm, clean, logo-forward ── */
+  .slide-cta {
+    background: var(--ss-bg);
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    padding: 80px; text-align: center;
+    width: 1080px; height: 1350px;
+    position: relative;
+  }
+  .slide-cta .cta-logo {
+    width: 200px; height: 200px;
+    margin-bottom: 48px;
+    position: relative;
+  }
+  /* SVG logo rendered inline — 3D leaf approximation */
+  .slide-cta .cta-logo svg { width: 100%; height: 100%; }
+
+  .slide-cta .cta-topline {
+    font-size: 30px; font-weight: 600; color: var(--ss-text3);
+    margin-bottom: 16px;
+  }
+  .slide-cta .cta-appname {
+    font-size: 80px; font-weight: 900; color: var(--ss-text1);
+    letter-spacing: -2px; margin-bottom: 20px;
+  }
+  .slide-cta .cta-appname .acc { color: var(--ss-accent); }
+  .slide-cta .cta-tagline {
+    font-size: 34px; font-weight: 500; color: var(--ss-text2);
+    line-height: 1.45; max-width: 800px; margin-bottom: 48px;
+  }
+  .slide-cta .cta-pill {
+    padding: 24px 56px;
+    background: var(--ss-accent);
+    border-radius: 100px;
+    font-size: 32px; font-weight: 700; color: white;
+    margin-bottom: 28px;
+  }
+  .slide-cta .cta-free {
+    font-size: 26px; color: var(--ss-text3); font-weight: 500;
+    margin-bottom: 44px;
+  }
+  .slide-cta .cta-badges {
+    display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+  }
+  .slide-cta .cta-badge {
+    padding: 14px 24px; background: var(--ss-surface);
+    border: 1.5px solid var(--ss-separator); border-radius: 100px;
+    font-size: 22px; font-weight: 600; color: var(--ss-text2);
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  /* ─── PROGRESS DOTS ─── */
+  .slide-dots {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 10px;
+  }
+  .slide-dots .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--ss-separator);
+  }
+  .slide-dots .dot.active {
+    background: var(--ss-accent); width: 32px; border-radius: 5px;
+  }
+
+  /* ─── DOWNLOAD OVERLAY ─── */
+  .download-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(28,37,52,0.6); backdrop-filter: blur(8px);
+    z-index: 1000; align-items: center; justify-content: center;
+  }
+  .download-overlay.active { display: flex; }
+  .download-modal {
+    background: var(--ss-surface); border-radius: 22px;
+    padding: 40px; max-width: 460px; width: 90%; text-align: center;
+  }
+  .download-modal h3 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+  .download-modal p { font-size: 13px; color: var(--ss-text3); margin-bottom: 20px; }
+  .download-progress {
+    width: 100%; height: 6px; background: var(--ss-surface2);
+    border-radius: 3px; overflow: hidden; margin-bottom: 12px;
+  }
+  .download-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--ss-accent), var(--ss-violet));
+    border-radius: 3px; transition: width 0.3s; width: 0%;
+  }
+  .download-status { font-size: 12px; color: var(--ss-text2); font-weight: 500; }
+
+  /* ─── JSON PANEL ─── */
+  .json-panel {
+    margin-top: 36px; background: var(--ss-surface);
+    border-radius: 18px; overflow: hidden; border: 1px solid var(--ss-separator);
+  }
+  .json-panel-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 22px; border-bottom: 1px solid var(--ss-separator);
+    background: var(--ss-surface2);
+  }
+  .json-panel-header h3 { font-size: 13px; font-weight: 700; }
+  .json-editor {
+    width: 100%; min-height: 400px; padding: 18px; border: none;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    font-size: 11.5px; line-height: 1.6; color: var(--ss-text1);
+    background: var(--ss-surface); resize: vertical; outline: none;
+  }
+
+  @media (max-width: 768px) {
+    .main-area { padding: 14px; }
+    .ig-slide { width: 300px; height: 375px; }
+    .slide-canvas { transform: scale(0.2778); }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <h1><span class="logo-dot">S</span> Symptly Carousel Studio</h1>
+  <div class="btn-group">
+    <button class="btn btn-secondary" onclick="toggleJSON()">{ } JSON</button>
+    <button class="btn btn-primary" onclick="downloadAll()">⬇ Download All Slides</button>
+  </div>
+</div>
+
+<div class="carousel-nav" id="carouselNav"></div>
+
+<div class="main-area">
+  <div class="controls-row">
+    <div>
+      <div class="carousel-title-display" id="carouselTitleDisplay"></div>
+      <div class="carousel-subtitle" id="carouselSubDisplay"></div>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="downloadAll()">⬇ Download All</button>
+      <button class="btn btn-violet" onclick="downloadCurrentSlide()">⬇ Current Slide</button>
+    </div>
+  </div>
+  <div class="slide-strip" id="slideStrip"></div>
+  <div class="json-panel" id="jsonPanel" style="display:none;">
+    <div class="json-panel-header">
+      <h3>Carousel JSON</h3>
+      <div class="btn-group">
+        <button class="btn btn-secondary" onclick="resetJSON()">Reset</button>
+        <button class="btn btn-primary" onclick="applyJSON()">Apply</button>
+      </div>
+    </div>
+    <textarea class="json-editor" id="jsonEditor" spellcheck="false"></textarea>
+  </div>
+</div>
+
+<div class="download-overlay" id="downloadOverlay">
+  <div class="download-modal">
+    <h3>Exporting slides...</h3>
+    <p>Rendering at 1080 × 1350px for Instagram</p>
+    <div class="download-progress"><div class="download-progress-bar" id="downloadProgressBar"></div></div>
+    <div class="download-status" id="downloadStatus">Preparing...</div>
+  </div>
+</div>
+
+<div id="renderArea" style="position:fixed;left:-9999px;top:0;z-index:-1;"></div>
+
+<script>
+// ═══════════════════════════════════════════════════════════
+// SYMPTLY LOGO SVG — Approximation of 3D leaf icon
+// ═══════════════════════════════════════════════════════════
+const SYMPTLY_LOGO_SVG = `
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="leaf1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#33DFBB"/>
+      <stop offset="100%" style="stop-color:#00C49A"/>
+    </linearGradient>
+    <linearGradient id="leaf2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#00C49A"/>
+      <stop offset="100%" style="stop-color:#009977"/>
+    </linearGradient>
+    <linearGradient id="leaf3" x1="50%" y1="0%" x2="50%" y2="100%">
+      <stop offset="0%" style="stop-color:#33DFBB"/>
+      <stop offset="100%" style="stop-color:#009977"/>
+    </linearGradient>
+    <filter id="shadow1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#00C49A" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <!-- Top leaf -->
+  <path d="M100 30 Q130 50 120 85 Q105 95 100 80 Q95 95 80 85 Q70 50 100 30Z" fill="url(#leaf1)" filter="url(#shadow1)"/>
+  <!-- Bottom-left leaf -->
+  <path d="M60 95 Q40 115 55 145 Q70 150 75 135 Q72 152 88 148 Q105 125 60 95Z" fill="url(#leaf2)" filter="url(#shadow1)"/>
+  <!-- Bottom-right leaf -->
+  <path d="M140 95 Q160 115 145 145 Q130 150 125 135 Q128 152 112 148 Q95 125 140 95Z" fill="url(#leaf3)" filter="url(#shadow1)"/>
+  <!-- Center connection -->
+  <circle cx="100" cy="100" r="8" fill="#009977" opacity="0.6"/>
+  <!-- Top arc accent -->
+  <path d="M118 42 Q135 30 142 48" stroke="#009977" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.7"/>
+  <!-- Violet orbs -->
+  <circle cx="52" cy="72" r="10" fill="#7C5CFC" opacity="0.85"/>
+  <circle cx="155" cy="155" r="8" fill="#9B82FA" opacity="0.75"/>
+  <!-- Small teal dot -->
+  <circle cx="140" cy="55" r="5" fill="#33DFBB" opacity="0.6"/>
+</svg>`;
+
+
+// ═══════════════════════════════════════════════════════════
+// CAROUSEL DATA — Triple Hook Framework
+// ═══════════════════════════════════════════════════════════
+// Structure per carousel:
+//   Slide 1: HOOK 1 — Bold, stops cold scroller
+//   Slide 2: HOOK 2 — Standalone hook, different angle
+//   Slide 3: HOOK 3 — Third entry point, also standalone
+//   Slides 4-7: Narrative arc with cliffhangers (incomplete info)
+//   Slide 8: Pivot — "but here's the thing..."
+//   Slide 9: NEED — "what you actually need"
+//   Slide 10: CTA — Calm, logo, "try this free app"
+// ═══════════════════════════════════════════════════════════
+
+const CAROUSELS = [
+
+// ─────────── 1. SLEEP & FATIGUE ───────────
+{
+  id: "sleep-fatigue",
+  title: "Sleep & Fatigue",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "You slept 8 hours and woke up <span class='acc'>exhausted</span>",
+      sub: "It's not about how much you sleep.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "<span class='err'>73%</span> of people with chronic fatigue get told \"just sleep more\"",
+      sub: "That advice is making it worse. Here's why.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Your tiredness has a <span class='acc'>pattern</span>. You just can't see it yet.",
+      sub: "Most people never find their real energy killers.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE REAL PROBLEM",
+      title: "Fatigue isn't one thing. It's a <span class='err'>stack</span>.",
+      body: "Bad sleep <strong>plus</strong> stress <strong>plus</strong> a weather shift <strong>plus</strong> that thing you ate yesterday. Alone, each one is fine. Together? You can't get off the couch.",
+      stat: { num: "6+", text: "hidden variables interact to cause your worst energy crashes" },
+      cliffhanger: "But there's a reason nobody finds these triggers..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "WHY YOU'RE STUCK",
+      title: "Your <span class='err'>memory</span> is the worst symptom tracker",
+      body: "You try to tell your doctor how you've been feeling. You say \"tired.\" That's it. <strong>Weeks of suffering condensed into one word.</strong>",
+      bullets: [
+        { color: "red", icon: "✕", text: "You forget the bad days when you feel okay" },
+        { color: "red", icon: "✕", text: "You can't spot a trigger that's delayed 48 hours" },
+        { color: "red", icon: "✕", text: "Fatigue itself destroys your ability to track fatigue" }
+      ],
+      cliffhanger: "So how do people actually figure this out?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "THE SHIFT",
+      title: "The people who beat fatigue all did <span class='acc'>one thing</span>",
+      body: "They stopped relying on memory. They started <strong>capturing data as it happened</strong> — energy levels, sleep quality, stress, food, mood. Every day. 10 seconds.",
+      stat: { num: "3x", text: "faster trigger discovery when tracking daily vs. relying on memory" },
+      cliffhanger: "But most tracking apps make a critical mistake..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "WHY APPS FAIL",
+      title: "You're not going to fill out a <span class='err'>20-field form</span> when you're exhausted",
+      body: "Most health apps were designed by people who've never been too tired to hold their phone. Complex logging, manual entry, no intelligence. <strong>You stop after a week.</strong>",
+      bullets: [
+        { color: "red", icon: "✕", text: "No AI means YOU have to find the patterns" },
+        { color: "red", icon: "✕", text: "Your data stays locked — useless to your doctor" },
+        { color: "red", icon: "✕", text: "They track food OR sleep OR mood — never all three together" }
+      ],
+      cliffhanger: "So what would actually work?"
+    },
+    {
+      type: "pivot",
+      headline: "Something that logs in 10 seconds. Finds patterns you can't. And gives your doctor actual proof.",
+      sub: "That's not a wishlist. It exists."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A way to <span class='acc'>see</span> what's draining you",
+      features: [
+        { icon: "⚡", iconColor: "teal", title: "10-second daily check-ins", text: "Energy, mood, sleep, stress. Tap and done." },
+        { icon: "🧠", iconColor: "violet", title: "AI that finds your triggers", text: "On-device ML cross-references everything — even 48hr delayed reactions." },
+        { icon: "📊", iconColor: "blue", title: "Interactive insights dashboard", text: "See correlations between your sleep, stress, weather, and crash days." },
+        { icon: "📄", iconColor: "green", title: "Doctor-ready PDF reports", text: "Hand your doctor 6 months of data. Change the entire conversation." }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Track how you feel. See why you feel that way.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · your data never leaves your phone",
+      badges: ["🔒 On-device only", "🧠 AI insights", "⚡ 10-sec logs", "📄 PDF reports"]
+    }
+  ]
+},
+
+// ─────────── 2. CHRONIC HEADACHES ───────────
+{
+  id: "headaches",
+  title: "Chronic Headaches",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Another headache. <span class='err'>No idea why.</span>",
+      sub: "You've eliminated everything. It keeps coming back.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "<span class='acc'>85%</span> of migraine sufferers can't recall their headache frequency",
+      sub: "Your doctor is working with bad data. So are you.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Your headaches have <span class='acc'>triggers</span>. They're just <span class='err'>stacked</span>.",
+      sub: "It's never one thing. That's why elimination diets don't work.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE REAL PROBLEM",
+      title: "Your triggers aren't what you <span class='err'>think</span>",
+      body: "Bad sleep alone? Fine. Dehydration alone? Fine. Weather shift alone? Fine. But <strong>all three on the same day?</strong> Migraine. And you'll blame the chocolate you ate.",
+      stat: { num: "47M", text: "Americans suffer from chronic headaches — most never find their real triggers" },
+      cliffhanger: "And the way you're tracking makes it impossible to find them..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE BROKEN SYSTEM",
+      title: "\"How often do you get headaches?\" <span class='err'>...\"Uh...\"</span>",
+      body: "15-minute appointment. You know it's bad, but is it worse than last month? Are they <strong>more frequent or just more painful?</strong> Without numbers, you're guessing. So is your neurologist.",
+      bullets: [
+        { color: "red", icon: "✕", text: "You remember the worst ones, not the pattern" },
+        { color: "red", icon: "✕", text: "Location, time of day, and weather data are lost" },
+        { color: "red", icon: "✕", text: "\"Headache diary\" paper logs capture 10% of what matters" }
+      ],
+      cliffhanger: "What if you didn't have to remember any of it?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "THE BREAKTHROUGH",
+      title: "People who find their triggers all do <span class='acc'>this</span>",
+      body: "They log <strong>every headache in real time</strong> — severity, location, what they were doing, what they ate. But more importantly, they log <strong>the days they DON'T get headaches too.</strong>",
+      stat: { num: "3x", text: "more likely to find stacked triggers with daily tracking vs. headache-only logging" },
+      cliffhanger: "But this only works if the tool is smart enough..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "violet",
+      eyebrow: "THE MISSING PIECE",
+      title: "You need something that connects <span class='vio'>sleep + weather + stress + food</span>",
+      body: "Not a food diary. Not a headache log. Not a sleep tracker. <strong>All of them together.</strong> With AI that can cross-reference across days and weeks to find the combinations that trigger you.",
+      bullets: [
+        { color: "teal", icon: "✓", text: "Automatic weather correlation — no manual entry" },
+        { color: "teal", icon: "✓", text: "ML finds delayed triggers you'd never spot" },
+        { color: "teal", icon: "✓", text: "One-tap PDF report your neurologist can actually use" }
+      ],
+      cliffhanger: "Here's what that looks like →"
+    },
+    {
+      type: "pivot",
+      headline: "Log in 10 seconds. AI finds the pattern. Show your doctor the proof.",
+      sub: "No more guessing. No more elimination roulette."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A headache tracker that actually <span class='acc'>thinks</span>",
+      features: [
+        { icon: "🎯", iconColor: "teal", title: "Tap. Rate. Done.", text: "Log severity, location, and triggers in under 15 seconds." },
+        { icon: "🧠", iconColor: "violet", title: "AI trigger detection", text: "Finds stacked triggers across sleep, weather, stress, and food." },
+        { icon: "📈", iconColor: "blue", title: "Visual pattern insights", text: "\"Headaches 3x more likely when sleep <6hrs + barometric pressure drops.\"" },
+        { icon: "📋", iconColor: "green", title: "Neurologist-ready reports", text: "Frequency, severity trends, time-of-day patterns. One tap." }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Find your headache triggers. Finally.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · all data stays on your phone",
+      badges: ["🔒 Private", "🧠 AI-powered", "⚡ 15-sec logs", "📋 Doctor reports"]
+    }
+  ]
+},
+
+// ─────────── 3. GUT PROBLEMS ───────────
+{
+  id: "gut-problems",
+  title: "Gut Problems",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Your stomach ruins <span class='err'>everything</span>",
+      sub: "Dinner plans. Work focus. Sleep. Confidence.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "You ate the <span class='acc'>exact same thing</span> yesterday and felt fine",
+      sub: "So why are you in pain today? It's not random.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "<span class='err'>1 in 7</span> adults have IBS. Most never find their <span class='acc'>actual triggers</span>.",
+      sub: "Elimination diets test one variable. Your gut reacts to five.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE REAL PROBLEM",
+      title: "Food is only <span class='err'>20%</span> of the equation",
+      body: "Stress amplifies gut reactions. Hormones shift sensitivity. Sleep deprivation weakens your gut lining. <strong>The same meal can be fine one day and destroy you the next</strong> depending on what else is happening in your body.",
+      stat: { num: "6–48hrs", text: "is the delay window for gut reactions — making cause-and-effect almost impossible to spot manually" },
+      cliffhanger: "And that delay is why elimination diets keep failing you..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE ANXIETY LOOP",
+      title: "Gut problems create anxiety. Anxiety makes your gut <span class='err'>worse</span>.",
+      body: "You start avoiding restaurants. Canceling plans. <strong>Planning your entire day around your stomach.</strong> The stress of worrying about it becomes a trigger itself.",
+      bullets: [
+        { color: "red", icon: "✕", text: "60% of IBS patients report significant anxiety about flare-ups" },
+        { color: "red", icon: "✕", text: "Avoidance behavior shrinks your world" },
+        { color: "red", icon: "✕", text: "Your GI doctor gets a 15-minute guess, not a clear picture" }
+      ],
+      cliffhanger: "So what actually breaks this cycle?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "THE ANSWER",
+      title: "Track <span class='acc'>everything</span> — not just food",
+      body: "The people who get their gut under control track food AND stress AND sleep AND hormones AND medication. <strong>Every day. Every symptom.</strong> That's how the delayed reactions finally become visible.",
+      stat: { num: "40%", text: "reduction in flare-ups when patients identify stress + food combination triggers" },
+      cliffhanger: "But who has time to track all of that manually?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "violet",
+      eyebrow: "THE SHORTCUT",
+      title: "What if AI did the detective work <span class='vio'>for you</span>?",
+      body: "Log how you feel in 10 seconds. The AI cross-references days, weeks, and months of data to find <strong>the specific combinations that trigger your flare-ups</strong> — including 24-48 hour delayed reactions your food diary would miss.",
+      bullets: [
+        { color: "teal", icon: "✓", text: "Tracks food, stress, sleep, mood, and symptoms together" },
+        { color: "teal", icon: "✓", text: "Finds delayed reactions across 6-48 hour windows" },
+        { color: "teal", icon: "✓", text: "Generates GI-ready reports with trigger analysis" }
+      ],
+      cliffhanger: "Here's exactly what this looks like →"
+    },
+    {
+      type: "pivot",
+      headline: "Stop guessing what's safe. Start knowing.",
+      sub: "Your gut has patterns. You just need the right tool to see them."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A gut tracker that catches <span class='acc'>delayed reactions</span>",
+      features: [
+        { icon: "🎯", iconColor: "teal", title: "Complete picture logging", text: "Food + mood + stress + sleep + symptoms. All in one place." },
+        { icon: "🔍", iconColor: "violet", title: "Delayed trigger detection", text: "AI scans 6-48 hour windows to find what your diary misses." },
+        { icon: "📊", iconColor: "blue", title: "Interactive correlations", text: "See exactly which combinations cause your worst days." },
+        { icon: "🩺", iconColor: "green", title: "GI-ready reports", text: "One tap. Full symptom history + trigger analysis for your gastroenterologist." }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Your gut has patterns. Let's find them.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · all data stays on your phone",
+      badges: ["🔒 On-device", "🧠 AI correlations", "⚡ Quick logs", "🩺 GI reports"]
+    }
+  ]
+},
+
+// ─────────── 4. MYSTERY SYMPTOMS ───────────
+{
+  id: "mystery-symptoms",
+  title: "Mystery Symptoms",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "\"Your tests came back <span class='acc'>normal</span>.\"",
+      sub: "But you know something is wrong. You feel it every single day.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "It takes an average of <span class='err'>7 years</span> to diagnose a chronic condition",
+      sub: "That's 7 years of being told it might be \"just stress.\"",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Your symptoms seem <span class='err'>random</span>. They're <span class='acc'>connected</span>.",
+      sub: "Brain fog, fatigue, joint pain — they might all have the same root cause.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE BROKEN SYSTEM",
+      title: "Different doctor. Same conversation. <span class='err'>Zero progress.</span>",
+      body: "Every new specialist starts from scratch. You re-explain everything. They order the same tests. <strong>Nobody sees the timeline.</strong> Nobody sees how symptom A started 3 weeks before symptom B.",
+      stat: { num: "67%", text: "of undiagnosed patients report 3+ seemingly unrelated symptoms" },
+      cliffhanger: "And there's a reason specialists keep missing the connection..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "WHY THEY MISS IT",
+      title: "Each doctor sees <span class='err'>one piece</span>. Nobody sees the puzzle.",
+      body: "The rheumatologist sees joint pain. The neurologist sees brain fog. The GI sees digestive issues. <strong>But these might all be triggered by the same pattern</strong> — stress plus sleep deprivation plus a seasonal shift.",
+      bullets: [
+        { color: "red", icon: "✕", text: "Medical records capture diagnoses, not your daily experience" },
+        { color: "red", icon: "✕", text: "Referrals lose context between specialists" },
+        { color: "red", icon: "✕", text: "Without data, your experience gets dismissed as \"anxiety\"" }
+      ],
+      cliffhanger: "So who's supposed to connect the dots?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "THE ANSWER",
+      title: "<span class='acc'>You</span> are. But you need the right tool.",
+      body: "The patients who get diagnosed faster are the ones who show up with <strong>months of organized data</strong>. Symptom timelines. Severity trends. Co-occurrence patterns. It shifts the conversation from \"I don't feel well\" to <strong>\"here's the proof.\"</strong>",
+      stat: { num: "3x", text: "more likely to get appropriate treatment when presenting objective health data" },
+      cliffhanger: "But you can't do this with a notebook..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "violet",
+      eyebrow: "THE EDGE",
+      title: "What if AI could find the <span class='vio'>connections</span> between your symptoms?",
+      body: "Not just logging. <strong>Cross-referencing.</strong> An engine that looks at all your symptoms together and finds co-occurrence patterns, shared triggers, and timing clusters that no single specialist would catch.",
+      bullets: [
+        { color: "teal", icon: "✓", text: "30+ symptoms across 7 categories — if you feel it, track it" },
+        { color: "teal", icon: "✓", text: "AI finds when symptoms cluster and what triggers the cluster" },
+        { color: "teal", icon: "✓", text: "One-tap PDF you can hand to ANY specialist — no more starting over" }
+      ],
+      cliffhanger: "Here's what this actually looks like →"
+    },
+    {
+      type: "pivot",
+      headline: "Your symptoms are real. Build the evidence your doctors need.",
+      sub: "Every symptom. Every pattern. Every correlation. On your phone."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A way to <span class='acc'>prove</span> what you're going through",
+      features: [
+        { icon: "📈", iconColor: "teal", title: "Build your symptom timeline", text: "Log everything — even the symptoms that seem unrelated." },
+        { icon: "🧠", iconColor: "violet", title: "AI cross-symptom analysis", text: "Finds co-occurrence patterns and shared triggers across all your symptoms." },
+        { icon: "📊", iconColor: "blue", title: "Wellness score tracking", text: "A 0-100 composite health score. See if you're improving or declining — objectively." },
+        { icon: "📄", iconColor: "green", title: "One PDF for every doctor", text: "Hand any specialist your complete health story. Skip the 'start from scratch' conversation." }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Your symptoms tell a story. Start writing it down.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · your data never leaves your phone",
+      badges: ["🔒 Encrypted", "🧠 AI patterns", "📄 Doctor PDFs", "💜 Built for the undiagnosed"]
+    }
+  ]
+},
+
+// ─────────── 5. BRAIN FOG ───────────
+{
+  id: "brain-fog",
+  title: "Brain Fog",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "You used to be <span class='acc'>sharp</span>. What happened?",
+      sub: "Words on the tip of your tongue. Tasks you keep forgetting. A mind that won't focus.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Brain fog has <span class='err'>dozens</span> of possible causes",
+      sub: "Sleep, stress, food, hormones, medications — all stacking. Which one is yours?",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "<span class='err'>89%</span> of brain fog sufferers say it's destroying their <span class='acc'>work</span>",
+      sub: "But there's no standard medical test for it. So nobody takes it seriously.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE CRUEL IRONY",
+      title: "Brain fog makes it <span class='err'>impossible</span> to track brain fog",
+      body: "When you're foggy, you can't remember what you ate, how you slept, or when it started. By the time you feel clear again, <strong>the details are gone.</strong> The pattern stays invisible.",
+      stat: { num: "0", text: "standard medical tests that specifically measure \"brain fog\"" },
+      cliffhanger: "And that's exactly why doctors keep dismissing it..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE DEAD END",
+      title: "\"Everything looks <span class='err'>fine</span> on paper\"",
+      body: "Cognitive test? Passed. Blood work? Normal. MRI? Clear. But you <strong>know</strong> your brain isn't working the way it used to. The data that would prove it — daily fluctuations over weeks — doesn't exist. Until now.",
+      bullets: [
+        { color: "red", icon: "✕", text: "Single-day tests miss day-to-day fluctuations" },
+        { color: "red", icon: "✕", text: "Without longitudinal data, it's your word against \"normal\" labs" },
+        { color: "red", icon: "✕", text: "\"Cognitive complaints\" get dismissed faster than physical ones" }
+      ],
+      cliffhanger: "But what if you could map your mental clarity day by day?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "THE PATTERN",
+      title: "Your fog has a <span class='acc'>schedule</span>. You just haven't seen it yet.",
+      body: "For most people, brain fog isn't random. It follows a pattern tied to <strong>sleep quality, stress accumulation, hydration, and sometimes food</strong>. The problem isn't that there's no pattern. It's that nobody's been capturing the data.",
+      stat: { num: "4x", text: "more likely to experience brain fog after nights with <5hrs sleep + high stress" },
+      cliffhanger: "So what does it take to find YOUR pattern?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "violet",
+      eyebrow: "THE APPROACH",
+      title: "10 seconds a day. AI does the <span class='vio'>rest</span>.",
+      body: "Quick check-ins when you're foggy AND when you're clear. The AI compares both — looking at what's <strong>different about your bad days vs your good days</strong>. After 2-3 weeks, patterns start emerging that you'd never spot in a journal.",
+      bullets: [
+        { color: "teal", icon: "✓", text: "Captures fog severity + energy + sleep + stress + triggers" },
+        { color: "teal", icon: "✓", text: "ML finds 24-48hr leading indicators of fog episodes" },
+        { color: "teal", icon: "✓", text: "Turns weeks of data into evidence your doctor can act on" }
+      ],
+      cliffhanger: "Here's what this looks like in practice →"
+    },
+    {
+      type: "pivot",
+      headline: "Map your mental clarity. Find out what's stealing it.",
+      sub: "Not a journal. Not a mood ring. Actual data science on your phone."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A way to <span class='acc'>see</span> when the fog rolls in — and why",
+      features: [
+        { icon: "📝", iconColor: "teal", title: "Capture fog as it happens", text: "Rate severity + energy + context. Even when you're too foggy to think." },
+        { icon: "🧠", iconColor: "violet", title: "AI predictive patterns", text: "\"Fog is 4x more likely after <5hrs sleep + high stress the day before.\"" },
+        { icon: "📊", iconColor: "blue", title: "Good days vs bad days", text: "See exactly what's different. Sleep, stress, food — all compared." },
+        { icon: "🏥", iconColor: "green", title: "90-day evidence report", text: "Shift the conversation from \"I feel foggy\" to \"here's 90 days of data.\"" }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Clear the fog. See what's causing it.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · works offline",
+      badges: ["🔒 On-device", "🧠 AI insights", "⚡ 10-sec logs", "📊 Clarity reports"]
+    }
+  ]
+},
+
+// ─────────── 6. ANXIETY & MOOD ───────────
+{
+  id: "anxiety-mood",
+  title: "Anxiety & Mood",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Fine one day. <span class='err'>Falling apart</span> the next.",
+      sub: "Your mood changes feel random. They're not.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "Your <span class='acc'>body</span> is triggering your anxiety. Not just your mind.",
+      sub: "Sleep, blood sugar, hormones, weather. Mental health isn't just mental.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "<span class='err'>73%</span> of people can't identify their anxiety triggers",
+      sub: "Because they're looking in the wrong place.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE HIDDEN TRIGGERS",
+      title: "Bad sleep Monday → anxiety <span class='err'>Wednesday</span>",
+      body: "The trigger and the reaction can be <strong>48 hours apart</strong>. That's why your anxiety feels random. You're looking at what happened today when the cause was two days ago.",
+      stat: { num: "48hrs", text: "is the delay window for sleep deprivation to trigger an anxiety spike" },
+      cliffhanger: "And there's a pattern even sneakier than this..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE STACK EFFECT",
+      title: "It's never <span class='err'>one</span> thing. It's the combination.",
+      body: "Bad sleep alone? Manageable. Work stress alone? You cope. But <strong>bad sleep + stress + skipping meals + weather change?</strong> That's when the spiral hits and you have no idea why.",
+      bullets: [
+        { color: "red", icon: "✕", text: "Journaling captures feelings but not the physical triggers" },
+        { color: "red", icon: "✕", text: "Your therapist gets 1 hour/week — the daily patterns get lost" },
+        { color: "red", icon: "✕", text: "Emotional memory is biased toward extremes, not patterns" }
+      ],
+      cliffhanger: "So how do you find the triggers nobody's looking for?"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "THE KEY",
+      title: "Track your <span class='acc'>body</span> and your <span class='acc'>mind</span> together",
+      body: "The people who get their anxiety under control track mood AND sleep AND energy AND stress AND physical symptoms. <strong>Every day. 10 seconds.</strong> After 2-3 weeks, the connections become undeniable.",
+      stat: { num: "3x", text: "more likely to identify mood triggers when tracking physical + emotional data together" },
+      cliffhanger: "But you need something smarter than a mood journal..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "violet",
+      eyebrow: "THE DIFFERENCE",
+      title: "What if AI could find the <span class='vio'>body-mood connection</span> for you?",
+      body: "Not just \"how do I feel today\" — but <strong>what happened in the last 48 hours that led to this?</strong> Sleep, food, exercise, weather, physical symptoms. All cross-referenced. Patterns you'd never spot in a journal.",
+      bullets: [
+        { color: "teal", icon: "✓", text: "\"Anxiety 3x more likely after <6hrs sleep + no exercise\"" },
+        { color: "teal", icon: "✓", text: "Tracks the physical triggers therapists can't see" },
+        { color: "teal", icon: "✓", text: "Show your therapist data, not just feelings" }
+      ],
+      cliffhanger: "Here's what this gives you →"
+    },
+    {
+      type: "pivot",
+      headline: "Your emotions have patterns. Your body has the clues.",
+      sub: "Stop guessing why you feel this way. Start seeing it."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A mood tracker that checks your <span class='acc'>body</span> too",
+      features: [
+        { icon: "💚", iconColor: "teal", title: "Holistic daily check-ins", text: "Mood + energy + stress + sleep + physical symptoms. 10 seconds." },
+        { icon: "🧠", iconColor: "violet", title: "AI mood-body analysis", text: "Finds the physical triggers behind your emotional days." },
+        { icon: "📈", iconColor: "blue", title: "Wellness score over time", text: "See your trajectory. Are things getting better or worse? Objectively." },
+        { icon: "🗣️", iconColor: "green", title: "Therapy-ready reports", text: "\"Anxiety spikes Monday/Tuesday after weekend sleep disruption.\" Evidence." }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Understand your mind. Backed by data.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · your data stays yours",
+      badges: ["🔒 Private", "🧠 AI mood analysis", "📊 Wellness scores", "🗣️ Therapy reports"]
+    }
+  ]
+},
+
+// ─────────── 7. DOCTOR APPOINTMENTS ───────────
+{
+  id: "doctor-prep",
+  title: "Doctor Prep",
+  subtitle: "Triple-hook carousel — 10 slides — 1080×1350",
+  slides: [
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "15 minutes. That's all you get. <span class='acc'>Make them count.</span>",
+      sub: "Your doctor can only help with what you tell them. Most of us forget everything.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "<span class='err'>80%</span> of what your doctor tells you is forgotten immediately",
+      sub: "And 80% of what YOU should tell them never gets said.",
+      swipe: "swipe →"
+    },
+    {
+      type: "hook",
+      eyebrow: "",
+      headline: "\"I've been <span class='err'>tired</span> lately\" is not a medical history",
+      sub: "But that's what most of us walk in with. And then wonder why nothing changes.",
+      swipe: "keep going →"
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE PROBLEM",
+      title: "You forget everything the moment the doctor <span class='err'>walks in</span>",
+      body: "All week you had a list in your head. Symptoms to mention. Questions to ask. Then you sit down, they say \"how have you been?\" and your mind goes <strong>completely blank</strong>.",
+      stat: { num: "8 min", text: "of actual face time after check-in, vitals, and wrap-up" },
+      cliffhanger: "And even when you remember, there's a bigger problem..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "red",
+      eyebrow: "THE COMMUNICATION GAP",
+      title: "You speak in <span class='err'>feelings</span>. Doctors need <span class='acc'>data</span>.",
+      body: "\"I've been really tired\" → gets \"try sleeping more.\"<br><br>\"My energy dropped from 4/5 to 2/5 over 6 weeks, correlating with increased headache frequency\" → <strong>gets actual attention.</strong>",
+      bullets: [
+        { color: "red", icon: "✕", text: "Subjective descriptions get less weight than objective data" },
+        { color: "red", icon: "✕", text: "You focus on the worst day, not the pattern" },
+        { color: "red", icon: "✕", text: "Years of symptoms get compressed into a 2-minute summary" }
+      ],
+      cliffhanger: "The patients who get results do something different..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "teal",
+      eyebrow: "WHAT WORKS",
+      title: "Walk in with <span class='acc'>data</span> and watch the conversation change",
+      body: "The patients who get taken seriously are the ones who <strong>show up with organized health data</strong>. Symptom timelines. Severity trends. Trigger patterns. It shifts you from patient to <strong>partner</strong>.",
+      stat: { num: "3x", text: "more likely to receive appropriate treatment when presenting objective data" },
+      cliffhanger: "But building that data set sounds like a part-time job..."
+    },
+    {
+      type: "narrative",
+      eyebrowColor: "violet",
+      eyebrow: "THE SHORTCUT",
+      title: "What if you could hand your doctor <span class='vio'>6 months</span> in one PDF?",
+      body: "10-second daily check-ins. Log symptoms when they happen. After a few weeks, you have <strong>more organized health data than most patients bring in a lifetime</strong>. One tap turns it into a doctor-ready report.",
+      bullets: [
+        { color: "teal", icon: "✓", text: "Symptom timeline with severity trends over months" },
+        { color: "teal", icon: "✓", text: "AI-discovered triggers and correlations" },
+        { color: "teal", icon: "✓", text: "Formatted PDF — hand it to any doctor, any specialist" }
+      ],
+      cliffhanger: "Here's what it takes →"
+    },
+    {
+      type: "pivot",
+      headline: "Your next appointment can be completely different.",
+      sub: "All you need is data. And 10 seconds a day."
+    },
+    {
+      type: "need",
+      eyebrow: "WHAT YOU NEED",
+      title: "A health tracker that preps you for <span class='acc'>every appointment</span>",
+      features: [
+        { icon: "📱", iconColor: "teal", title: "Effortless daily logging", text: "30+ symptoms, severity ratings, triggers, notes. All organized automatically." },
+        { icon: "🧠", iconColor: "violet", title: "AI-built health story", text: "Trends, triggers, and correlations discovered over weeks and months." },
+        { icon: "📄", iconColor: "blue", title: "One-tap PDF report", text: "Professional health summary with timeline, trends, and trigger analysis." },
+        { icon: "🏥", iconColor: "green", title: "Works with any specialist", text: "Same report, any doctor. No more starting from scratch." }
+      ]
+    },
+    {
+      type: "cta",
+      topline: "try this free app",
+      appname: "Symptly",
+      tagline: "Show up prepared. Get answers.",
+      buttonText: "Free on the App Store",
+      freeNote: "no account needed · 100% private · your data never leaves your phone",
+      badges: ["📄 PDF reports", "🧠 AI insights", "🔒 Private", "⚡ 10-sec logs"]
+    }
+  ]
+}
+
+]; // END CAROUSELS
+
+
+// ═══════════════════════════════════════════════════════════
+// RENDERER
+// ═══════════════════════════════════════════════════════════
+
+let currentCarouselIdx = 0;
+let currentSlideIdx = 0;
+
+function init() {
+  renderNav();
+  selectCarousel(0);
+}
+
+function renderNav() {
+  const nav = document.getElementById('carouselNav');
+  nav.innerHTML = CAROUSELS.map((c, i) =>
+    `<button class="carousel-tab ${i === currentCarouselIdx ? 'active' : ''}" onclick="selectCarousel(${i})">${c.title}</button>`
+  ).join('');
+}
+
+function selectCarousel(idx) {
+  currentCarouselIdx = idx;
+  currentSlideIdx = 0;
+  renderNav();
+  const c = CAROUSELS[idx];
+  document.getElementById('carouselTitleDisplay').textContent = c.title;
+  document.getElementById('carouselSubDisplay').textContent = c.subtitle + '  ·  ' + c.slides.length + ' slides';
+  renderSlides(c);
+  updateJSONEditor();
+}
+
+function renderSlides(carousel) {
+  const strip = document.getElementById('slideStrip');
+  const labels = ['HOOK 1', 'HOOK 2', 'HOOK 3'];
+  strip.innerHTML = carousel.slides.map((slide, i) => {
+    let label = i < 3 ? labels[i] : `Slide ${i + 1} · ${slide.type}`;
+    if (slide.type === 'need') label = 'THE NEED';
+    if (slide.type === 'cta') label = 'CTA';
+    if (slide.type === 'pivot') label = 'PIVOT';
+    return `<div class="slide-wrapper" onclick="currentSlideIdx=${i}">
+      <div class="slide-label">${label}</div>
+      <div class="ig-slide">
+        <div class="slide-canvas">${renderSlideHTML(slide, i, carousel.slides.length)}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderSlideHTML(slide, idx, total) {
+  const dots = renderDots(idx, total);
+
+  switch(slide.type) {
+
+    case 'hook': return `
+      <div class="slide-hook">
+        <div class="blob-tl"></div>
+        <div class="blob-br"></div>
+        ${slide.eyebrow ? `<div class="hook-eyebrow">${slide.eyebrow}</div>` : ''}
+        <div class="hook-headline">${slide.headline}</div>
+        <div class="hook-sub">${slide.sub}</div>
+        ${slide.swipe ? `<div class="hook-swipe">${slide.swipe} <span class="arrow">→</span></div>` : ''}
+        ${dots}
+      </div>`;
+
+    case 'narrative': return `
+      <div class="slide-narrative">
+        <div class="narr-eyebrow ${slide.eyebrowColor}">${slide.eyebrow}</div>
+        <div class="narr-title">${slide.title}</div>
+        <div class="narr-body">${slide.body}</div>
+        ${slide.stat ? `
+          <div class="narr-stat">
+            <div class="stat-num">${slide.stat.num}</div>
+            <div class="stat-text">${slide.stat.text}</div>
+          </div>` : ''}
+        ${slide.bullets ? `
+          <div class="narr-bullets">
+            ${slide.bullets.map(b => `
+              <div class="bullet">
+                <div class="b-dot ${b.color}">${b.icon}</div>
+                <div>${b.text}</div>
+              </div>`).join('')}
+          </div>` : ''}
+        ${slide.cliffhanger ? `
+          <div class="cliffhanger">
+            <span>${slide.cliffhanger}</span>
+            <span class="cliff-arrow">→</span>
+          </div>` : ''}
+        ${dots}
+      </div>`;
+
+    case 'pivot': return `
+      <div class="slide-pivot">
+        <div class="pivot-headline">${slide.headline}</div>
+        <div class="pivot-sub">${slide.sub}</div>
+        ${dots}
+      </div>`;
+
+    case 'need': return `
+      <div class="slide-need">
+        <div class="need-eyebrow">${slide.eyebrow}</div>
+        <div class="need-title">${slide.title}</div>
+        <div class="need-features">
+          ${slide.features.map(f => `
+            <div class="need-feat">
+              <div class="nf-icon ${f.iconColor}">${f.icon}</div>
+              <div class="nf-text"><strong>${f.title}</strong> ${f.text}</div>
+            </div>`).join('')}
+        </div>
+        ${dots}
+      </div>`;
+
+    case 'cta': return `
+      <div class="slide-cta">
+        <div class="cta-logo">${SYMPTLY_LOGO_SVG}</div>
+        <div class="cta-topline">${slide.topline}</div>
+        <div class="cta-appname">${slide.appname}</div>
+        <div class="cta-tagline">${slide.tagline}</div>
+        <div class="cta-pill">${slide.buttonText}</div>
+        <div class="cta-free">${slide.freeNote}</div>
+        <div class="cta-badges">
+          ${slide.badges.map(b => `<div class="cta-badge">${b}</div>`).join('')}
+        </div>
+        ${dots}
+      </div>`;
+
+    default: return `<div style="width:1080px;height:1350px;display:flex;align-items:center;justify-content:center;background:#f5f5f5;font-size:36px;">Unknown: ${slide.type}</div>`;
+  }
+}
+
+function renderDots(activeIdx, total) {
+  let d = '<div class="slide-dots">';
+  for (let i = 0; i < total; i++) d += `<div class="dot ${i === activeIdx ? 'active' : ''}"></div>`;
+  return d + '</div>';
+}
+
+
+// ═══════════════════════════════════════════════════════════
+// DOWNLOAD ENGINE
+// ═══════════════════════════════════════════════════════════
+
+async function downloadAll() {
+  const carousel = CAROUSELS[currentCarouselIdx];
+  const overlay = document.getElementById('downloadOverlay');
+  const bar = document.getElementById('downloadProgressBar');
+  const status = document.getElementById('downloadStatus');
+  overlay.classList.add('active');
+  bar.style.width = '0%';
+  const area = document.getElementById('renderArea');
+
+  for (let i = 0; i < carousel.slides.length; i++) {
+    status.textContent = `Rendering slide ${i+1} of ${carousel.slides.length}...`;
+    bar.style.width = `${((i+1)/carousel.slides.length)*100}%`;
+
+    const c = document.createElement('div');
+    c.style.cssText = 'width:1080px;height:1350px;position:absolute;left:0;top:0;';
+    c.innerHTML = renderSlideHTML(carousel.slides[i], i, carousel.slides.length);
+    area.appendChild(c);
+    await new Promise(r => setTimeout(r, 150));
+
+    try {
+      const canvas = await html2canvas(c, { width:1080, height:1350, scale:1, useCORS:true, backgroundColor:null, logging:false });
+      const link = document.createElement('a');
+      link.download = `${carousel.id}_slide_${String(i+1).padStart(2,'0')}.png`;
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    } catch(e) { console.error('Render error slide', i+1, e); }
+    area.removeChild(c);
+    await new Promise(r => setTimeout(r, 350));
+  }
+  status.textContent = `Done! ${carousel.slides.length} slides exported.`;
+  setTimeout(() => overlay.classList.remove('active'), 1500);
+}
+
+async function downloadCurrentSlide() {
+  const carousel = CAROUSELS[currentCarouselIdx];
+  const slide = carousel.slides[currentSlideIdx];
+  const area = document.getElementById('renderArea');
+  const c = document.createElement('div');
+  c.style.cssText = 'width:1080px;height:1350px;position:absolute;left:0;top:0;';
+  c.innerHTML = renderSlideHTML(slide, currentSlideIdx, carousel.slides.length);
+  area.appendChild(c);
+  await new Promise(r => setTimeout(r, 150));
+  try {
+    const canvas = await html2canvas(c, { width:1080, height:1350, scale:1, useCORS:true, backgroundColor:null, logging:false });
+    const link = document.createElement('a');
+    link.download = `${carousel.id}_slide_${String(currentSlideIdx+1).padStart(2,'0')}.png`;
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  } catch(e) { console.error('Render error', e); }
+  area.removeChild(c);
+}
+
+
+// ═══════════════════════════════════════════════════════════
+// JSON EDITOR
+// ═══════════════════════════════════════════════════════════
+
+let jsonOpen = false;
+function toggleJSON() {
+  jsonOpen = !jsonOpen;
+  document.getElementById('jsonPanel').style.display = jsonOpen ? 'block' : 'none';
+  if (jsonOpen) updateJSONEditor();
+}
+function updateJSONEditor() {
+  document.getElementById('jsonEditor').value = JSON.stringify(CAROUSELS[currentCarouselIdx], null, 2);
+}
+function applyJSON() {
+  try {
+    CAROUSELS[currentCarouselIdx] = JSON.parse(document.getElementById('jsonEditor').value);
+    selectCarousel(currentCarouselIdx);
+  } catch(e) { alert('JSON error: ' + e.message); }
+}
+function resetJSON() { updateJSONEditor(); }
+
+init();
+</script>
+</body>
+</html>
