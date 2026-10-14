@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Symptly app icons — teal-to-violet gradient with cartoonish ECG + wellness ring."""
+"""Generate Symptly app icons: teal-to-violet gradient with cartoonish ECG + wellness ring."""
 
 from PIL import Image, ImageDraw, ImageFilter, ImageFont
 import math
@@ -35,7 +35,7 @@ def draw_gradient(draw, size, c1, c2, angle_deg=135):
 
 
 def draw_ecg_line(draw, cx, cy, scale, color, width=3):
-    """Draw a stylized ECG/heartbeat line — cartoonish with rounded peaks."""
+    """Draw a stylized ECG/heartbeat line: cartoonish with rounded peaks."""
     w = width
     points = []
     # Flat start
@@ -122,7 +122,7 @@ def generate_light_icon(size=1024):
     draw_glow_circle(img, cx, int(cy * 0.92), int(s * 0.35), WHITE, intensity=0.12)
     draw = ImageDraw.Draw(img)
 
-    # Wellness ring (partial circle) — upper area
+    # Wellness ring (partial circle): upper area
     ring_cy = int(s * 0.42)
     ring_r = int(s * 0.22)
     ring_thick = max(int(s * 0.028), 3)
@@ -284,7 +284,7 @@ def generate_tinted_icon(size=1024):
     s = size
     cx, cy = s // 2, s // 2
 
-    # Tinted icons should be monochrome — iOS applies the tint color
+    # Tinted icons should be monochrome: iOS applies the tint color
     # Use white with varying alpha for depth
     FG = (255, 255, 255)
     FG_DIM = (255, 255, 255, 120)

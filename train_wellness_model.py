@@ -59,7 +59,7 @@ base_score = (
     # Mood and energy are strong positive signals (each 1-5 → contribute up to ~20 pts)
     4.0 * mood
     + 4.0 * energy
-    # Streak rewards consistency — diminishing returns via sqrt
+    # Streak rewards consistency: diminishing returns via sqrt
     + 1.5 * np.sqrt(streak)
     # Symptom burden pulls the score down
     - 1.2 * symptom_count

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate App Store marketing screenshots for Symptly (6.5" iPhone — 1242×2688)."""
+"""Generate App Store marketing screenshots for Symptly (6.5" iPhone, 1242×2688)."""
 
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import math
