@@ -1,4 +1,4 @@
-# Analytics Tracker — Weekly KPIs
+# Analytics Tracker: Weekly KPIs
 
 > Cowork fills this every Sunday using X Analytics data. Tracks what's working and what isnt so content strategy can self-correct.
 
@@ -10,7 +10,7 @@
 1. Pull metrics from X Analytics (or ask Keshav to share a screenshot)
 2. Fill in the current week's row in the Growth table
 3. Fill in the Content Performance section
-4. Write 2-3 sentences of analysis — what worked, what didn't, what to change
+4. Write 2-3 sentences of analysis: what worked, what didn't, what to change
 5. Update the "Current Benchmarks" section if targets change
 
 **Decision triggers:** If a metric drops 2 weeks in a row, flag it in the analysis and suggest a content adjustment.
@@ -85,7 +85,7 @@ Track which formats actually work. Updated weekly.
 
 ## Best Posting Times (Observed)
 
-Track when posts actually perform best — not just when guides say to post.
+Track when posts actually perform best, not just when guides say to post.
 
 | Time Slot | Posts Tested | Avg Impressions | Avg Engagement | Verdict |
 |-----------|-------------|----------------|---------------|---------|
@@ -105,10 +105,10 @@ Track when posts actually perform best — not just when guides say to post.
 Cowork writes this every Sunday:
 
 ```
-### Week [X] — [DATE RANGE]
+### Week [X] - [DATE RANGE]
 
 **Phase:** [X]
-**Overall:** [one sentence — growing/flat/declining, why]
+**Overall:** [one sentence - growing/flat/declining, why]
 
 **What worked:**
 - [specific post or format that outperformed, with numbers]
@@ -123,10 +123,10 @@ Cowork writes this every Sunday:
 - [any new meaningful connections this week?]
 
 **Adjustments for next week:**
-- [concrete change — e.g., "post more image content, less text-only"]
-- [concrete change — e.g., "shift reply focus to health tech accounts"]
+- [concrete change - e.g., "post more image content, less text-only"]
+- [concrete change - e.g., "shift reply focus to health tech accounts"]
 
-**Shadowban check:** [clear / suspicious / confirmed — describe symptoms if any]
+**Shadowban check:** [clear / suspicious / confirmed - describe symptoms if any]
 ```
 
 ---
@@ -149,7 +149,7 @@ Once the app is live, track the Twitter → download pipeline:
 
 ---
 
-## Red Flags — When to Change Strategy
+## Red Flags: When to Change Strategy
 
 | Signal | What It Means | What to Do |
 |--------|--------------|-----------|

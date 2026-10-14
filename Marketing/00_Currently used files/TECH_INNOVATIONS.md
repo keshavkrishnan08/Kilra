@@ -1,4 +1,4 @@
-# Tech Innovations — Research & Discussion Topics
+# Tech Innovations: Research & Discussion Topics
 
 > Claude Cowork populates this file with recent tech innovations, AI developments, and health tech news worth discussing on Twitter. Refreshed weekly.
 
@@ -6,7 +6,7 @@
 
 ## How to Use This File
 
-**Cowork (weekly refresh):** Research and add 5–10 new items to the "Fresh Topics" section. Move stale items (>2 weeks old) to Archive. Tag each topic with relevance to Keshav's brand.
+**Cowork (weekly refresh):** Research and add 5-10 new items to the "Fresh Topics" section. Move stale items (>2 weeks old) to Archive. Tag each topic with relevance to Keshav's brand.
 
 **Content creation:** When drafting posts, Cowork checks this file for timely topics to react to, quote tweet, or thread about. Always tie back to Keshav's perspective as a builder/health tech founder.
 
@@ -18,14 +18,14 @@
 
 ```markdown
 ### [Topic Title]
-- **Source:** [where you found it — publication, tweet, announcement]
+- **Source:** [where you found it - publication, tweet, announcement]
 - **Date spotted:** [YYYY-MM-DD]
 - **Category:** [ai-tools / health-tech / mobile-dev / privacy / ml / indie-dev / general-tech]
 - **Relevance to brand:** [how this connects to Keshav's story / Symptly]
 - **Possible angles:**
-  - [angle 1 — e.g., "I use this tool daily, here's my take"]
-  - [angle 2 — e.g., "This validates the approach I'm taking with Symptly"]
-  - [angle 3 — e.g., "Contrarian take — here's why this won't work for health apps"]
+  - [angle 1 - e.g., "I use this tool daily, here's my take"]
+  - [angle 2 - e.g., "This validates the approach I'm taking with Symptly"]
+  - [angle 3 - e.g., "Contrarian take - here's why this won't work for health apps"]
 - **Draft hook:** [one-line hook for a potential tweet]
 - **Status:** fresh / used [DATE, post #X in POST_CATALOG.md]
 ```
@@ -83,7 +83,7 @@ Cowork should scan these areas weekly:
 
 ## Fresh Topics
 
-> Cowork: Add new topics below. Aim for 5–10 per week.
+> Cowork: Add new topics below. Aim for 5-10 per week.
 
 <!-- Cowork adds entries here using the template above -->
 
@@ -95,14 +95,14 @@ These are always relevant and can be recycled with fresh takes:
 
 | Topic | Angle for Keshav |
 |-------|-----------------|
-| On-device vs cloud ML | "Here's why Symptly processes everything on your phone — and why that matters for your health data" |
+| On-device vs cloud ML | "Here's why Symptly processes everything on your phone, and why that matters for your health data" |
 | Health app privacy concerns | "Most health apps upload your data to servers you'll never see. I chose a different path." |
-| Solo founder reality | "Building alone with AI tools — the honest version nobody posts about" |
+| Solo founder reality | "Building alone with AI tools, the honest version nobody posts about" |
 | AI replacing developers? | "I use AI to code every day. Here's what it's actually like (not what Twitter thinks)" |
 | Chronic illness invisibility | "You look fine. But your data tells a different story." |
 | Doctor-patient communication gap | "The 15 minutes you get with your doctor aren't enough. That's why I built doctor prep reports." |
 | Apple Health ecosystem | "Apple gives you the data. Nobody helps you understand it. That's the gap." |
-| Subscription fatigue | "Why I charge for Symptly — and why I think it's fair" |
+| Subscription fatigue | "Why I charge for Symptly, and why I think it's fair" |
 | Building for empathy | "Health apps shouldn't feel clinical. They should feel like someone cares." |
 | The myth of overnight success | "Month [X] of building. [X] followers. [X] downloads. The reality behind 'overnight success'" |
 

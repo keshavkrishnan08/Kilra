@@ -1,4 +1,4 @@
-# Marketing Orchestrator — Master Workflow
+# Marketing Orchestrator: Master Workflow
 
 > This is the single source of truth for Cowork's daily marketing automation.
 > Read this file FIRST. It tells you what to read, in what order, and what to do.
@@ -35,11 +35,11 @@ When starting any task, Cowork reads files in this priority:
 
 ## Daily Workflow
 
-### Single Morning Session — Everything Happens Here
+### Single Morning Session: Everything Happens Here
 
 **Goal:** Draft today's posts, schedule them on X, then handle engagement. One session.
 
-**All volume targets come from SCALING_FRAMEWORK.md.** How many posts, replies, likes, DMs, and follows to do today depends on the current phase. Never hardcode numbers here — always check the framework.
+**All volume targets come from SCALING_FRAMEWORK.md.** How many posts, replies, likes, DMs, and follows to do today depends on the current phase. Never hardcode numbers here, always check the framework.
 
 **Step 1: Read the System (no browser yet)**
 
@@ -69,22 +69,22 @@ When starting any task, Cowork reads files in this priority:
 
 Draft the exact number of posts specified by today's SCALING_FRAMEWORK.md targets. No more, no less.
 
-The posts should feel like scraps from someone's actual day — not a content plan. Follow CHROME_INSTRUCTIONS.md Step 2 rules:
+The posts should feel like scraps from someone's actual day, not a content plan. Follow CHROME_INSTRUCTIONS.md Step 2 rules:
 
 - **Train of thought:** Posts loosely connect as one person's thinking across the day. But some days they don't connect at all. Both are fine.
 - **No cannibalization:** Same feature/topic never appears twice in the same day.
-- **Naturally mention the app:** Symptly should come up the way it would in real life — as the thing giving you headaches and excitement. Not every post, maybe 60-70% of days. As a problem you're stuck on, context for a broader point, or a passing mention while talking about something else.
-- **Problems are content:** Talk about things that aren't working — the prediction engine false-alarming, the onboarding being too long, a design choice you're second-guessing. Struggling publicly builds trust faster than shipping publicly.
+- **Naturally mention the app:** Symptly should come up the way it would in real life, as the thing giving you headaches and excitement. Not every post, maybe 60-70% of days. As a problem you're stuck on, context for a broader point, or a passing mention while talking about something else.
+- **Problems are content:** Talk about things that aren't working, the prediction engine false-alarming, the onboarding being too long, a design choice you're second-guessing. Struggling publicly builds trust faster than shipping publicly.
 - **Vulnerability is mandatory:** At least 1 post per day shows genuine uncertainty. Not performed "look at me being real" energy. Actual "i dont know if this is the right call" doubt.
 - **Quantify everything:** Numbers or honest estimates in every post.
 - **Topic freshness:** Switch if covered 3x in 10 days or engagement dropped 2x in a row.
-- **Rotate pillars:** Builder, Human, Expert, Community, Product — never same pillar 3 days running.
+- **Rotate pillars:** Builder, Human, Expert, Community, Product, never same pillar 3 days running.
 
 Apply VOICE_BIBLE.md voice + micro-mistakes. Apply HASHTAG_STRATEGY.md. Check IMAGE_GUIDE.md last-used tracker.
 
 Save drafts to CONTENT_QUEUE.md with scheduled times (2+ hours apart).
 
-**Step 3: Open Chrome — Schedule All Posts**
+**Step 3: Open Chrome, Schedule All Posts**
 
 Follow CHROME_INSTRUCTIONS.md Step 3 exactly:
 - Open x.com → compose each post → type text (preserve micro-mistakes) → attach image if any → click scheduler → set time → schedule
@@ -93,7 +93,7 @@ Follow CHROME_INSTRUCTIONS.md Step 3 exactly:
 
 **Step 4: Engagement**
 
-Check SCALING_FRAMEWORK.md — if current phase says replies/likes are manual only, skip this step. Keshav handles it.
+Check SCALING_FRAMEWORK.md, if current phase says replies/likes are manual only, skip this step. Keshav handles it.
 
 If phase allows AI-assisted engagement:
 - Visit target accounts from COMPETITOR_ACCOUNTS.md
@@ -159,12 +159,12 @@ Check SCALING_FRAMEWORK.md for manual post and DM targets.
 ```
 1. Full ANALYTICS_TRACKER.md monthly trends update
 2. COMPETITOR_ACCOUNTS.md monthly analysis (what's working for them)
-3. BRAND_EVOLUTION.md phase review — are we on track? do milestones need adjusting?
-4. VOICE_BIBLE.md review — is the voice still accurate? update with new patterns from Keshav's actual posts
-5. TARGET_AUDIENCES.md review — has the audience shifted? are we reaching who we want?
+3. BRAND_EVOLUTION.md phase review - are we on track? do milestones need adjusting?
+4. VOICE_BIBLE.md review - is the voice still accurate? update with new patterns from Keshav's actual posts
+5. TARGET_AUDIENCES.md review - has the audience shifted? are we reaching who we want?
 6. HASHTAG_STRATEGY.md monthly audit
 7. Archive old weeks in POST_CATALOG.md
-8. Review images/IMAGE_GUIDE.md — any new screenshots to add?
+8. Review images/IMAGE_GUIDE.md - any new screenshots to add?
 ```
 
 ---
@@ -184,7 +184,7 @@ The app is "the thing I'm building." Share features as build updates, not market
 
 You're now talking about health tracking as a domain expert. The app comes up naturally when explaining how things work. "Here's how we handle trigger detection in Symptly" is fine because it's educational.
 
-**Allowed:** "symptly uses bayesian inference for trigger detection — here's how that works"
+**Allowed:** "symptly uses bayesian inference for trigger detection, here's how that works"
 **Not allowed:** "Our app uses cutting-edge AI to deliver personalized insights"
 
 ### Phase 4: App is the Story
@@ -205,20 +205,20 @@ Share user feedback, testimonials, real results. Your posts are still about the 
 
 | Phase | Image Type | Purpose |
 |-------|-----------|---------|
-| 1-2 | Raw simulator screenshots | "here's what im working on" — build in public proof |
-| 3 | Feature screenshots with context | Educational — "this is how pattern detection looks" |
-| 4 | App Store polished screenshots | Launch prep — "this is what the store page looks like" |
-| 5 | User feedback screenshots, metrics | Social proof — "real people using real features" |
+| 1-2 | Raw simulator screenshots | "here's what im working on", build in public proof |
+| 3 | Feature screenshots with context | Educational, "this is how pattern detection looks" |
+| 4 | App Store polished screenshots | Launch prep, "this is what the store page looks like" |
+| 5 | User feedback screenshots, metrics | Social proof, "real people using real features" |
 
 ---
 
 ## Error Handling
 
 ### If a post fails to publish
-1. Check internet/session — Chrome may need re-authentication
+1. Check internet/session: Chrome may need re-authentication
 2. Retry once after 5 minutes
 3. If still failing, save post back to CONTENT_QUEUE.md with status "failed"
-4. Notify Keshav: "posting failed — [error details]. post saved to queue."
+4. Notify Keshav: "posting failed: [error details]. post saved to queue."
 5. Continue with next scheduled post
 
 ### If engagement drops 50%+ suddenly
@@ -230,7 +230,7 @@ Share user feedback, testimonials, real results. Your posts are still about the 
 
 ### If someone accuses you of being a bot
 1. Do NOT reply defensively or deny it immediately (that looks more bot-like)
-2. Reply with something specific and human — reference a real detail from your day
+2. Reply with something specific and human: reference a real detail from your day
 3. Example: "lol fair, i do post a lot. just genuinely excited about what im building rn. the medication tracker almost works and i cant shut up about it"
 4. If accusations persist from multiple accounts: reduce posting volume for 3-5 days
 
@@ -242,7 +242,7 @@ Share user feedback, testimonials, real results. Your posts are still about the 
 5. Post something unrelated and positive within 2 hours to push the feed forward
 
 ### If Keshav is unavailable for review
-1. Do NOT post replies without approval — only pre-scheduled original posts
+1. Do NOT post replies without approval: only pre-scheduled original posts
 2. Skip the reply workflow for the day
 3. Resume when Keshav is back
 4. Log skipped day in ANALYTICS_TRACKER.md

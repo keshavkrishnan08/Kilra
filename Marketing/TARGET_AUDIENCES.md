@@ -1,4 +1,4 @@
-# Target Audiences — Who We're Talking To
+# Target Audiences: Who We're Talking To
 
 > Cowork references this before drafting content. Different audiences respond to different hooks, language, and proof points. Know who you're writing for.
 
@@ -8,14 +8,14 @@
 
 ### 1. Indie Builders & Vibe Coders
 
-**Who:** Solo developers, indie hackers, people building side projects or startups with AI tools. Ages 20–35 mostly. Active on tech Twitter. Many building in public.
+**Who:** Solo developers, indie hackers, people building side projects or startups with AI tools. Ages 20-35 mostly. Active on tech Twitter. Many building in public.
 
 **Where they hang out:** Twitter, Indie Hackers, Hacker News, Reddit (r/SideProject, r/indiehackers), Discord communities
 
 **What they care about:**
 - What tools you're using and whether they actually work
 - Real metrics, not vanity numbers
-- The unglamorous parts of shipping — bugs, decisions, late nights
+- The unglamorous parts of shipping: bugs, decisions, late nights
 - Stack choices and why you made them
 - How fast you're moving and what's slowing you down
 
@@ -37,7 +37,7 @@
 
 ### 2. Chronic Illness & Health-Conscious Community
 
-**Who:** People managing chronic conditions (migraines, IBS, anxiety, chronic fatigue, autoimmune conditions). Also people who track their health proactively. Ages 25–50. Lots of women. Lots of invisible illness.
+**Who:** People managing chronic conditions (migraines, IBS, anxiety, chronic fatigue, autoimmune conditions). Also people who track their health proactively. Ages 25-50. Lots of women. Lots of invisible illness.
 
 **Where they hang out:** Twitter health communities, Reddit (r/ChronicPain, r/migraine, r/IBS), Facebook groups, Instagram wellness space, TikTok health creators
 
@@ -45,8 +45,8 @@
 - Feeling heard and believed about their symptoms
 - Finding patterns in what triggers their bad days
 - Being prepared for doctor appointments (this is huge)
-- Privacy — they dont want their health data sold
-- Ease of use — they're often logging symptoms while feeling terrible
+- Privacy: they dont want their health data sold
+- Ease of use: they're often logging symptoms while feeling terrible
 
 **What makes them follow you:**
 - You understand the emotional side, not just the technical side
@@ -66,7 +66,7 @@
 
 ### 3. AI & Machine Learning Enthusiasts
 
-**Who:** Developers and tech enthusiasts interested in practical ML applications. Not just researchers — people who want to see ML doing real things for real people. Ages 22–40.
+**Who:** Developers and tech enthusiasts interested in practical ML applications. Not just researchers, people who want to see ML doing real things for real people. Ages 22-40.
 
 **Where they hang out:** Twitter (ML Twitter, AI Twitter), Reddit (r/MachineLearning, r/LocalLLaMA), Hacker News, YouTube (technical channels), Substack
 
@@ -89,13 +89,13 @@
 >
 > the interesting part is the onboarding bias that fades as real data accumulates. starts strong at ~60 entries it's basically gone. prevents cold start from ruining predictions
 
-**What to avoid:** Don't oversell your ML as "AI-powered" without substance. Don't claim accuracy you can't prove. Don't handwave the technical details for this audience — they'll call you on it.
+**What to avoid:** Don't oversell your ML as "AI-powered" without substance. Don't claim accuracy you can't prove. Don't handwave the technical details for this audience, they'll call you on it.
 
 ---
 
 ### 4. Health Tech Professionals
 
-**Who:** People working in digital health, healthtech startups, medical professionals interested in technology. Ages 30–50. More LinkedIn than Twitter but crossover exists.
+**Who:** People working in digital health, healthtech startups, medical professionals interested in technology. Ages 30-50. More LinkedIn than Twitter but crossover exists.
 
 **Where they hang out:** Twitter (healthtech circles), LinkedIn, conferences (HLTH, HIMSS), Substack health newsletters
 

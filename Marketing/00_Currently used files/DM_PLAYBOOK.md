@@ -1,4 +1,4 @@
-# DM Playbook — Networking & Outreach
+# DM Playbook: Networking & Outreach
 
 > Real relationships drive growth faster than content alone. This is how to build them without being weird about it.
 
@@ -31,7 +31,7 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 **Example:**
 
-> hey, been following your build for a few weeks — the way you handled [specific thing they did] was smart. im building a health tracking app solo too and keep running into similar decisions
+> hey, been following your build for a few weeks, the way you handled [specific thing they did] was smart. im building a health tracking app solo too and keep running into similar decisions
 >
 > no ask or anything, just wanted to say your posts have been helpful while im figuring things out
 
@@ -49,7 +49,7 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 **Example:**
 
-> appreciate the reply on that thread — you're right that [reference their specific comment]. been thinking about it since
+> appreciate the reply on that thread, you're right that [reference their specific comment]. been thinking about it since
 >
 > what are you working on right now? saw you mention [thing from their timeline]
 
@@ -61,11 +61,11 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 **Example:**
 
-> hey quick thing — been working on symptom logging and im stuck on whether the 4-step flow is too many taps or if each step actually matters for data quality. would you mind looking at a screenshot and telling me what you think?
+> hey quick thing, been working on symptom logging and im stuck on whether the 4-step flow is too many taps or if each step actually matters for data quality. would you mind looking at a screenshot and telling me what you think?
 >
 > totally fine if youre busy, no pressure
 
-**Why this works:** It's specific, it's easy to say no to, and it shows you value their opinion on a concrete problem — not a vague "what do you think of my app."
+**Why this works:** It's specific, it's easy to say no to, and it shows you value their opinion on a concrete problem, not a vague "what do you think of my app."
 
 ---
 
@@ -77,7 +77,7 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 > your posts about tracking migraine triggers have been really eye-opening for me. im building a symptom tracking app and honestly your experience shaped how i think about the trigger analysis feature
 >
-> not trying to pitch anything — just wanted you to know your perspective matters to how this thing gets built
+> not trying to pitch anything, just wanted you to know your perspective matters to how this thing gets built
 
 **What NOT to send:**
 
@@ -93,7 +93,7 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 **Example:**
 
-> hey — been engaging with your posts for a while and your take on [specific topic] really shifted how i approach [specific thing in your work]. just wanted to say thanks, your content is genuinely useful not just "content"
+> hey, been engaging with your posts for a while and your take on [specific topic] really shifted how i approach [specific thing in your work]. just wanted to say thanks, your content is genuinely useful not just "content"
 >
 > building a health tracking app if you ever want to chat about [overlapping topic]
 
@@ -107,7 +107,7 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 **Example:**
 
-> been thinking — would you be down for a mutual thread thing? i could write about [your expertise] from my perspective building symptly and you could write about [their expertise] from yours. we tag each other and both our audiences see it
+> been thinking, would you be down for a mutual thread thing? i could write about [your expertise] from my perspective building symptly and you could write about [their expertise] from yours. we tag each other and both our audiences see it
 >
 > no pressure at all, just thought it could be fun and useful for both of us
 
@@ -119,7 +119,7 @@ The goal: by week 8, you should have 10-15 founders who know your name, your pro
 
 **Example:**
 
-> hey just wanted to follow up on what you said about [topic] — tried it this week and it actually worked way better than what i was doing before. the [specific detail] was the key insight
+> hey just wanted to follow up on what you said about [topic], tried it this week and it actually worked way better than what i was doing before. the [specific detail] was the key insight
 >
 > hope your launch prep is going well
 
@@ -154,7 +154,7 @@ Cowork maintains this table. Keshav updates with conversation outcomes.
 
 ## Launch Amplification Prep (Phase 4)
 
-By week 9, you should have a list of people who will amplify your launch. Don't ask them to retweet — ask them to try the app and share their honest reaction.
+By week 9, you should have a list of people who will amplify your launch. Don't ask them to retweet, ask them to try the app and share their honest reaction.
 
 **The ask (only to people you've built real relationships with):**
 

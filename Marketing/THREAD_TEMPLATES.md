@@ -1,4 +1,4 @@
-# Thread Templates — High-Engagement Long-Form
+# Thread Templates: High-Engagement Long-Form
 
 > Threads get ~3x engagement of single tweets. Aim for 2-4 threads per week once in Phase 2+.
 > Cowork drafts threads using these templates. Keshav reviews and adds personal details.
@@ -35,7 +35,7 @@
 > **Tweet 3:**
 > the hardest part wasn't the math. it was deciding how much weight to give each signal.
 >
-> early versions weighted sleep too heavily — every bad night predicted a flare-up. turns out sleep alone isn't enough. you need the combination of poor sleep + active triggers + severity trend to actually predict anything useful.
+> early versions weighted sleep too heavily, every bad night predicted a flare-up. turns out sleep alone isn't enough. you need the combination of poor sleep + active triggers + severity trend to actually predict anything useful.
 
 > **Tweet 4:**
 > another thing i got wrong: cold start. when someone first downloads the app, you have zero data. predicting anything felt irresponsible.
@@ -69,7 +69,7 @@
 > 3 months of building a health app solo. here are 7 things i know now that i wish i knew at the start:
 
 > **Tweet 2:**
-> 1. privacy isn't a feature, it's architecture. i decided early that health data never leaves the device. that one decision shaped everything — SwiftData instead of Firebase, CoreML instead of cloud APIs, on-device processing for every analysis.
+> 1. privacy isn't a feature, it's architecture. i decided early that health data never leaves the device. that one decision shaped everything, SwiftData instead of Firebase, CoreML instead of cloud APIs, on-device processing for every analysis.
 >
 > you can't bolt on privacy later.
 
@@ -93,7 +93,7 @@
 > **Tweet 8:**
 > 7. building alone is harder than the code. some days the loneliest part isnt debugging a weird SwiftData crash at midnight. its having nobody to high-five when something finally works.
 >
-> if you're building solo — find your people. even just a few DMs make a difference.
+> if you're building solo, find your people. even just a few DMs make a difference.
 
 ---
 
@@ -116,7 +116,7 @@
 > **Tweet 3:**
 > step 2: find your triggers. most apps just ask "what triggered this?" and show a count. that's useless.
 >
-> we use bayesian inference: P(high_severity | trigger). basically — when stress is present, how much worse are your symptoms compared to when it isn't? that difference is your trigger risk score.
+> we use bayesian inference: P(high_severity | trigger). basically, when stress is present, how much worse are your symptoms compared to when it isn't? that difference is your trigger risk score.
 
 > **Tweet 4:**
 > step 3: find symptom clusters. if headaches and fatigue always show up on the same days, that matters.
@@ -153,7 +153,7 @@
 > two days. three lines.
 
 > **Tweet 4:**
-> thursday: had a good conversation with someone who manages 5 medications daily. they said the hardest part isnt remembering to take them — its remembering whether they already took them this morning.
+> thursday: had a good conversation with someone who manages 5 medications daily. they said the hardest part isnt remembering to take them, its remembering whether they already took them this morning.
 >
 > completely changed how i think about the check-off UI.
 
@@ -178,7 +178,7 @@
 >
 > here's the difference between real pattern detection and marketing copy:
 
-> Continue with specific technical comparisons, what "AI-powered" actually requires, and where the bar should be. End with what you built and why it's different — but lead with the education, not the pitch.
+> Continue with specific technical comparisons, what "AI-powered" actually requires, and where the bar should be. End with what you built and why it's different, but lead with the education, not the pitch.
 
 ---
 

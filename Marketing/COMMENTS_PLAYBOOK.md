@@ -1,4 +1,4 @@
-# Comments Playbook — Reply Strategy & Drafts
+# Comments Playbook: Reply Strategy & Drafts
 
 > How to respond to different types of posts for maximum growth while staying human.
 > Cowork drafts replies here. Keshav reviews. Claude Chrome posts approved replies.
@@ -8,19 +8,19 @@
 ## How This File Works
 
 ### Workflow
-1. **Cowork** scans target accounts for new posts (2–3x daily)
+1. **Cowork** scans target accounts for new posts (2-3x daily)
 2. **Cowork** drafts replies using the strategies below → appends to "Pending Replies" section
 3. **Keshav** reviews: approves, edits, or rejects each reply
-4. **Claude Chrome** posts approved replies with 2–5 minute spacing between each
+4. **Claude Chrome** posts approved replies with 2-5 minute spacing between each
 5. **Cowork** moves posted replies to "Posted Today" section
 
 ### Anti-Bot Rules (CRITICAL)
 - **Never post more than 6 replies in a 30-minute window**
-- **Space replies 2–5 minutes apart** (randomize, don't use exact intervals)
-- **Vary reply length:** some 1 sentence, some 3–4 sentences, never uniform
+- **Space replies 2-5 minutes apart** (randomize, don't use exact intervals)
+- **Vary reply length:** some 1 sentence, some 3-4 sentences, never uniform
 - **Don't reply to the same account more than 2x per day**
 - **Skip some obvious reply opportunities.** Real people don't reply to everything. Leave gaps.
-- **Include typos occasionally.** Not every reply — maybe 1 in 15. A missing comma, "teh" instead of "the", not capitalizing "i" once. Subtle, not sloppy.
+- **Include typos occasionally.** Not every reply: maybe 1 in 15. A missing comma, "teh" instead of "the", not capitalizing "i" once. Subtle, not sloppy.
 - **Use different sentence starters.** Never begin 3 replies in a row the same way.
 - **Reference time/context.** "just saw this" or "was thinking about this earlier" grounds replies in reality.
 
@@ -47,7 +47,7 @@
 **Strategy:** Empathize with specifics. Share a similar experience. Don't give unsolicited advice.
 
 **Good:**
-> "been there. spent 3 days last month debugging something that turned out to be a one-line fix. the worst part is the silence while you're stuck — feels like everyone else is shipping and you're drowning"
+> "been there. spent 3 days last month debugging something that turned out to be a one-line fix. the worst part is the silence while you're stuck, feels like everyone else is shipping and you're drowning"
 
 **Bad:**
 > "Have you tried [solution]?" (nobody asked)
@@ -61,7 +61,7 @@
 **Strategy:** Agree with nuance OR respectfully push back with your experience. Never just "+1".
 
 **Good (agree):**
-> "this is exactly right and i'd add — [your specific experience that extends their point]. been seeing this firsthand building [app/feature]"
+> "this is exactly right and i'd add, [your specific experience that extends their point]. been seeing this firsthand building [app/feature]"
 
 **Good (disagree):**
 > "interesting take but my experience has been the opposite actually. when i [specific example], [different outcome]. could be a niche thing though"
@@ -109,10 +109,10 @@
 
 ### 6. Someone posts a thread
 
-**Strategy:** Reply to the specific tweet in the thread that resonated most — not just the first tweet. Quote a specific line.
+**Strategy:** Reply to the specific tweet in the thread that resonated most, not just the first tweet. Quote a specific line.
 
 **Good:**
-> "this part ↑ — 'quote from their thread.' this is exactly what i've been wrestling with building [feature]. the tradeoff between [X] and [Y] is real"
+> "this part ↑, 'quote from their thread.' this is exactly what i've been wrestling with building [feature]. the tradeoff between [X] and [Y] is real"
 
 **Bad:**
 > "Great thread!" on tweet 1/12 (didn't read it, obviously)
@@ -126,7 +126,7 @@
 **Strategy:** Comment on a specific detail you noticed. Ask a question about the implementation.
 
 **Good:**
-> "the spacing on that bottom nav is really clean — are you using a custom tab bar or sticking with the system one? i went custom for mine and it was... a journey lol"
+> "the spacing on that bottom nav is really clean, are you using a custom tab bar or sticking with the system one? i went custom for mine and it was... a journey lol"
 
 **Bad:**
 > "Looks great!" (what specifically looks great?)
@@ -140,7 +140,7 @@
 **Strategy:** Connect to your personal experience or your app naturally. Don't force it. Empathy first, product second (or not at all).
 
 **Good:**
-> "this is real. i started tracking my symptoms daily and the patterns were honestly surprising — things i never would've connected on my own. the hardest part is just being consistent with it"
+> "this is real. i started tracking my symptoms daily and the patterns were honestly surprising, things i never would've connected on my own. the hardest part is just being consistent with it"
 
 **Bad:**
 > "That's why I built Symptly! Check it out at [link]" (promotional reply = death)
@@ -151,7 +151,7 @@
 
 ## Humanization Techniques
 
-### Imperfection Patterns (use sparingly, ~1 in 10–15 replies)
+### Imperfection Patterns (use sparingly, ~1 in 10-15 replies)
 - Don't capitalize "i" occasionally: "i've been thinking about this"
 - Skip a period at the end sometimes
 - Use "tbh" or "ngl" or "lol" naturally (not forced)
@@ -169,11 +169,11 @@
 - "ok wait" / "hold on"
 
 ### Things Bots Never Do
-- Self-correct: "actually wait, i take that back — [revised thought]"
+- Self-correct: "actually wait, i take that back: [revised thought]"
 - Express uncertainty: "might be wrong about this but..."
 - Reference time: "saw this at 2am and couldn't stop thinking about it"
 - Use humor: "my code did this exact thing yesterday and i'm still recovering"
-- Ask genuine follow-ups: "curious — did you end up going with [option]?"
+- Ask genuine follow-ups: "curious: did you end up going with [option]?"
 
 ---
 

@@ -1,4 +1,4 @@
-# Account Details — X Profile Setup
+# Account Details: X Profile Setup
 
 > Everything Chrome and Cowork need to know about the account.
 
@@ -8,7 +8,7 @@
 
 | Field | Value |
 |-------|-------|
-| **Handle** | @[FILL IN — pick something short, memorable, ideally your name or a variant] |
+| **Handle** | @[FILL IN, pick something short, memorable, ideally your name or a variant] |
 | **Display Name** | Keshav Krishnan |
 | **Profile Photo** | Real headshot of you. Not a logo, not Symptly branding, not an avatar. Accounts with real faces get 3-4x more profile-to-follow conversion. |
 
@@ -31,11 +31,11 @@ Pick whichever is available and feels like you. Shorter is better.
 That's it. Seven words. Minimalist, memorable, intriguing. Makes people click your profile to find out more.
 
 **Why this works:**
-- "building symptly" — you're a builder, it's a product, instant context
-- "your AI doctor" — bold positioning, creates curiosity, sticks in your head
+- "building symptly": you're a builder, it's a product, instant context
+- "your AI doctor": bold positioning, creates curiosity, sticks in your head
 - No fluff, no buzzwords, no "passionate about" nonsense
-- People will ask "what's symptly?" in your replies — that's free marketing
-- Under 40 characters — reads clean on mobile
+- People will ask "what's symptly?" in your replies: that's free marketing
+- Under 40 characters: reads clean on mobile
 
 **Alternate minimalist bios (if you want to switch later):**
 
@@ -55,7 +55,7 @@ That's it. Seven words. Minimalist, memorable, intriguing. Makes people click yo
 >
 > it tracks 30+ symptoms across 7 categories, runs ML on your phone to find patterns, and generates a report you can hand to your doctor. no cloud servers. your data stays on your device.
 >
-> im building it with AI tools and sharing everything here — the bugs, the breakthroughs, the 2am debugging sessions, and the features im not sure anyone will use.
+> im building it with AI tools and sharing everything here, the bugs, the breakthroughs, the 2am debugging sessions, and the features im not sure anyone will use.
 >
 > follow along if you want to watch someone figure it out in real time
 
@@ -79,7 +79,7 @@ That's it. Seven words. Minimalist, memorable, intriguing. Makes people click yo
 
 Copy this into Midjourney, DALL-E, Ideogram, or any AI image generator:
 
-> Minimal, clean Twitter/X banner (1500x500 pixels). Dark background (#111318 near-black). Subtle teal (#00C49A) and violet (#7C5CFC) gradient glow in the center, soft and diffused like light through fog. A faint, abstract ECG/heartbeat line running horizontally across the middle in teal, thin and elegant. No text, no logos, no people, no devices. The mood should feel calm, technical, and slightly futuristic — like a health dashboard in the dark. Ultra clean, lots of negative space. No clutter.
+> Minimal, clean Twitter/X banner (1500x500 pixels). Dark background (#111318 near-black). Subtle teal (#00C49A) and violet (#7C5CFC) gradient glow in the center, soft and diffused like light through fog. A faint, abstract ECG/heartbeat line running horizontally across the middle in teal, thin and elegant. No text, no logos, no people, no devices. The mood should feel calm, technical, and slightly futuristic, like a health dashboard in the dark. Ultra clean, lots of negative space. No clutter.
 
 **Alternate prompt (more personal, less product):**
 
@@ -87,7 +87,7 @@ Copy this into Midjourney, DALL-E, Ideogram, or any AI image generator:
 
 **Alternate prompt (abstract data):**
 
-> Abstract data visualization banner, 1500x500px. Dark background. Flowing lines of teal (#00C49A) and violet (#7C5CFC) that suggest health data patterns — sine waves, scatter plots, trend lines — but abstracted and beautiful. Like a health dashboard turned into art. Minimal, no text, no icons. Clean and modern.
+> Abstract data visualization banner, 1500x500px. Dark background. Flowing lines of teal (#00C49A) and violet (#7C5CFC) that suggest health data patterns, sine waves, scatter plots, trend lines, but abstracted and beautiful. Like a health dashboard turned into art. Minimal, no text, no icons. Clean and modern.
 
 After generating, save the banner to `Marketing/images/banner.png`.
 
@@ -107,7 +107,7 @@ After generating, save the banner to `Marketing/images/banner.png`.
 
 | Milestone | What to Change |
 |-----------|---------------|
-| 250 followers | Nothing yet — consistency matters more than optimization |
+| 250 followers | Nothing yet, consistency matters more than optimization |
 | 500 followers | Consider updating pinned tweet to your best-performing thread |
 | 1,000 followers | Update bio to mention audience size naturally if it fits |
 | App launch | Add "symptly is live on the app store" to bio + App Store link |
@@ -137,11 +137,11 @@ Before posting the first tweet:
 
 **Things only Keshav can provide:**
 
-1. **Your X handle** — pick one, create the account, fill it in above
-2. **A real headshot** — doesn't need to be professional. Phone selfie with decent lighting works. Natural > polished.
-3. **Banner image** — use one of the prompts above to generate it
-4. **X Premium** — sign up ($8/mo) for scheduled posts and reach boost
-5. **Real writing samples** — paste a few texts/messages/notes below so Cowork can match your actual voice instead of approximating it
+1. **Your X handle**: pick one, create the account, fill it in above
+2. **A real headshot**: doesn't need to be professional. Phone selfie with decent lighting works. Natural > polished.
+3. **Banner image**: use one of the prompts above to generate it
+4. **X Premium**: sign up ($8/mo) for scheduled posts and reach boost
+5. **Real writing samples**: paste a few texts/messages/notes below so Cowork can match your actual voice instead of approximating it
 
 ### Keshav's Writing Samples
 
@@ -151,7 +151,7 @@ Before posting the first tweet:
 > [paste a text/message about what you're building]
 
 **Sample 2:**
-> [paste something casual — a rant, a thought, anything natural]
+> [paste something casual, a rant, a thought, anything natural]
 
 **Sample 3:**
 > [paste a message where you were excited or frustrated about something]

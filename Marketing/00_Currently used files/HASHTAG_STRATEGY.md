@@ -1,6 +1,6 @@
 # Hashtag Strategy
 
-> Which tags to use, how many, and when. Less is more on Twitter — this isn't Instagram.
+> Which tags to use, how many, and when. Less is more on Twitter, this isn't Instagram.
 
 ---
 
@@ -30,10 +30,10 @@
 | Hashtag | When to Use | Notes |
 |---------|-----------|-------|
 | #swiftui | Specifically about SwiftUI code or design decisions | Niche but highly engaged community |
-| #vibecoding | Posts about building with AI tools | Trending in 2026, may fade — monitor |
+| #vibecoding | Posts about building with AI tools | Trending in 2026, may fade, monitor |
 | #solofounder | Personal journey, building alone, founder life | Emotional connection hashtag |
 | #machinelearning | ML architecture, on-device inference, model design | Reaches ML community on Twitter |
-| #chronicillness | Posts about understanding chronic conditions (not marketing posts) | Use with care and empathy — never attach to promotional content |
+| #chronicillness | Posts about understanding chronic conditions (not marketing posts) | Use with care and empathy, never attach to promotional content |
 | #applehealth | HealthKit integration, Apple Health ecosystem | Small but targeted |
 | #coreml | On-device ML, CoreML implementation details | Very niche, very engaged |
 | #privacyfirst | Posts about data privacy, on-device processing | Resonates with privacy-conscious users |

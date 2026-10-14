@@ -1,7 +1,7 @@
-# Post Catalog — History & Archive
+# Post Catalog: History & Archive
 
 > Living document. Every post Cowork schedules or publishes gets logged here.
-> Claude Cowork appends new entries after each post. Never delete history — archive old weeks.
+> Claude Cowork appends new entries after each post. Never delete history, archive old weeks.
 
 ---
 
@@ -16,7 +16,7 @@
 ## Current Week
 
 **Week of: [DATE]**
-**Phase:** [1/2/3/4/5 — reference SCALING_FRAMEWORK.md]
+**Phase:** [1/2/3/4/5, reference SCALING_FRAMEWORK.md]
 **Theme:** [reference BRAND_EVOLUTION.md for current theme]
 
 | # | Date | Time | Post Text (first 50 chars...) | Format | Topic | Image? | Link? | Status | Impressions | Likes | Replies | RTs | Notes |
@@ -53,7 +53,7 @@ Use these consistently for filtering and analysis:
 
 | Tag | Meaning |
 |-----|---------|
-| `build` | Building Symptly — features, shipping, progress |
+| `build` | Building Symptly, features, shipping, progress |
 | `ai-tool` | AI tools, vibe coding, Claude, Cursor, etc. |
 | `health` | Health insights, chronic illness, wellness |
 | `personal` | Personal brand, life, founder journey |
@@ -74,8 +74,8 @@ Cowork fills this every Sunday:
 - Total impressions: [X]
 - Total engagement (likes + replies + RTs): [X]
 - Engagement rate: [X%]
-- Best performing post: #[X] — [why it worked]
-- Worst performing post: #[X] — [why it flopped]
+- Best performing post: #[X] - [why it worked]
+- Worst performing post: #[X] - [why it flopped]
 - New followers this week: [X]
 - Total followers: [X]
 - Top format this week: [format tag]
@@ -100,4 +100,4 @@ Before posting, Cowork should scan the last 14 days of this catalog and verify:
 1. No post covers the same specific topic within 7 days
 2. No hook is reused within 14 days
 3. No screenshot/image is reused within 7 days
-4. Post format varies — no more than 3 of the same format in a row
+4. Post format varies: no more than 3 of the same format in a row

@@ -1,4 +1,4 @@
-# Brand Evolution — Personal Brand Organizer
+# Brand Evolution: Personal Brand Organizer
 
 > Tracks the arc of Keshav's personal brand over time. Every post should ladder up to the current phase's goals. Cowork references this file before drafting any content.
 
@@ -6,7 +6,7 @@
 
 ## Brand Identity
 
-**Who:** Keshav Krishnan — solo founder, builder, health tech
+**Who:** Keshav Krishnan, solo founder, builder, health tech
 **What:** Building Symptly, a privacy-first health tracking app with on-device ML
 **Voice:** Honest, curious, technical but accessible, empathetic about health struggles
 **Not:** Salesy, corporate, preachy, guru-ish, hustle-culture
@@ -16,12 +16,12 @@
 
 ## Phase Timeline
 
-### Phase 1: The Builder (Weeks 1–2)
+### Phase 1: The Builder (Weeks 1-2)
 
 **Theme:** "I'm building an app with AI. Here's what that actually looks like."
 
 **Content focus (80% of posts):**
-- Vibe coding daily life — what tools you use, what works, what doesn't
+- Vibe coding daily life: what tools you use, what works, what doesn't
 - Claude Code, Cursor, or whatever AI tools are in your stack
 - Before/after screenshots of UI as you iterate
 - The honest mess of solo development
@@ -43,15 +43,15 @@
 
 ---
 
-### Phase 2: The Journey (Weeks 3–4)
+### Phase 2: The Journey (Weeks 3-4)
 
 **Theme:** "Here's what I've been shipping and what I'm learning."
 
 **Content focus (70%):**
-- Feature updates — "just added [feature], here's why it matters"
+- Feature updates: "just added [feature], here's why it matters"
 - Design decisions with screenshots
-- ML/technical deep dives made accessible ("I built a Bayesian trigger detector — here's what that means in plain English")
-- The emotional side — frustrations, breakthroughs, late nights
+- ML/technical deep dives made accessible ("I built a Bayesian trigger detector, here's what that means in plain English")
+- The emotional side: frustrations, breakthroughs, late nights
 - Weekly recaps with real metrics (even small ones)
 
 **Supporting content (30%):**
@@ -70,21 +70,21 @@
 
 ---
 
-### Phase 3: The Expert (Weeks 5–8)
+### Phase 3: The Expert (Weeks 5-8)
 
 **Theme:** "I know things about health tracking that most people don't. Let me share."
 
 **Content focus (60%):**
 - Health insights: symptom patterns, chronic illness realities, medication tracking challenges
 - Why privacy matters for health data (strong opinion pieces)
-- On-device ML explainers — making technical concepts human
+- On-device ML explainers: making technical concepts human
 - User stories and beta feedback (even if small scale)
 - Doctor prep and health communication content
 - Data-backed posts (stats about chronic illness, health app adoption, etc.)
 
 **Supporting content (40%):**
 - Continue build-in-public updates (less frequent, higher quality)
-- Community building — hosting Twitter Spaces, collaborating with health advocates
+- Community building: hosting Twitter Spaces, collaborating with health advocates
 - Engaging with health and wellness communities
 - Quote tweeting health-related content with your perspective
 
@@ -98,16 +98,16 @@
 
 ---
 
-### Phase 4: The Launch Build (Weeks 9–12)
+### Phase 4: The Launch Build (Weeks 9-12)
 
 **Theme:** "Symptly is almost ready. Here's the final push."
 
 **Content focus (50%):**
-- Countdown energy — "X days until launch"
+- Countdown energy: "X days until launch"
 - Behind-the-scenes of App Store prep, screenshots, metadata
 - Beta testing stories and feedback loops
 - The emotional weight of launching something you've built
-- Preview content — show the app in action
+- Preview content: show the app in action
 
 **Supporting content (50%):**
 - "Why I built this" origin story (re-tell for new followers)
@@ -125,13 +125,13 @@
 
 ---
 
-### Phase 5: Launch & Growth (Weeks 13–16)
+### Phase 5: Launch & Growth (Weeks 13-16)
 
 **Theme:** "Symptly is live. Here's what's happening."
 
 **Content focus (40%):**
 - Launch day content blitz (announcement, thread, screenshots, video)
-- Real-time metrics — downloads, first reviews, first support emails
+- Real-time metrics: downloads, first reviews, first support emails
 - User stories and testimonials
 - "Things I didn't expect" post-launch content
 - Iteration based on feedback
@@ -190,13 +190,13 @@ Before moving to the next phase, verify:
 1. All milestones for current phase are checked
 2. `POST_CATALOG.md` shows consistent posting throughout the phase
 3. Engagement rate is stable or growing (not declining)
-4. Content naturally feels ready to evolve — don't force it
+4. Content naturally feels ready to evolve: don't force it
 5. Update this file's "Current Phase" marker below
 
 ---
 
 ## Current Phase
 
-**Active Phase:** 1 — The Builder
+**Active Phase:** 1, The Builder
 **Started:** [DATE]
 **Target transition to Phase 2:** [DATE + 14 days]

@@ -1,10 +1,10 @@
-# Symptly Daily Posting Plan — Claude in Chrome Autonomous Execution
+# Symptly Daily Posting Plan: Claude in Chrome Autonomous Execution
 
 > **This is the only file Claude in Chrome needs.** Everything required to execute the daily marketing workflow is here. No other files need to be opened or referenced during execution.
 >
 > **Last updated:** 2026-03-23
 > **Account:** @kabornelius on X (Keshav Krishnan)
-> **Current Phase:** Phase 1 — The Builder (Days 1-14)
+> **Current Phase:** Phase 1, The Builder (Days 1-14)
 > **Phase start date:** 2026-03-23
 
 ---
@@ -20,14 +20,14 @@ Claude in Chrome: read this file top to bottom at the start of every session. It
 
 ---
 
-## PHASE 1: FOUNDATION (Days 1-14) — MANUAL ONLY
+## PHASE 1: FOUNDATION (Days 1-14): MANUAL ONLY
 
 **No automation. Everything is Keshav posting manually.** Claude in Chrome's role in Phase 1 is LIMITED to:
 - Drafting posts for Keshav to copy-paste or tweak
 - Suggesting reply targets
 - Tracking what's been posted
 
-### Daily Targets — Phase 1
+### Daily Targets: Phase 1
 
 | Action | Target | Who |
 |--------|--------|-----|
@@ -61,7 +61,7 @@ Claude in Chrome: read this file top to bottom at the start of every session. It
 
 **Start scheduling posts. All engagement stays manual.**
 
-### Daily Targets — Phase 2
+### Daily Targets: Phase 2
 
 | Action | Target | Who |
 |--------|--------|-----|
@@ -97,7 +97,7 @@ Claude in Chrome: read this file top to bottom at the start of every session. It
 
 **AI-drafted replies introduced. Keshav still approves each one.**
 
-### Daily Targets — Phase 3
+### Daily Targets: Phase 3
 
 | Action | Target | Who |
 |--------|--------|-----|
@@ -137,7 +137,7 @@ Claude in Chrome: read this file top to bottom at the start of every session. It
 
 **Full system running. Keshav spends ~30 min/day on manual engagement.**
 
-### Daily Targets — Phase 4
+### Daily Targets: Phase 4
 
 | Action | Target | Who |
 |--------|--------|-----|
@@ -178,7 +178,7 @@ Claude in Chrome: read this file top to bottom at the start of every session. It
 
 **Max output. Audience established. Algorithm trusts the account.**
 
-### Daily Targets — Phase 5
+### Daily Targets: Phase 5
 
 | Action | Target | Who |
 |--------|--------|-----|
@@ -233,7 +233,7 @@ How many slots to use per phase:
 ```
 1. Go to https://x.com
 2. Click "Post" button → compose modal opens
-3. Type post text EXACTLY as drafted (preserve all micro-mistakes, lowercase i, missing apostrophes — do NOT let spellcheck modify)
+3. Type post text EXACTLY as drafted (preserve all micro-mistakes, lowercase i, missing apostrophes - do NOT let spellcheck modify)
 4. If image needed: click image icon → upload from Marketing/images/ folder → wait for upload complete
 5. Click calendar/clock icon in compose toolbar
 6. Set DATE to today
@@ -272,13 +272,13 @@ After scheduling all posts:
 
 ### Brand Identity
 
-- **Who:** Keshav Krishnan — solo founder building Symptly
+- **Who:** Keshav Krishnan: solo founder building Symptly
 - **What:** Privacy-first health tracking app with on-device ML
 - **Voice:** Honest, curious, technical but accessible, empathetic about health struggles
 - **NOT:** Salesy, corporate, preachy, guru-ish, hustle-culture
 - **Core message:** "I'm building something that helps people understand their bodies. Here's the real journey."
 
-### Content Pillars (rotate — never same pillar 3 days running)
+### Content Pillars (rotate: never same pillar 3 days running)
 
 | Pillar | What | Example |
 |--------|------|---------|
@@ -347,18 +347,18 @@ But some days there's no thread. Real people don't theme their days. That's fine
 
 ---
 
-## VOICE — HOW KESHAV SOUNDS
+## VOICE: HOW KESHAV SOUNDS
 
 ### Tone by Situation
 
 | Situation | Tone |
 |-----------|------|
-| Shipping a feature | Excited but grounded — "finally got this working, feels good" |
-| Hitting a wall | Honest frustration — "been stuck on this for hours" |
-| AI tools | Curious and practical — what worked, what didn't |
-| Health topics | Genuine and quiet — no inspirational quotes, just real talk |
-| Tech news | Thoughtful, sometimes contrarian — "interesting but here's what everyone's missing" |
-| Milestones | Low-key proud — "hit 100 downloads which is small but honestly feels huge" |
+| Shipping a feature | Excited but grounded, "finally got this working, feels good" |
+| Hitting a wall | Honest frustration, "been stuck on this for hours" |
+| AI tools | Curious and practical, what worked, what didn't |
+| Health topics | Genuine and quiet, no inspirational quotes, just real talk |
+| Tech news | Thoughtful, sometimes contrarian, "interesting but here's what everyone's missing" |
+| Milestones | Low-key proud, "hit 100 downloads which is small but honestly feels huge" |
 
 ### Do
 
@@ -412,7 +412,7 @@ But some days there's no thread. Real people don't theme their days. That's fine
 
 ### Micro-Mistake Guide
 
-Use sparingly — not every post, max 1 per post, never in the first line, never in threads, never on technical terms.
+Use sparingly, not every post, max 1 per post, never in the first line, never in threads, never on technical terms.
 
 | Type | Frequency | Example |
 |------|-----------|---------|
@@ -434,7 +434,7 @@ Use sparingly — not every post, max 1 per post, never in the first line, never
 - Space replies 2-5 min apart (randomize)
 - Vary reply length (some 1 sentence, some 3-4)
 - Max 2 replies to the same account per day
-- Skip some obvious reply opportunities — real people don't reply to everything
+- Skip some obvious reply opportunities: real people don't reply to everything
 - Include typos in ~1 of 15 replies
 - Different sentence starters every time
 - Reference time/context: "just saw this", "was thinking about this earlier"
@@ -452,7 +452,7 @@ NEVER: "Congratulations! Keep going!" (too generic = bot)
 NEVER: "Have you tried [solution]?" (nobody asked)
 
 **Someone posts a hot take:**
-> "this is exactly right and i'd add — [your specific experience]. been seeing this firsthand building [feature]"
+> "this is exactly right and i'd add, [your specific experience]. been seeing this firsthand building [feature]"
 > OR: "interesting take but my experience has been the opposite actually. when i [example], [different outcome]"
 
 NEVER: "So true!" / "This." / "Couldn't agree more" (zero value)
@@ -469,28 +469,28 @@ NEVER: Long perfect answer that sounds like ChatGPT wrote it
 
 **Someone posts a thread:**
 Reply to tweet 4/12 (not tweet 1). Quote a specific line:
-> "this part — '[quote].' this is exactly what ive been wrestling with building [feature]"
+> "this part, '[quote].' this is exactly what ive been wrestling with building [feature]"
 
 NEVER: "Great thread!" on tweet 1 (obviously didn't read it)
 
 **Someone posts a screenshot:**
-> "the spacing on that bottom nav is really clean — are you using a custom tab bar or the system one? i went custom and it was... a journey lol"
+> "the spacing on that bottom nav is really clean, are you using a custom tab bar or the system one? i went custom and it was... a journey lol"
 
 NEVER: "Looks great!" (what specifically?)
 
 **Someone posts about health/wellness:**
-> "this is real. i started tracking my symptoms daily and the patterns were honestly surprising — things i never wouldve connected on my own"
+> "this is real. i started tracking my symptoms daily and the patterns were honestly surprising, things i never wouldve connected on my own"
 
 NEVER: "That's why I built Symptly! Check it out at [link]" (promotional = death)
 
 ### Humanization Techniques for Replies
 
 Things to sprinkle in naturally:
-- Self-correct: "actually wait, i take that back — [revised thought]"
+- Self-correct: "actually wait, i take that back: [revised thought]"
 - Express uncertainty: "might be wrong about this but..."
 - Reference time: "saw this at 2am and couldn't stop thinking about it"
 - Humor: "my code did this exact thing yesterday and i'm still recovering"
-- Genuine follow-ups: "curious — did you end up going with [option]?"
+- Genuine follow-ups: "curious: did you end up going with [option]?"
 
 ---
 
@@ -536,7 +536,7 @@ Things to sprinkle in naturally:
 1. Never jump more than 2x volume day-over-day
 2. No identical or near-identical text within 7 days
 3. Space replies 2-5 min apart
-4. Don't follow/unfollow to manage ratios — only follow accounts you genuinely want
+4. Don't follow/unfollow to manage ratios: only follow accounts you genuinely want
 5. Mix content types: text, images, polls, threads, quote tweets
 6. Keep some posts with zero links (link-heavy = suppressed)
 7. If impressions drop 80%+ overnight: STOP all automation 48 hours, delete promotional/repetitive content, increase manual browsing, resume at 50% volume
@@ -547,7 +547,7 @@ Things to sprinkle in naturally:
 
 **App name:** Symptly
 **What it does:** Tracks 30+ symptoms across 7 categories, uses on-device ML for wellness scoring (0-100), finds patterns/correlations, generates doctor prep PDF reports, medication tracking, journal
-**Key tech:** SwiftUI, SwiftData, CoreML, HealthKit, WeatherKit, StoreKit 2 — all built into iOS 17+, zero third-party dependencies
+**Key tech:** SwiftUI, SwiftData, CoreML, HealthKit, WeatherKit, StoreKit 2, all built into iOS 17+, zero third-party dependencies
 **Privacy:** All data stays on device. No cloud ML. No analytics on symptoms. Health data encrypted at rest.
 **Cost to build:** $20/mo for Claude. Everything else is free Apple frameworks.
 **Unique features:** On-device ML pattern detection (no other app does this), doctor prep PDF (doesn't exist elsewhere), weather-symptom correlation, Bayesian trigger analysis
@@ -558,10 +558,10 @@ Things to sprinkle in naturally:
 ## WEEKLY WORKFLOW (Every Sunday)
 
 ```
-[ ] 1. Review the week's posts — what got engagement, what flopped
-[ ] 2. Check follower count — are we hitting phase milestones?
+[ ] 1. Review the week's posts - what got engagement, what flopped
+[ ] 2. Check follower count - are we hitting phase milestones?
 [ ] 3. Identify top 3 performing posts (format + topic)
-[ ] 4. Identify worst 3 posts — why did they flop?
+[ ] 4. Identify worst 3 posts - why did they flop?
 [ ] 5. Check if current phase exit criteria are met → update phase if transitioning
 [ ] 6. Pre-draft next week's content (5-7 days ahead)
 [ ] 7. Research 5-10 fresh topics in health tech / AI building space
@@ -575,12 +575,12 @@ Things to sprinkle in naturally:
 
 ```
 [ ] 1. Full monthly trends review (follower growth, engagement rate, impressions)
-[ ] 2. Competitor account analysis — what's working for them
-[ ] 3. Phase review — on track? Need to adjust milestones?
-[ ] 4. Voice check — is the voice still accurate? Update with new patterns from Keshav's actual posts
-[ ] 5. Audience review — reaching who we want?
-[ ] 6. Hashtag audit — which tags are performing?
-[ ] 7. Image refresh — any new screenshots to use?
+[ ] 2. Competitor account analysis - what's working for them
+[ ] 3. Phase review - on track? Need to adjust milestones?
+[ ] 4. Voice check - is the voice still accurate? Update with new patterns from Keshav's actual posts
+[ ] 5. Audience review - reaching who we want?
+[ ] 6. Hashtag audit - which tags are performing?
+[ ] 7. Image refresh - any new screenshots to use?
 ```
 
 ---
@@ -601,7 +601,7 @@ Things to sprinkle in naturally:
 
 ## SECURITY RULES
 
-1. Never store or transmit passwords — use existing Chrome session
+1. Never store or transmit passwords: use existing Chrome session
 2. Never access DM content without permission
 3. Never change account settings
 4. Never delete posts unless Keshav requests it
@@ -622,12 +622,12 @@ Posts topics: [brief list]
 Replies drafted: [count]
 Replies approved/posted: [count]
 Likes given: [count]
-Notable: [anything worth flagging — high engagement, issues, milestones hit]
+Notable: [anything worth flagging - high engagement, issues, milestones hit]
 ```
 
 ### 2026-03-23
-Phase: 1 — The Builder (Day 1)
+Phase: 1, The Builder (Day 1)
 Posts scheduled: 0 (manual only in Phase 1)
 Posts drafted for Keshav: [to be filled after first session]
 Replies: Keshav manual
-Notable: Day 1 — account warming up. First post is the introduction post.
+Notable: Day 1, account warming up. First post is the introduction post.

@@ -1,4 +1,4 @@
-# Chrome Automation Instructions — Step-by-Step
+# Chrome Automation Instructions: Step-by-Step
 
 > Exact steps for Claude Chrome to execute the daily marketing workflow.
 > One morning session: draft posts, schedule them on X, then handle engagement.
@@ -38,7 +38,7 @@
 5. Read CONTENT_QUEUE.md → check for any pre-loaded drafts
 ```
 
-**The number of posts, replies, and likes today comes from SCALING_FRAMEWORK.md — not from this file.** If the scaling framework says 1-2 posts today, draft 1-2. If it says 5-6, draft 5-6. Never override the growth targets.
+**The number of posts, replies, and likes today comes from SCALING_FRAMEWORK.md, not from this file.** If the scaling framework says 1-2 posts today, draft 1-2. If it says 5-6, draft 5-6. Never override the growth targets.
 
 ---
 
@@ -59,11 +59,11 @@ But some days there's no thread. Some days you post about your ML engine in the 
 
 **Naturally Mention the App and Its Problems:**
 
-Not every post is about Symptly. But across the week, the app should come up the way it would in real life — as the thing you're working on that gives you both headaches and excitement.
+Not every post is about Symptly. But across the week, the app should come up the way it would in real life, as the thing you're working on that gives you both headaches and excitement.
 
 Ways to weave it in naturally:
 
-- As context for a broader point: "been working through this with the wellness scoring in symptly — turns out clamping a score to 0-100 is harder than it sounds when you have 7 weighted inputs fighting each other"
+- As context for a broader point: "been working through this with the wellness scoring in symptly, turns out clamping a score to 0-100 is harder than it sounds when you have 7 weighted inputs fighting each other"
 - As a problem you're stuck on: "the flare-up predictor keeps false-alarming on bad sleep alone. need to figure out how to require multiple signals before showing elevated risk. anyone dealt with multi-signal thresholds?"
 - As a passing mention: "shipped a small fix to symptly this morning, now back to staring at the onboarding flow"
 - As background to a tool discussion: "used claude to rewrite my time series analyzer for the health app im building. took 20 minutes for what wouldve been a full day"
@@ -82,29 +82,29 @@ Don't force it. If today's posts are about AI tools or personal founder stuff, t
 - Later posts: vulnerable, personal, or a question
 
 **Apply to every draft:**
-- "Quantify Everything" — specific numbers or honest estimates
-- "Vulnerability First" — at least 1 post per day shows uncertainty
-- VOICE_BIBLE.md — micro-mistakes in casual posts, natural voice
-- HASHTAG_STRATEGY.md — max 2 tags, none on casual posts
-- IMAGE_GUIDE.md — attach image to max 1-2 posts, check last-used tracker
+- "Quantify Everything": specific numbers or honest estimates
+- "Vulnerability First": at least 1 post per day shows uncertainty
+- VOICE_BIBLE.md: micro-mistakes in casual posts, natural voice
+- HASHTAG_STRATEGY.md: max 2 tags, none on casual posts
+- IMAGE_GUIDE.md: attach image to max 1-2 posts, check last-used tracker
 
 Save drafts to CONTENT_QUEUE.md with scheduled times.
 
-**Example — Phase 1 day (1-2 posts, all manual):**
+**Example, Phase 1 day (1-2 posts, all manual):**
 
 > post 1 (afternoon): "3 months into building a health tracking app solo. using claude for maybe 80% of the code. the other 20% is me debugging what claude got wrong. today's problem: the severity slider snaps to integers but the ML engine wants decimals. small stuff but it adds up"
 
 Just one post. That's it. Phase 1 is about showing up consistently, not flooding the feed.
 
-**Example — Phase 3 day (5-6 scheduled + 1-3 manual):**
+**Example, Phase 3 day (5-6 scheduled + 1-3 manual):**
 
-> 8:30 AM: "realized the trigger analysis was using simple averages instead of bayesian inference. switched it over yesterday — now instead of 'stress appeared 12 times' it says 'when stress is present, severity is 2.3 points higher on average.' way more useful for the user"
+> 8:30 AM: "realized the trigger analysis was using simple averages instead of bayesian inference. switched it over yesterday, now instead of 'stress appeared 12 times' it says 'when stress is present, severity is 2.3 points higher on average.' way more useful for the user"
 
 > 11:00 AM: "honest question for anyone building consumer health products: how do you handle the line between 'helpful insight' and 'medical advice'? symptly says things like 'elevated flare-up risk' but i dont want someone to mistake that for a diagnosis. where do you draw it"
 
 > 1:30 PM: "my favorite feature in symptly that nobody will care about: the test harness generates synthetic patients with configurable severity trends and validates every ML engine against them. 25 tests, all automated. users will never see it. but its the reason the wellness score doesn't return 104/100 anymore"
 
-> 4:30 PM: "stack update — zero third party dependencies. swiftui, swiftdata, coreml, healthkit, storekit 2, weatherkit. all built into ios 17. total cost of my dependency management: $0"
+> 4:30 PM: "stack update, zero third party dependencies. swiftui, swiftdata, coreml, healthkit, storekit 2, weatherkit. all built into ios 17. total cost of my dependency management: $0"
 
 > 8:00 PM: "some days the hardest part of building alone is having nobody to show things to. i shipped the doctor prep PDF today and it generates a full 6-month symptom summary with charts and trigger analysis. its maybe the most useful thing ive built. and i just... closed my laptop and went to make dinner"
 
@@ -112,7 +112,7 @@ Five posts. Connected loosely (ML, health product questions, technical pride, lo
 
 ---
 
-### Step 3: Open Chrome — Schedule All Posts
+### Step 3: Open Chrome: Schedule All Posts
 
 ```
 1. Navigate to https://x.com
@@ -150,7 +150,7 @@ Five posts. Connected loosely (ML, health product questions, technical pride, lo
    - Update CONTENT_QUEUE.md → mark all "scheduled"
 ```
 
-**Time spacing — pull from SCALING_FRAMEWORK.md targets:**
+**Time spacing, pull from SCALING_FRAMEWORK.md targets:**
 
 | If scheduling... | Spread across |
 |-----------------|---------------|
@@ -165,7 +165,7 @@ Vary by ±15 min daily. Never post at the exact same minute two days in a row.
 
 ### Step 4: Engagement
 
-Check SCALING_FRAMEWORK.md for today's reply and like targets. If current phase says "manual only" for engagement, skip this — Keshav handles it himself.
+Check SCALING_FRAMEWORK.md for today's reply and like targets. If current phase says "manual only" for engagement, skip this, Keshav handles it himself.
 
 **Replying (when phase allows AI-assisted replies):**
 
@@ -178,10 +178,10 @@ Check SCALING_FRAMEWORK.md for today's reply and like targets. If current phase 
    - Apply humanization + micro-imperfections
    - Weave in Keshav's perspective naturally
      (e.g., replying to a build-in-public post: "been hitting the same wall
-      with my health app — the cold start problem is real")
+      with my health app - the cold start problem is real")
 5. Save drafts to COMMENTS_PLAYBOOK.md "Pending Replies"
 6. Notify Keshav for review
-7. Post approved replies — 2-5 min randomized gaps, max 6 per 30-min window
+7. Post approved replies - 2-5 min randomized gaps, max 6 per 30-min window
 ```
 
 **Likes:**
@@ -226,7 +226,7 @@ Separate from the morning session. On his phone.
 
 ```
 1. Check replies to scheduled posts → respond personally
-2. Post 1 spontaneous tweet — whatever is actually on his mind
+2. Post 1 spontaneous tweet - whatever is actually on his mind
    (this is what separates a real account from a scheduled one)
 3. Send DMs per DM_PLAYBOOK.md targets from SCALING_FRAMEWORK.md
 4. Scroll feed 5-10 min, like/reply to things that genuinely interest him
@@ -240,7 +240,7 @@ Separate from the morning session. On his phone.
 1. Verify scheduled posts went out → check profile
 2. If any failed: repost or note for tomorrow
 3. If SCALING_FRAMEWORK.md allows a night post:
-   - Post directly (not scheduled) — this should feel unplanned
+   - Post directly (not scheduled) - this should feel unplanned
    - Most casual/vulnerable post of the day
 4. Note high/low performers for weekly ANALYTICS_TRACKER.md
 ```
@@ -253,7 +253,7 @@ Separate from the morning session. On his phone.
 |---------|----------|
 | Scheduler icon missing | X Premium may not be active |
 | "Something went wrong" | Wait 60 sec, retry once. If fails, post live instead |
-| Scheduled post didn't go out | Check x.com/compose/scheduled — reschedule or post live |
+| Scheduled post didn't go out | Check x.com/compose/scheduled, reschedule or post live |
 | Rate limited | Stop 15 min. Resume at 50% volume |
 | Session expired | Stop everything. Notify Keshav. Do not attempt login |
 | Image upload fails | Schedule without image. Note in POST_CATALOG.md |
@@ -262,10 +262,10 @@ Separate from the morning session. On his phone.
 
 ## Security Rules
 
-1. Never store or transmit Keshav's password — Chrome uses existing session
+1. Never store or transmit Keshav's password: Chrome uses existing session
 2. Never access DM content without explicit permission
 3. Never change account settings without explicit instruction
 4. Never delete posts unless Keshav requests it
 5. Never block or mute without approval
 6. If session expires, stop. Notify. Wait.
-7. Never post replies without Keshav's approval — scheduled posts are pre-approved via CONTENT_QUEUE.md, replies always need review
+7. Never post replies without Keshav's approval: scheduled posts are pre-approved via CONTENT_QUEUE.md, replies always need review

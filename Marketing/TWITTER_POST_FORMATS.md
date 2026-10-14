@@ -1,4 +1,4 @@
-# Twitter Post Formats — Personal Brand Skeleton
+# Twitter Post Formats: Personal Brand Skeleton
 
 > For Keshav Krishnan building Symptly. Focus: building in public, vibe coding, AI tools, health tech, real human empathy.
 
@@ -33,7 +33,7 @@ Numbers stop the scroll. The human brain processes numbers faster than adjective
 
 ### 2. Be Vulnerable First, Impressive Second
 
-Your brand isn't "look how smart I am." It's "look how honest I am about building something hard." Vulnerability is your unfair advantage — most tech accounts are performing confidence. You're showing the real thing.
+Your brand isn't "look how smart I am." It's "look how honest I am about building something hard." Vulnerability is your unfair advantage, most tech accounts are performing confidence. You're showing the real thing.
 
 **Vulnerability hierarchy (most to least powerful):**
 1. Admitting you don't know the answer and are figuring it out
@@ -140,7 +140,7 @@ Your brand isn't "look how smart I am." It's "look how honest I am about buildin
 > Unpopular opinion: [contrarian take about your industry]
 > Here's why I think this...
 >
-> Best for: sparking debate. Engagement magnet. Don't be contrarian for its own sake — believe what you say.
+> Best for: sparking debate. Engagement magnet. Don't be contrarian for its own sake, believe what you say.
 
 **12. The Personal Lesson**
 > Something I wish I knew before I started building:
@@ -160,7 +160,7 @@ Your brand isn't "look how smart I am." It's "look how honest I am about buildin
 **14. The "Did You Know" Health Insight**
 > Most people don't realize: [health stat or insight]
 > That's why I built [feature] into Symptly.
-> Your body is giving you signals — you just need to track them.
+> Your body is giving you signals, you just need to track them.
 >
 > Best for: positioning as a domain expert. Tie every health insight back to the app naturally.
 
@@ -231,13 +231,13 @@ The first line decides everything. Here's how to stop the scroll:
 - "I built this because nobody listened when I said I wasn't feeling well"
 - "Some days building feels pointless. Today was one of them. Then..."
 - "My mom asked me why her symptoms keep changing. I didn't have an answer. So I built one."
-- "The hardest part of chronic illness isn't the pain — it's nobody believing you"
+- "The hardest part of chronic illness isn't the pain: it's nobody believing you"
 
 ### Authority / Data Hooks
 - "I analyzed [X] data points and found..."
 - "After [X] months of building, here's what actually works"
 - "I tested [X] different approaches to [thing]. Only one worked."
-- "[Specific number] — that's how many [thing]. Here's why it matters."
+- "[Specific number]: that's how many [thing]. Here's why it matters."
 
 ### Direct / Conversational Hooks
 - "Real talk:"
@@ -279,7 +279,7 @@ Share the emotion, not just the event. "I shipped the feature" is boring. "I shi
 
 ### The Soft Ask
 > "If you're building something too, I'd love to hear about it."
-> "Drop your project below — I'll check it out."
+> "Drop your project below, I'll check it out."
 
 ### The Follow Hook
 > "I'm sharing the whole journey here. Follow along if you want."
@@ -292,7 +292,7 @@ Share the emotion, not just the event. "I shipped the feature" is boring. "I shi
 
 ### The Cliffhanger
 > "Tomorrow I'm revealing [thing]. Stay tuned."
-> "Part 2 coming soon — this one's going to be controversial."
+> "Part 2 coming soon, this one's going to be controversial."
 
 ### The Emotional Land
 > "This is why I build."
@@ -315,4 +315,4 @@ Every post should feel like it came from a real person having a real moment. Her
 5. **Contradict yourself sometimes.** Last week you loved a tool, this week it annoyed you. That's human.
 6. **Use "I" more than "you."** Personal brand means personal. Share YOUR experience before giving advice.
 7. **Don't always include a CTA.** Sometimes just think out loud. Not everything needs to convert.
-8. **Typos happen.** Don't correct every single one. Leave the occasional "teh" or missing period. (Don't overdo this — just don't obsess over perfection.)
+8. **Typos happen.** Don't correct every single one. Leave the occasional "teh" or missing period. (Don't overdo this, just don't obsess over perfection.)

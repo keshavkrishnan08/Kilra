@@ -1,4 +1,4 @@
-# Competitor & Inspiration Accounts — Study List
+# Competitor & Inspiration Accounts: Study List
 
 > Accounts to follow, engage with, and study. Cowork monitors these for reply opportunities and content inspiration. Updated monthly.
 
@@ -18,7 +18,7 @@ These are your people in Phase 1-2. They'll engage back, share your stuff, and b
 
 | Account | Why Follow | What Works for Them | Reply Priority | Notes |
 |---------|-----------|-------------------|---------------|-------|
-| @levelsio | OG build-in-public, ships fast, shares metrics openly | Raw screenshots, revenue numbers, controversial takes about startups | MEDIUM (huge account, your reply might get buried) | Study his posting style — extremely direct, no fluff |
+| @levelsio | OG build-in-public, ships fast, shares metrics openly | Raw screenshots, revenue numbers, controversial takes about startups | MEDIUM (huge account, your reply might get buried) | Study his posting style, extremely direct, no fluff |
 | @marc_louvion | Indie maker, launches frequently, shares real numbers | Product demos, before/after, launch day content | HIGH | Similar stage energy, good collab potential |
 | @tdinh_me | Solo dev, transparent about revenue and failures | Honest post-mortems, tool recommendations, "what i learned" threads | HIGH | Authentic voice, good model for your tone |
 | @danshipper | Writes about AI and building, thoughtful takes | Long-form threads about AI tools in practice | MEDIUM | More writer than builder but overlapping audience |
@@ -41,7 +41,7 @@ These validate your domain and connect you to the health side of your audience.
 | | | | | |
 | | | | | |
 
-> **Cowork: Search for accounts posting about "health tracking app", "symptom tracker", "chronic illness tech", "digital health startup". Add founders of competing or adjacent apps — Bearable, Flaredown, Daylio, etc. These are collab opportunities not just competitors.**
+> **Cowork: Search for accounts posting about "health tracking app", "symptom tracker", "chronic illness tech", "digital health startup". Add founders of competing or adjacent apps, Bearable, Flaredown, Daylio, etc. These are collab opportunities not just competitors.**
 
 ---
 
@@ -56,7 +56,7 @@ Technical credibility builders. When they engage with your ML posts it signals l
 | | | | | |
 | | | | | |
 
-> **Cowork: Search for accounts posting about "CoreML", "on-device ML", "mobile machine learning", "swift ML". Prioritize practitioners over researchers — people building things, not just publishing papers.**
+> **Cowork: Search for accounts posting about "CoreML", "on-device ML", "mobile machine learning", "swift ML". Prioritize practitioners over researchers, people building things, not just publishing papers.**
 
 ---
 
@@ -70,7 +70,7 @@ These are your users. Engage with empathy, not marketing. Never pitch the app in
 | | | | | |
 | | | | | |
 
-> **Cowork: Search for accounts posting about "chronic illness", "invisible illness", "spoonie", "migraine life", "IBS", "chronic fatigue". Look for advocates with 5k-50k followers who share personal health experiences. These relationships take time — engage genuinely for weeks before ever mentioning what you're building.**
+> **Cowork: Search for accounts posting about "chronic illness", "invisible illness", "spoonie", "migraine life", "IBS", "chronic fatigue". Look for advocates with 5k-50k followers who share personal health experiences. These relationships take time, engage genuinely for weeks before ever mentioning what you're building.**
 
 ---
 
@@ -93,13 +93,13 @@ Technical community that will appreciate your architecture decisions and code qu
 Every month, Cowork should update this section:
 
 ```
-### Month of [DATE] — Account Analysis
+### Month of [DATE] - Account Analysis
 
 **New accounts discovered this month:** [list]
 **Accounts removed (inactive/irrelevant):** [list]
 
 **Top-performing content patterns observed:**
-- [Pattern 1 — e.g., "screenshot + one-line caption outperformed threads 3:1"]
+- [Pattern 1 - e.g., "screenshot + one-line caption outperformed threads 3:1"]
 - [Pattern 2]
 - [Pattern 3]
 
@@ -110,7 +110,7 @@ Every month, Cowork should update this section:
 - Replies that led to DM conversations: [X]
 
 **Content ideas stolen (adapted) from competitors:**
-- [Idea 1 — what they did, how we'd adapt it]
+- [Idea 1 - what they did, how we'd adapt it]
 - [Idea 2]
 ```
 
