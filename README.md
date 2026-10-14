@@ -1,14 +1,17 @@
-# Symptly
+# Kilra
 
 **A SwiftUI symptom and wellness tracker. Log a symptom in four steps, check in on mood and
 energy, and get a wellness score, tested trigger correlations, and a summary to bring to a doctor,
 all computed on the phone.**
 
-![Four Symptly screens from the iOS simulator: the first onboarding page, the personalization step with daily reminders and Apple Health sync, the home screen with a wellness score of 84, today's stats, and quick actions for logging a symptom, checking in, medications, and the journal, and the empty journal](docs/screens.png)
+Live on the App Store as [Kilra](https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331).
+The Xcode project and the code still use the app's working name, Symptly.
+
+![Four app screens from the iOS simulator: the first onboarding page, the personalization step with daily reminders and Apple Health sync, the home screen with a wellness score of 84, today's stats, and quick actions for logging a symptom, checking in, medications, and the journal, and the empty journal](docs/screens.png)
 
 A doctor's visit compresses weeks of symptoms into "it has been bad lately." Memory is a poor
 instrument for that: it overweights the last few days and forgets what came before a flare.
-Symptly turns daily logs into a structured history (symptom, severity, duration, triggers, mood,
+Kilra turns daily logs into a structured history (symptom, severity, duration, triggers, mood,
 energy, sleep, weather) and then asks which of those factors actually go with worse days, using
 significance tests rather than raw averages, so the patterns it shows have some evidence behind
 them.
