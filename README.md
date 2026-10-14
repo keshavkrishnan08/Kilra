@@ -137,7 +137,6 @@ train_wellness_model.py   trains and exports the Core ML model
 generate_*.py             icon and marketing image generators
 screenshots/              simulator captures and store-style images
 docs/                     privacy policy and support page
-Marketing/                launch and social media planning material
 ```
 
 ## Honesty
