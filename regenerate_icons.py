@@ -45,13 +45,13 @@ ICONS: dict[str, str] = {}
 
 # === TAB ICONS =============================================================
 
-# Home – simple house outline
+# Home: simple house outline
 ICONS["ss.tab.home"] = svg_wrap(
     '<path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/>'
     '<polyline points="9 21 9 14 15 14 15 21"/>'
 )
 
-# Home fill – house with fill
+# Home fill: house with fill
 ICONS["ss.tab.home.fill"] = (
     f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" '
     f'viewBox="0 0 24 24" fill="#000000" stroke="#000000" '
@@ -61,28 +61,28 @@ ICONS["ss.tab.home.fill"] = (
     f'</svg>'
 )
 
-# History – clock with counter-clockwise arrow
+# History: clock with counter-clockwise arrow
 ICONS["ss.tab.history"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<polyline points="12 7 12 12 15 15"/>'
     '<path d="M3 12a9 9 0 0 1 9-9" fill="none"/>'
 )
 
-# Plus – circle with plus
+# Plus: circle with plus
 ICONS["ss.tab.plus"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="12" y1="8" x2="12" y2="16"/>'
     '<line x1="8" y1="12" x2="16" y2="12"/>'
 )
 
-# Insights – bar chart
+# Insights: bar chart
 ICONS["ss.tab.insights"] = svg_wrap(
     '<line x1="18" y1="20" x2="18" y2="10"/>'
     '<line x1="12" y1="20" x2="12" y2="4"/>'
     '<line x1="6" y1="20" x2="6" y2="14"/>'
 )
 
-# Settings – gear outline
+# Settings: gear outline
 ICONS["ss.tab.settings"] = svg_wrap(
     '<circle cx="12" cy="12" r="3"/>'
     '<path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06'
@@ -96,7 +96,7 @@ ICONS["ss.tab.settings"] = svg_wrap(
     'a1.65 1.65 0 0 0-1.51 1z"/>'
 )
 
-# Settings fill – same gear but filled
+# Settings fill: same gear but filled
 ICONS["ss.tab.settings.fill"] = (
     f'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" '
     f'viewBox="0 0 24 24" fill="#000000" stroke="#000000" '
@@ -190,12 +190,12 @@ ICONS["ss.link"] = svg_wrap(
 
 # === HEALTH / BODY ==========================================================
 
-# ECG – heartbeat line
+# ECG: heartbeat line
 ICONS["ss.ecg"] = svg_wrap(
     '<polyline points="2 12 6 12 8 8 10 16 12 10 14 14 16 12 22 12"/>'
 )
 
-# Headache – head outline with pain lines
+# Headache: head outline with pain lines
 ICONS["ss.headache"] = svg_wrap(
     '<path d="M12 2a8 8 0 0 0-8 8c0 3 1.5 5 3 6.5V20a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-3.5'
     'c1.5-1.5 3-3.5 3-6.5a8 8 0 0 0-8-8z"/>'
@@ -203,7 +203,7 @@ ICONS["ss.headache"] = svg_wrap(
     '<line x1="15" y1="9" x2="15" y2="13"/>'
 )
 
-# Back pain – spine with pain indicator
+# Back pain: spine with pain indicator
 ICONS["ss.backpain"] = svg_wrap(
     '<path d="M12 2v20"/>'
     '<path d="M8 6c2 0 2 2 4 2s2-2 4-2"/>'
@@ -211,7 +211,7 @@ ICONS["ss.backpain"] = svg_wrap(
     '<path d="M8 18c2 0 2 2 4 2s2-2 4-2"/>'
 )
 
-# Joint pain – two bones meeting
+# Joint pain: two bones meeting
 ICONS["ss.jointpain"] = svg_wrap(
     '<circle cx="12" cy="12" r="3"/>'
     '<line x1="5" y1="5" x2="9.5" y2="9.5"/>'
@@ -220,7 +220,7 @@ ICONS["ss.jointpain"] = svg_wrap(
     '<circle cx="19" cy="19" r="2"/>'
 )
 
-# Chest pain – heart with pain lines
+# Chest pain: heart with pain lines
 ICONS["ss.chestpain"] = svg_wrap(
     '<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78'
     'L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>'
@@ -228,18 +228,18 @@ ICONS["ss.chestpain"] = svg_wrap(
     '<line x1="9" y1="13" x2="15" y2="13"/>'
 )
 
-# Muscle ache – flexed arm
+# Muscle ache: flexed arm
 ICONS["ss.muscleache"] = svg_wrap(
     '<path d="M4 17L7 7c.5-2 2-3 3.5-2.5S12 6 12 8l-1 4"/>'
     '<path d="M12 12c1-1 3-1 4 0l4 5c1 1.5 0 3-1.5 3H8c-1.5 0-2.5-1-2-2.5L8 13"/>'
 )
 
-# Abdominal – stomach area
+# Abdominal: stomach area
 ICONS["ss.abdominal"] = svg_wrap(
     '<path d="M12 3c4 0 7 3 7 7 0 5-3 8-5 10a3 3 0 0 1-4 0c-2-2-5-5-5-10 0-4 3-7 7-7z"/>'
 )
 
-# Nausea – queasy face
+# Nausea: queasy face
 ICONS["ss.nausea"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -248,7 +248,7 @@ ICONS["ss.nausea"] = svg_wrap(
     '<path d="M8 15c0 0 1.5 1 4 1s4-1 4-1" fill="none"/>'
 )
 
-# Bloating – expanded circle with arrows
+# Bloating: expanded circle with arrows
 ICONS["ss.bloating"] = svg_wrap(
     '<circle cx="12" cy="12" r="7"/>'
     '<line x1="12" y1="5" x2="12" y2="2"/>'
@@ -257,14 +257,14 @@ ICONS["ss.bloating"] = svg_wrap(
     '<line x1="22" y1="12" x2="19" y2="12"/>'
 )
 
-# Acid reflux – stomach with upward flame
+# Acid reflux: stomach with upward flame
 ICONS["ss.acidreflux"] = svg_wrap(
     '<path d="M7 14c0 3 2 6 5 6s5-3 5-6-2-4-5-4-5 1-5 4z"/>'
     '<path d="M12 10V4"/>'
     '<path d="M10 6l2-2 2 2"/>'
 )
 
-# Constipation – blocked/slow indicator
+# Constipation: blocked/slow indicator
 ICONS["ss.constipation"] = svg_wrap(
     '<circle cx="12" cy="14" r="6"/>'
     '<line x1="12" y1="8" x2="12" y2="4"/>'
@@ -272,7 +272,7 @@ ICONS["ss.constipation"] = svg_wrap(
     '<line x1="9" y1="3" x2="15" y2="3"/>'
 )
 
-# Diarrhea – downward wavy lines
+# Diarrhea: downward wavy lines
 ICONS["ss.diarrhea"] = svg_wrap(
     '<path d="M7 4c0 2 2 3 5 3s5-1 5-3"/>'
     '<path d="M7 9c0 2 2 3 5 3s5-1 5-3"/>'
@@ -281,7 +281,7 @@ ICONS["ss.diarrhea"] = svg_wrap(
     '<line x1="15" y1="14" x2="15" y2="19"/>'
 )
 
-# Dizziness – spiral
+# Dizziness: spiral
 ICONS["ss.dizziness"] = svg_wrap(
     '<path d="M12 12m-2 0a2 2 0 1 0 4 0"/>'
     '<path d="M12 10a4 4 0 0 1 4 4"/>'
@@ -290,14 +290,14 @@ ICONS["ss.dizziness"] = svg_wrap(
     '<path d="M2 12a10 10 0 0 1 10-10"/>'
 )
 
-# Brain fog – cloud with question mark
+# Brain fog: cloud with question mark
 ICONS["ss.brainfog"] = svg_wrap(
     '<path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>'
     '<line x1="12" y1="16" x2="12" y2="16.01"/>'
     '<path d="M10 12a2 2 0 1 1 2 2v1"/>'
 )
 
-# Numbness – hand with waves
+# Numbness: hand with waves
 ICONS["ss.numbness"] = svg_wrap(
     '<path d="M18 11V6a2 2 0 0 0-4 0v5"/>'
     '<path d="M14 11V4a2 2 0 0 0-4 0v7"/>'
@@ -305,7 +305,7 @@ ICONS["ss.numbness"] = svg_wrap(
     '<path d="M6 9c-1 0-2-.5-2-1.5S5 6 6 6"/>'
 )
 
-# Tremors – shaking hand
+# Tremors: shaking hand
 ICONS["ss.tremors"] = svg_wrap(
     '<path d="M14 4a2 2 0 0 0-4 0v9"/>'
     '<path d="M18 7a2 2 0 0 0-4 0v6"/>'
@@ -313,13 +313,13 @@ ICONS["ss.tremors"] = svg_wrap(
     '<path d="M3 12l2 1 2-1 2 1"/>'
 )
 
-# Anxiety – mind with lightning bolt
+# Anxiety: mind with lightning bolt
 ICONS["ss.anxiety"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<path d="M13 8l-3 5h4l-3 5"/>'
 )
 
-# Depression – sad face
+# Depression: sad face
 ICONS["ss.depression"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -327,14 +327,14 @@ ICONS["ss.depression"] = svg_wrap(
     '<path d="M8 16c1-1 2.5-2 4-2s3 1 4 2" fill="none"/>'
 )
 
-# Insomnia – moon with X (no sleep)
+# Insomnia: moon with X (no sleep)
 ICONS["ss.insomnia"] = svg_wrap(
     '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>'
     '<line x1="17" y1="2" x2="21" y2="6"/>'
     '<line x1="21" y1="2" x2="17" y2="6"/>'
 )
 
-# Mood swings – up/down arrows
+# Mood swings: up/down arrows
 ICONS["ss.moodswings"] = svg_wrap(
     '<line x1="7" y1="18" x2="7" y2="6"/>'
     '<polyline points="4 9 7 6 10 9"/>'
@@ -342,7 +342,7 @@ ICONS["ss.moodswings"] = svg_wrap(
     '<polyline points="14 15 17 18 20 15"/>'
 )
 
-# Shortness of breath – lungs with alert
+# Shortness of breath: lungs with alert
 ICONS["ss.shortbreath"] = svg_wrap(
     '<path d="M8 19c-3 0-5-2-5-5 0-2 1-3 2-4l3-5V3"/>'
     '<path d="M16 19c3 0 5-2 5-5 0-2-1-3-2-4l-3-5V3"/>'
@@ -350,7 +350,7 @@ ICONS["ss.shortbreath"] = svg_wrap(
     '<line x1="12" y1="20" x2="12.01" y2="20"/>'
 )
 
-# Cough – mouth with air puffs
+# Cough: mouth with air puffs
 ICONS["ss.cough"] = svg_wrap(
     '<path d="M6 12a4 4 0 0 1 4-4h2a4 4 0 0 1 0 8h-2"/>'
     '<circle cx="18" cy="8" r="1" fill="#000000" stroke="none"/>'
@@ -358,21 +358,21 @@ ICONS["ss.cough"] = svg_wrap(
     '<circle cx="21" cy="14" r="1" fill="#000000" stroke="none"/>'
 )
 
-# Wheezing – wavy air lines
+# Wheezing: wavy air lines
 ICONS["ss.wheezing"] = svg_wrap(
     '<path d="M3 8c2-2 4 0 6-2s4 0 6-2 4 0 6-2"/>'
     '<path d="M3 14c2-2 4 0 6-2s4 0 6-2 4 0 6-2"/>'
     '<path d="M3 20c2-2 4 0 6-2s4 0 6-2 4 0 6-2"/>'
 )
 
-# Congestion – nose with block
+# Congestion: nose with block
 ICONS["ss.congestion"] = svg_wrap(
     '<path d="M8 2v6c0 3 2 5 4 6 2-1 4-3 4-6V2"/>'
     '<path d="M6 14c-1 1-2 3-2 5h16c0-2-1-4-2-5"/>'
     '<line x1="10" y1="19" x2="14" y2="19"/>'
 )
 
-# Rash – dotted patch
+# Rash: dotted patch
 ICONS["ss.rash"] = svg_wrap(
     '<rect x="4" y="4" width="16" height="16" rx="3"/>'
     '<circle cx="9" cy="9" r="1" fill="#000000" stroke="none"/>'
@@ -382,35 +382,35 @@ ICONS["ss.rash"] = svg_wrap(
     '<circle cx="12" cy="12" r="1" fill="#000000" stroke="none"/>'
 )
 
-# Itching – scratching lines
+# Itching: scratching lines
 ICONS["ss.itching"] = svg_wrap(
     '<path d="M5 7l4 4-4 4"/>'
     '<path d="M10 7l4 4-4 4"/>'
     '<path d="M15 7l4 4-4 4"/>'
 )
 
-# Dry skin – cracked surface
+# Dry skin: cracked surface
 ICONS["ss.dryskin"] = svg_wrap(
     '<rect x="3" y="3" width="18" height="18" rx="3"/>'
     '<path d="M8 3v8l4 4 4-4V3"/>'
     '<line x1="12" y1="15" x2="12" y2="21"/>'
 )
 
-# Fatigue – battery low
+# Fatigue: battery low
 ICONS["ss.fatigue"] = svg_wrap(
     '<rect x="2" y="7" width="18" height="10" rx="2"/>'
     '<line x1="22" y1="11" x2="22" y2="13"/>'
     '<rect x="4" y="9" width="4" height="6" rx="1" fill="#000000" stroke="none"/>'
 )
 
-# Low energy – gauge at low
+# Low energy: gauge at low
 ICONS["ss.lowenergy"] = svg_wrap(
     '<path d="M12 2a10 10 0 0 0-10 10h20a10 10 0 0 0-10-10z" fill="none"/>'
     '<line x1="12" y1="12" x2="7" y2="8"/>'
     '<circle cx="12" cy="12" r="1" fill="#000000" stroke="none"/>'
 )
 
-# Weakness – broken barbell
+# Weakness: broken barbell
 ICONS["ss.weakness"] = svg_wrap(
     '<line x1="4" y1="12" x2="20" y2="12"/>'
     '<rect x="2" y="8" width="4" height="8" rx="1"/>'
@@ -420,18 +420,18 @@ ICONS["ss.weakness"] = svg_wrap(
 
 # === CATEGORY ICONS =========================================================
 
-# Pain category – lightning bolt
+# Pain category: lightning bolt
 ICONS["ss.cat.pain"] = svg_wrap(
     '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>'
 )
 
-# Digestive – stomach
+# Digestive: stomach
 ICONS["ss.cat.digestive"] = svg_wrap(
     '<path d="M12 3c4 0 7 3 7 7 0 5-3 8-5 10a3 3 0 0 1-4 0c-2-2-5-5-5-10 0-4 3-7 7-7z"/>'
     '<path d="M12 7v4" />'
 )
 
-# Neuro – brain
+# Neuro: brain
 ICONS["ss.cat.neuro"] = svg_wrap(
     '<path d="M12 2C8 2 5 5 5 9c0 2 .5 3 1.5 4S8 15 8 17v1a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1'
     'c0-2 .5-2 1.5-4S19 11 19 9c0-4-3-7-7-7z"/>'
@@ -440,26 +440,26 @@ ICONS["ss.cat.neuro"] = svg_wrap(
     '<path d="M9 8c1.5 1 4.5 1 6 0"/>'
 )
 
-# Mental – brain with heart
+# Mental: brain with heart
 ICONS["ss.cat.mental"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<path d="M14.5 9a2 2 0 0 0-2.5 1 2 2 0 0 0-2.5-1 2.2 2.2 0 0 0 0 3.5L12 15l2.5-2.5'
     'a2.2 2.2 0 0 0 0-3.5z" fill="none"/>'
 )
 
-# Respiratory – lungs
+# Respiratory: lungs
 ICONS["ss.cat.respiratory"] = svg_wrap(
     '<path d="M8 19c-3 0-5-2-5-5 0-2 1-3 2-4l3-5V3"/>'
     '<path d="M16 19c3 0 5-2 5-5 0-2-1-3-2-4l-3-5V3"/>'
     '<line x1="12" y1="3" x2="12" y2="19"/>'
 )
 
-# Skin – shield/skin patch
+# Skin: shield/skin patch
 ICONS["ss.cat.skin"] = svg_wrap(
     '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>'
 )
 
-# Energy – battery
+# Energy: battery
 ICONS["ss.cat.energy"] = svg_wrap(
     '<rect x="2" y="7" width="18" height="10" rx="2"/>'
     '<line x1="22" y1="11" x2="22" y2="13"/>'
@@ -468,7 +468,7 @@ ICONS["ss.cat.energy"] = svg_wrap(
 
 # === MOOD ICONS =============================================================
 
-# Mood 1 – very sad
+# Mood 1: very sad
 ICONS["ss.mood.1"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -476,7 +476,7 @@ ICONS["ss.mood.1"] = svg_wrap(
     '<path d="M8 17c1-2 2.5-3 4-3s3 1 4 3" fill="none"/>'
 )
 
-# Mood 2 – somewhat sad
+# Mood 2: somewhat sad
 ICONS["ss.mood.2"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -484,7 +484,7 @@ ICONS["ss.mood.2"] = svg_wrap(
     '<path d="M8 16c1-1 2.5-2 4-2s3 1 4 2" fill="none"/>'
 )
 
-# Mood 3 – neutral
+# Mood 3: neutral
 ICONS["ss.mood.3"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -492,7 +492,7 @@ ICONS["ss.mood.3"] = svg_wrap(
     '<line x1="8" y1="15" x2="16" y2="15"/>'
 )
 
-# Mood 4 – somewhat happy
+# Mood 4: somewhat happy
 ICONS["ss.mood.4"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -500,7 +500,7 @@ ICONS["ss.mood.4"] = svg_wrap(
     '<path d="M8 14c1 1 2.5 2 4 2s3-1 4-2" fill="none"/>'
 )
 
-# Mood 5 – very happy
+# Mood 5: very happy
 ICONS["ss.mood.5"] = svg_wrap(
     '<circle cx="12" cy="12" r="9"/>'
     '<line x1="9" y1="9" x2="9.01" y2="9"/>'
@@ -614,7 +614,7 @@ ICONS["ss.person"] = svg_wrap(
     '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>'
 )
 
-# Person 2 – two people
+# Person 2: two people
 ICONS["ss.person.2"] = svg_wrap(
     '<circle cx="9" cy="7" r="3"/>'
     '<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>'
@@ -701,7 +701,7 @@ ICONS["ss.calendar.badge"] = svg_wrap(
     '<circle cx="18" cy="5" r="3" fill="#000000" stroke="none"/>'
 )
 
-# Bed – sleep/rest
+# Bed: sleep/rest
 ICONS["ss.bed"] = svg_wrap(
     '<path d="M2 12h20v6H2z"/>'
     '<path d="M2 18v2"/>'
@@ -796,7 +796,7 @@ def main() -> None:
     for icon_name, svg_content in sorted(ICONS.items()):
         imageset_dir = os.path.join(ASSETS_DIR, f"{icon_name}.imageset")
         if not os.path.isdir(imageset_dir):
-            print(f"  SKIP  {icon_name} – imageset directory not found")
+            print(f"  SKIP  {icon_name}, imageset directory not found")
             skip_count += 1
             continue
 

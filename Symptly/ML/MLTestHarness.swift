@@ -210,7 +210,7 @@ struct MLTestHarness {
     static func testTimeSeriesAnalyzer() -> [TestResult] {
         var results: [TestResult] = []
 
-        // Test 1: EMA smoothness — output should be less volatile than input
+        // Test 1: EMA smoothness: output should be less volatile than input
         let noisyData = (0..<30).map { _ in Double.random(in: 1...10) }
         let smoothed = TimeSeriesAnalyzer.ema(noisyData, alpha: 0.2)
 
@@ -229,7 +229,7 @@ struct MLTestHarness {
             details: "Input: \(noisyData.count), Output: \(smoothed.count)"
         ))
 
-        // Test 3: Trend detection — worsening data
+        // Test 3: Trend detection: worsening data
         let worseningData = (0..<30).map { i in Double(i) * 0.2 + Double.random(in: -0.5...0.5) + 3.0 }
         let trend = TimeSeriesAnalyzer.trendStrength(worseningData)
         results.append(TestResult(
@@ -238,7 +238,7 @@ struct MLTestHarness {
             details: "slope=\(String(format: "%.3f", trend.slope)), R²=\(String(format: "%.3f", trend.rSquared)), dir=\(trend.direction.rawValue)"
         ))
 
-        // Test 4: Trend detection — improving data
+        // Test 4: Trend detection: improving data
         let improvingData = (0..<30).map { i in 8.0 - Double(i) * 0.15 + Double.random(in: -0.3...0.3) }
         let improveTrend = TimeSeriesAnalyzer.trendStrength(improvingData)
         results.append(TestResult(
@@ -247,7 +247,7 @@ struct MLTestHarness {
             details: "slope=\(String(format: "%.3f", improveTrend.slope)), dir=\(improveTrend.direction.rawValue)"
         ))
 
-        // Test 5: Forecast — should continue in the trend direction
+        // Test 5: Forecast: should continue in the trend direction
         let forecastValues = TimeSeriesAnalyzer.forecast(worseningData, count: 5)
         let lastActual = worseningData.last ?? 0
         results.append(TestResult(

@@ -69,7 +69,7 @@ struct PaywallView: View {
             VStack(spacing: 0) {
                 Spacer()
 
-                // Hero — emotionally compelling, connects to score
+                // Hero: emotionally compelling, connects to score
                 VStack(spacing: Spacing.md) {
                     // Animated crown with ring
                     ZStack {
@@ -100,7 +100,7 @@ struct PaywallView: View {
                             .lineSpacing(2)
 
                         let score = appState.computeBaselineScore()
-                        Text("Score: \(score)/100 — see what's behind it")
+                        Text("Score: \(score)/100, see what's behind it")
                             .font(Font.SS.labelSmall)
                             .foregroundColor(Color.SS.accent)
                             .lineLimit(1)
@@ -114,7 +114,7 @@ struct PaywallView: View {
                         PaywallBullet("Discover what triggers your worst days")
                         PaywallBullet("Walk into doctor visits fully prepared")
                         PaywallBullet("See how sleep & weather affect you")
-                        PaywallBullet("Track everything — spots patterns faster")
+                        PaywallBullet("Track everything, spots patterns faster")
                     }
                     .padding(.top, Spacing.xs)
                     .opacity(appeared ? 1 : 0)
@@ -123,7 +123,7 @@ struct PaywallView: View {
 
                 Spacer()
 
-                // Plan selector — clear savings comparison
+                // Plan selector: clear savings comparison
                 VStack(spacing: Spacing.sm) {
                     HStack(spacing: Spacing.sm) {
                         ForEach(Array(plans.enumerated()), id: \.offset) { index, plan in
@@ -196,10 +196,10 @@ struct PaywallView: View {
 
                 Spacer().frame(height: Spacing.md)
 
-                // CTA + legal — pinned bottom
+                // CTA + legal: pinned bottom
                 VStack(spacing: Spacing.xs) {
                     SSButton(
-                        title: "Continue — \(plans[selectedPlan].price)/\(selectedPlan == 0 ? "yr" : "mo")",
+                        title: "Continue, \(plans[selectedPlan].price)/\(selectedPlan == 0 ? "yr" : "mo")",
                         style: .primary,
                         isLoading: isLoading || subscriptionManager.isLoading
                     ) {

@@ -1113,10 +1113,10 @@ struct TimeOfDayCard: View {
 
         var hours: String {
             switch self {
-            case .morning: return "6am–12pm"
-            case .afternoon: return "12–5pm"
-            case .evening: return "5–9pm"
-            case .night: return "9pm–6am"
+            case .morning: return "6am-12pm"
+            case .afternoon: return "12-5pm"
+            case .evening: return "5-9pm"
+            case .night: return "9pm-6am"
             }
         }
 
@@ -1425,7 +1425,7 @@ struct SymptomForecastCard: View {
                     }
 
                     // Disclaimer
-                    Text("Based on your 30-day patterns — not a medical prediction")
+                    Text("Based on your 30-day patterns, not a medical prediction")
                         .font(Font.SS.caption)
                         .foregroundColor(Color.SS.textDisabled)
                 }

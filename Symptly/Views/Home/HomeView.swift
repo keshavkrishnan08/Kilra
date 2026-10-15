@@ -26,7 +26,7 @@ struct HomeView: View {
     }
 
     private var activeFlareUp: FlareUpAlert? {
-        // Reset dismissal daily — only suppress if dismissed today
+        // Reset dismissal daily: only suppress if dismissed today
         if let dismissed = flareUpDismissedDate,
            Calendar.current.isDateInToday(dismissed) {
             return nil
@@ -66,7 +66,7 @@ struct HomeView: View {
                     .padding(.horizontal, Spacing.xl)
                     .padding(.top, Spacing.lg)
 
-                    // Flare-up detection banner — tappable, navigates to Doctor Prep
+                    // Flare-up detection banner: tappable, navigates to Doctor Prep
                     if let flare = activeFlareUp {
                         FlareUpBanner(alert: flare, onTap: {
                             showDoctorPrep = true
@@ -142,11 +142,11 @@ struct HomeView: View {
                         }
                     }
 
-                    // Quick Mood — one-tap mood save (feeds DailySummary → ML)
+                    // Quick Mood: one-tap mood save (feeds DailySummary → ML)
                     QuickMoodCard(dataStore: dataStore)
                         .padding(.horizontal, Spacing.xl)
 
-                    // Today's Medications — quick take/skip (feeds MedicationLog → ML)
+                    // Today's Medications: quick take/skip (feeds MedicationLog → ML)
                     if !dataStore.medications.filter(\.isActive).isEmpty {
                         TodayMedsCard(dataStore: dataStore)
                             .padding(.horizontal, Spacing.xl)

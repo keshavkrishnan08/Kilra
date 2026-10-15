@@ -264,7 +264,7 @@ struct SettingsView: View {
             Task {
                 if healthKitEnabled {
                     await healthKitManager.requestAuthorization()
-                } // HealthKit doesn't support revoking — user must disable in Settings.app
+                } // HealthKit doesn't support revoking, user must disable in Settings.app
             }
         }
         .sheet(isPresented: $showPaywall) {

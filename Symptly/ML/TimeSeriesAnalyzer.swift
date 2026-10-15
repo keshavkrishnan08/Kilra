@@ -66,7 +66,7 @@ struct TimeSeriesAnalyzer {
         // Step 1: Extract trend via centered moving average
         let trend = sma(values, window: period)
 
-        // Step 2: Detrend — subtract trend from original
+        // Step 2: Detrend: subtract trend from original
         let detrended = zip(values, trend).map { $0 - $1 }
 
         // Step 3: Average seasonal component per position within period

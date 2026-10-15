@@ -109,7 +109,7 @@ final class WellnessScoreEngine: ObservableObject {
         activeMinutes: Int?,
         onboardingProfile: OnboardingProfile? = nil
     ) -> Double {
-        // CoreML model doesn't know about health data — use heuristic with full inputs
+        // CoreML model doesn't know about health data: use heuristic with full inputs
         return heuristicScore(
             symptomCount: symptomCount,
             avgSeverity: avgSeverity,

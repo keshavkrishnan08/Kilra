@@ -5,18 +5,18 @@ from daily health-tracking inputs, then export it as a CoreML .mlmodel.
 
 Inputs
 ------
-symptom_count   (Int)    – symptoms logged in past 7 days
-avg_severity    (Double) – mean severity (1-10) over past 7 days
-max_severity    (Int)    – worst severity today
-streak          (Int)    – consecutive logging days
-mood            (Int)    – today's mood (1-5)
-energy          (Int)    – today's energy (1-5)
-unique_symptoms (Int)    – distinct symptom types in past 7 days
-entries_today   (Int)    – symptoms logged today
+symptom_count   (Int), symptoms logged in past 7 days
+avg_severity    (Double), mean severity (1-10) over past 7 days
+max_severity    (Int), worst severity today
+streak          (Int), consecutive logging days
+mood            (Int), today's mood (1-5)
+energy          (Int), today's energy (1-5)
+unique_symptoms (Int), distinct symptom types in past 7 days
+entries_today   (Int), symptoms logged today
 
 Output
 ------
-wellness_score  (Double) – 0-100
+wellness_score  (Double), 0-100
 """
 
 import numpy as np

@@ -456,7 +456,7 @@ final class SymptomAnalysisEngine: ObservableObject {
             riskFactors.append("\(recentUnique) different symptoms in the last 2 days")
         }
 
-        // Factor 6: HealthKit — poor sleep and elevated HR increase flare risk
+        // Factor 6: HealthKit: poor sleep and elevated HR increase flare risk
         if let health = healthSnapshot {
             if let sleep = health.sleepHours, sleep > 0, sleep < 5.5 {
                 riskScore += 0.12

@@ -31,9 +31,9 @@ final class NotificationManager: ObservableObject {
 
         let messages: [(title: String, body: String)] = [
             ("How's your day going? 🌿", "A quick check-in helps spot patterns you'd never notice otherwise."),
-            ("Your health diary misses you 💚", "30 seconds is all it takes — log how you're feeling right now."),
+            ("Your health diary misses you 💚", "30 seconds is all it takes, log how you're feeling right now."),
             ("Time for your daily check-in ✨", "Track your mood and symptoms to unlock smarter insights."),
-            ("Quick wellness check! 🩺", "Rate your mood and energy — your future self will thank you."),
+            ("Quick wellness check! 🩺", "Rate your mood and energy, your future self will thank you."),
             ("Hey, how are you feeling? 🌱", "Even a simple log helps your AI get smarter about your health."),
         ]
         let pick = messages[Calendar.current.component(.day, from: Date()) % messages.count]
@@ -105,7 +105,7 @@ final class NotificationManager: ObservableObject {
         for (suffix, components) in times {
             let content = UNMutableNotificationContent()
             content.title = "Time for \(medication.name) 💊"
-            content.body = "\(medication.dosage) — \(medication.timeOfDay.rawValue). Tap to mark as taken."
+            content.body = "\(medication.dosage), \(medication.timeOfDay.rawValue). Tap to mark as taken."
             content.sound = .default
             content.categoryIdentifier = "MEDICATION_REMINDER"
 
@@ -149,7 +149,7 @@ final class NotificationManager: ObservableObject {
 
     /// Maps a medication's frequency and timeOfDay to one or more (suffix, DateComponents) pairs.
     private func reminderTimes(for medication: Medication) -> [(String, DateComponents)] {
-        // Twice-daily overrides the single timeOfDay — schedule morning + evening
+        // Twice-daily overrides the single timeOfDay: schedule morning + evening
         if medication.frequency == .twiceDaily {
             var morning = DateComponents()
             morning.hour = 8

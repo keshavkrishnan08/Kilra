@@ -211,7 +211,7 @@ final class DataStore: ObservableObject {
             if diff >= 0.5 {
                 results.append((
                     "Barometric Pressure",
-                    "Low pressure days correlate with \(String(format: "%.1f", diff)) higher avg severity — common for migraines",
+                    "Low pressure days correlate with \(String(format: "%.1f", diff)) higher avg severity, common for migraines",
                     "ss.wind",
                     "60A5FA"
                 ))
@@ -314,7 +314,7 @@ final class DataStore: ObservableObject {
                 } else {
                     results.append((
                         "Activity Level",
-                        "Higher activity days (~\(avgHighSteps / 1000)k steps) correlate with \(String(format: "%.1f", abs(diff))) higher severity — watch for overexertion",
+                        "Higher activity days (~\(avgHighSteps / 1000)k steps) correlate with \(String(format: "%.1f", abs(diff))) higher severity, watch for overexertion",
                         "ss.flame",
                         "F97316"
                     ))
@@ -344,7 +344,7 @@ final class DataStore: ObservableObject {
                     } else {
                         results.append((
                             "Exercise",
-                            "Exercise days show \(String(format: "%.1f", abs(diff))) higher avg severity — consider pacing",
+                            "Exercise days show \(String(format: "%.1f", abs(diff))) higher avg severity, consider pacing",
                             "ss.cat.energy",
                             "F97316"
                         ))
@@ -567,7 +567,7 @@ final class DataStore: ObservableObject {
         let recentEntries = entries.filter { $0.timestamp >= threeDaysAgo }
         guard !recentEntries.isEmpty else { return nil }
 
-        // Baseline window: 4–14 days ago (excludes recent window to avoid contamination)
+        // Baseline window: 4-14 days ago (excludes recent window to avoid contamination)
         let baselineEntries = entries.filter { $0.timestamp >= fourteenDaysAgo && $0.timestamp < threeDaysAgo }
         guard baselineEntries.count >= 3 else { return nil }
 
@@ -609,7 +609,7 @@ final class DataStore: ObservableObject {
         let message: String
         switch flareSeverity {
         case .severe:
-            message = "Your symptoms have spiked significantly. \(symptomName) is hitting hard — consider reaching out to your provider."
+            message = "Your symptoms have spiked significantly. \(symptomName) is hitting hard, consider reaching out to your provider."
         case .moderate:
             message = "\(symptomName) is trending above your baseline. Keep an eye on your triggers."
         case .mild:
@@ -673,7 +673,7 @@ final class DataStore: ObservableObject {
 
         var results: [(factor: String, finding: String, icon: String, color: String)] = []
 
-        // Sleep correlation — use Pearson correlation between sleep hours and daily severity
+        // Sleep correlation: use Pearson correlation between sleep hours and daily severity
         let summariesWithSleep = recentSummaries.filter { $0.sleepHours != nil }
         if summariesWithSleep.count >= 5 {
             let sleepValues = summariesWithSleep.map { $0.sleepHours ?? 0 }
@@ -714,7 +714,7 @@ final class DataStore: ObservableObject {
             }
         }
 
-        // Stress correlation — t-test between high vs low stress days
+        // Stress correlation: t-test between high vs low stress days
         let summariesWithStress = recentSummaries.filter { $0.stressLevel != nil }
         if summariesWithStress.count >= 5 {
             let highStress = summariesWithStress.filter { ($0.stressLevel ?? 0) >= 4 }
@@ -737,7 +737,7 @@ final class DataStore: ObservableObject {
             }
         }
 
-        // Mood correlation — Pearson between mood and severity
+        // Mood correlation: Pearson between mood and severity
         let moodDays = recentSummaries.filter { $0.overallMood > 0 }
         if moodDays.count >= 5 {
             let moodValues = moodDays.map { Double($0.overallMood) }
@@ -748,7 +748,7 @@ final class DataStore: ObservableObject {
                 let sigLabel = corr.isSignificant ? " (p<0.05)" : ""
                 results.append((
                     "Mood",
-                    "\(corr.strength.rawValue) inverse link — lower mood tracks with higher severity (r=\(String(format: "%.2f", corr.r)))\(sigLabel)",
+                    "\(corr.strength.rawValue) inverse link, lower mood tracks with higher severity (r=\(String(format: "%.2f", corr.r)))\(sigLabel)",
                     "ss.mood.1",
                     "EC4899"
                 ))
@@ -814,14 +814,14 @@ final class DataStore: ObservableObject {
         } else {
             return (
                 "Hydration",
-                "Higher water intake days show slightly higher severity — likely not causal",
+                "Higher water intake days show slightly higher severity, likely not causal",
                 "ss.drop",
                 "60A5FA"
             )
         }
     }
 
-    /// Analyze symptom duration patterns — do longer episodes correlate with higher severity or specific triggers?
+    /// Analyze symptom duration patterns: do longer episodes correlate with higher severity or specific triggers?
     func durationInsights(days: Int = 30) -> [(factor: String, finding: String, icon: String, color: String)] {
         let cutoff = Date().addingTimeInterval(-Double(days * 86400))
         let relevant = entries.filter { $0.timestamp >= cutoff && $0.duration != nil }
@@ -876,7 +876,7 @@ final class DataStore: ObservableObject {
                 else { label = "hours" }
                 results.append((
                     "Persistent Symptom",
-                    "\(longest.key) typically lasts \(label) — the longest-lasting of your tracked symptoms",
+                    "\(longest.key) typically lasts \(label), the longest-lasting of your tracked symptoms",
                     "ss.clock",
                     "F97316"
                 ))
@@ -936,7 +936,7 @@ final class DataStore: ObservableObject {
                 } else {
                     results.append((
                         "Medication",
-                        "Medication days show slightly higher severity — could indicate you medicate on worse days",
+                        "Medication days show slightly higher severity, could indicate you medicate on worse days",
                         "ss.pill",
                         "F59E0B"
                     ))
@@ -1053,7 +1053,7 @@ final class DataStore: ObservableObject {
             )
         } else if diff <= -2.0 {
             return (
-                "Good news — this is milder than your usual \(entry.symptomName) (avg \(String(format: "%.1f", avgSev)))",
+                "Good news, this is milder than your usual \(entry.symptomName) (avg \(String(format: "%.1f", avgSev)))",
                 "34D399"
             )
         }
@@ -1062,7 +1062,7 @@ final class DataStore: ObservableObject {
         let todayCount = entriesForDate(Date()).count
         if todayCount >= 4 {
             return (
-                "You've logged \(todayCount) symptoms today — consider reviewing your triggers",
+                "You've logged \(todayCount) symptoms today, consider reviewing your triggers",
                 "818CF8"
             )
         }

@@ -19,13 +19,13 @@ struct InsightsView: View {
         var result: [Insight] = []
         let freq = dataStore.symptomFrequency(days: 30)
 
-        // Top symptom — actionable severity context
+        // Top symptom: actionable severity context
         if let top = freq.first {
             let avg = dataStore.averageSeverity(for: top.0, days: 30)
             let severity = avg >= 7 ? "severe" : avg >= 5 ? "moderate" : "mild"
             let action = avg >= 6 ? "Consider discussing this with your doctor." : "Keep tracking to spot what triggers it."
             result.append(Insight(
-                title: "\(top.0) — \(severity) pattern",
+                title: "\(top.0), \(severity) pattern",
                 description: "\(top.0) averages \(String(format: "%.1f", avg))/10 across \(top.1) entries this month. \(action)",
                 icon: "ss.tab.insights",
                 color: avg >= 6 ? Color.SS.error : Color(hex: "EC4899"),
@@ -33,13 +33,13 @@ struct InsightsView: View {
             ))
         }
 
-        // Co-occurrence — find linked symptoms
+        // Co-occurrence: find linked symptoms
         let coOccurrence = dataStore.symptomCoOccurrence(days: 30)
         if let top = coOccurrence.first, top.coCount >= 3 {
             let pct = Int(top.ratio * 100)
             result.append(Insight(
                 title: "\(top.symptom1) + \(top.symptom2) are linked",
-                description: "These appear on the same day \(pct)% of the time (\(top.coCount) days). They likely share a common trigger — check your entries for overlap.",
+                description: "These appear on the same day \(pct)% of the time (\(top.coCount) days). They likely share a common trigger, check your entries for overlap.",
                 icon: "ss.link",
                 color: Color(hex: "818CF8"),
                 type: .correlation
@@ -54,11 +54,11 @@ struct InsightsView: View {
             ))
         }
 
-        // Streak — celebrate and motivate
+        // Streak: celebrate and motivate
         let streak = dataStore.currentStreak()
         if streak >= 7 {
             result.append(Insight(
-                title: "\(streak)-day streak — insights unlocked!",
+                title: "\(streak)-day streak, insights unlocked!",
                 description: "A full week of data means your pattern detection is now accurate. Correlations and predictions are live.",
                 icon: "ss.flame",
                 color: Color(hex: "FB923C"),
@@ -66,7 +66,7 @@ struct InsightsView: View {
             ))
         } else if streak >= 3 {
             result.append(Insight(
-                title: "\(streak)-day streak — keep going!",
+                title: "\(streak)-day streak, keep going!",
                 description: "Log \(7 - streak) more days to unlock accurate pattern detection and predictions.",
                 icon: "ss.flame",
                 color: Color(hex: "FB923C"),
@@ -74,7 +74,7 @@ struct InsightsView: View {
             ))
         }
 
-        // Trigger correlation — specific and actionable
+        // Trigger correlation: specific and actionable
         let triggerCorr = dataStore.triggerCorrelations(days: 30)
         if let top = triggerCorr.first, top.avgWith - top.avgWithout >= 0.5 {
             let pctWorse = Int(((top.avgWith - top.avgWithout) / max(top.avgWithout, 1)) * 100)
@@ -87,7 +87,7 @@ struct InsightsView: View {
             ))
         }
 
-        // Lifestyle correlations — already actionable from DataStore
+        // Lifestyle correlations: already actionable from DataStore
         let lifestyleCorr = dataStore.lifestyleCorrelations(days: 30)
         for corr in lifestyleCorr.prefix(2) {
             result.append(Insight(
@@ -122,7 +122,7 @@ struct InsightsView: View {
             ))
         }
 
-        // Medication — clear impact statement
+        // Medication: clear impact statement
         let medCorr = dataStore.medicationCorrelations()
         if let top = medCorr.first {
             result.append(Insight(
@@ -316,7 +316,7 @@ struct InsightsView: View {
                         CorrelationSection(
                             title: "Weather Impact",
                             correlations: dataStore.weatherCorrelations(),
-                            emptyMessage: "Not enough weather data yet — keep logging for weather-based insights"
+                            emptyMessage: "Not enough weather data yet, keep logging for weather-based insights"
                         )
 
                         // Health Correlations (always visible)

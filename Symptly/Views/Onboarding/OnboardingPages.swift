@@ -64,7 +64,7 @@ struct ECGPulseLine: Shape {
     }
 }
 
-// MARK: - Page 1: Welcome — Breathing concentric rings
+// MARK: - Page 1: Welcome: Breathing concentric rings
 struct OnboardingWelcomePage: View {
     @State private var animate = false
     @State private var ecgPhase: CGFloat = 0
@@ -162,7 +162,7 @@ struct OnboardingFeatureRow: View {
     }
 }
 
-// MARK: - Page 2: Goals — Horizontal scrolling card carousel
+// MARK: - Page 2: Goals: Horizontal scrolling card carousel
 struct OnboardingGoalPage: View {
     @Binding var answers: [String: Any]
     @State private var selected: Set<String> = []
@@ -259,7 +259,7 @@ struct OnboardingGoalPage: View {
     }
 }
 
-// MARK: - Page 3: Symptoms — Category grid (already unique pattern)
+// MARK: - Page 3: Symptoms: Category grid (already unique pattern)
 struct OnboardingSymptomsPage: View {
     @Binding var answers: [String: Any]
     @State private var selectedCategories: Set<String> = []
@@ -350,7 +350,7 @@ struct OnboardingCategoryCard: View {
     }
 }
 
-// MARK: - Page 4: Frequency — Interactive animated bar chart
+// MARK: - Page 4: Frequency: Interactive animated bar chart
 struct OnboardingFrequencyPage: View {
     @Binding var answers: [String: Any]
     @State private var selected: String = ""
@@ -460,7 +460,7 @@ struct OnboardingFrequencyPage: View {
     }
 }
 
-// MARK: - Page 5: Impact — Orbital ring layout
+// MARK: - Page 5: Impact: Orbital ring layout
 struct OnboardingImpactPage: View {
     @Binding var answers: [String: Any]
     @State private var selected: Set<String> = []
@@ -490,7 +490,7 @@ struct OnboardingImpactPage: View {
             }
             .padding(.top, Spacing.xl)
 
-            // Orbital layout — icons arranged in a circle
+            // Orbital layout: icons arranged in a circle
             ZStack {
                 // Outer orbit ring
                 Circle()
@@ -564,7 +564,7 @@ struct OnboardingImpactPage: View {
     }
 }
 
-// MARK: - Page 6: Lifestyle — Circular gauge dials
+// MARK: - Page 6: Lifestyle: Circular gauge dials
 struct OnboardingLifestylePage: View {
     @Binding var answers: [String: Any]
     @State private var sleepHours: Double = 7
@@ -724,7 +724,7 @@ struct GaugeSlider: View {
     }
 }
 
-// MARK: - Page 7: Age & Sex — Big number stepper + horizontal pills
+// MARK: - Page 7: Age & Sex: Big number stepper + horizontal pills
 struct OnboardingAgeSexPage: View {
     @Binding var answers: [String: Any]
     @State private var age: Double = 30
@@ -802,7 +802,7 @@ struct OnboardingAgeSexPage: View {
                     .onChange(of: age) { answers["age"] = age }
             }
 
-            // Sex selection — horizontal pill buttons
+            // Sex selection: horizontal pill buttons
             VStack(spacing: Spacing.md) {
                 Text("BIOLOGICAL SEX")
                     .font(Font.SS.caption)
@@ -843,7 +843,7 @@ struct OnboardingAgeSexPage: View {
     }
 }
 
-// MARK: - Page 8: Health Conditions — Flowing tag chips
+// MARK: - Page 8: Health Conditions: Flowing tag chips
 struct OnboardingConditionsPage: View {
     @Binding var answers: [String: Any]
     @State private var selected: Set<String> = []
@@ -874,7 +874,7 @@ struct OnboardingConditionsPage: View {
                         .foregroundColor(Color.SS.textPrimary)
                         .multilineTextAlignment(.center)
 
-                    Text("Select all that apply — stays private")
+                    Text("Select all that apply, stays private")
                         .font(Font.SS.bodySmall)
                         .foregroundColor(Color.SS.textTertiary)
                         .tracking(0.5)
@@ -935,7 +935,7 @@ struct OnboardingConditionsPage: View {
     }
 }
 
-// MARK: - Page 9: Severity — Thermometer visualization
+// MARK: - Page 9: Severity: Thermometer visualization
 struct OnboardingSeverityPage: View {
     @Binding var answers: [String: Any]
     @State private var severity: Double = 5
@@ -1102,7 +1102,7 @@ struct OnboardingSeverityPage: View {
     }
 }
 
-// MARK: - Page 10: Duration — Horizontal timeline with dots
+// MARK: - Page 10: Duration: Horizontal timeline with dots
 struct OnboardingDurationPage: View {
     @Binding var answers: [String: Any]
     @State private var selected: String = ""
@@ -1132,7 +1132,7 @@ struct OnboardingDurationPage: View {
             }
             .padding(.top, Spacing.xxl)
 
-            // Horizontal timeline — fits screen width
+            // Horizontal timeline: fits screen width
             HStack(spacing: 0) {
                 ForEach(Array(durations.enumerated()), id: \.element.label) { index, duration in
                     let isOn = selected == duration.label
@@ -1233,7 +1233,7 @@ struct OnboardingDurationPage: View {
     }
 }
 
-// MARK: - Page 11: Health Rating — Emoji face scale
+// MARK: - Page 11: Health Rating: Emoji face scale
 struct OnboardingHealthRatingPage: View {
     @Binding var answers: [String: Any]
     @State private var rating: Int = 3
@@ -1255,7 +1255,7 @@ struct OnboardingHealthRatingPage: View {
                     .foregroundColor(Color.SS.textPrimary)
                     .multilineTextAlignment(.center)
 
-                Text("Be honest — no wrong answers")
+                Text("Be honest, no wrong answers")
                     .font(Font.SS.bodySmall)
                     .foregroundColor(Color.SS.textTertiary)
                     .tracking(0.5)
@@ -1336,7 +1336,7 @@ struct OnboardingHealthRatingPage: View {
     }
 }
 
-// MARK: - Page 12: Personalize — Toggle cards (kept unique)
+// MARK: - Page 12: Personalize: Toggle cards (kept unique)
 struct OnboardingPersonalizePage: View {
     @Binding var answers: [String: Any]
     @State private var reminderTime = Date()
@@ -1551,7 +1551,7 @@ struct HelixShape: Shape {
     }
 }
 
-// MARK: - Page 13: Score Teaser — Locked score with pulsing rings
+// MARK: - Page 13: Score Teaser: Locked score with pulsing rings
 struct OnboardingScoreTeaser: View {
     @State private var animate = false
     @State private var pulseRing = false

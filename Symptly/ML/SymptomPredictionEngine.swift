@@ -138,7 +138,7 @@ struct SymptomPredictionEngine {
             ))
         }
 
-        // Feature 7: HealthKit context — poor sleep/low activity predicts worse severity
+        // Feature 7: HealthKit context: poor sleep/low activity predicts worse severity
         if let health = healthSnapshot {
             let healthWeight = 0.10
             var healthAdj = baseline
@@ -243,7 +243,7 @@ struct SymptomPredictionEngine {
                 reasonParts.append("appears on \(Int(baseRate * 100))% of days")
             }
 
-            // Factor 2: Recency — more recent = higher likelihood
+            // Factor 2: Recency: more recent = higher likelihood
             let now = targetDate
             let sorted = symptomEntries.sorted { $0.timestamp > $1.timestamp }
             let daysSinceLast = calendar.dateComponents([.day], from: sorted[0].timestamp, to: now).day ?? 999

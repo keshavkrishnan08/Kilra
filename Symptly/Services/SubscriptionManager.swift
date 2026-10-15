@@ -65,7 +65,7 @@ final class SubscriptionManager: ObservableObject {
         isLoading = true
         defer { isLoading = false }
 
-        // Start fresh — only keep currently valid entitlements
+        // Start fresh: only keep currently valid entitlements
         var activeIDs: Set<String> = []
         for await result in Transaction.currentEntitlements {
             if let transaction = try? checkVerified(result) {

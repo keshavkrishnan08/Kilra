@@ -11,7 +11,7 @@ struct SplashView: View {
         ZStack {
             Color.SS.background.ignoresSafeArea()
 
-            // Background glow — matches paywall
+            // Background glow: matches paywall
             ZStack {
                 Ellipse()
                     .fill(Color.SS.accent.opacity(glowPulse ? 0.08 : 0.04))

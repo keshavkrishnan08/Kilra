@@ -473,7 +473,7 @@ struct DailyEntryBarCard: View {
                     }
                     .frame(height: 130)
 
-                    // X-axis labels — show every other day to avoid crowding
+                    // X-axis labels: show every other day to avoid crowding
                     HStack {
                         ForEach(Array(bars.enumerated()), id: \.offset) { index, bar in
                             if index % 2 == 1 || bar.isToday {
@@ -838,7 +838,7 @@ struct SymptomRadarCard: View {
 
     private let categories = SymptomCategory.allCases
 
-    /// Dynamic max scale based on the user's actual data — prevents tiny polygons
+    /// Dynamic max scale based on the user's actual data: prevents tiny polygons
     /// when all severities are low. Minimum of 5 so the chart remains readable.
     private var maxSeverity: Double {
         let maxAvg = categoryValues.map(\.averageSeverity).max() ?? 5

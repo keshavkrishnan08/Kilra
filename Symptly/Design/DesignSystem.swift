@@ -57,13 +57,13 @@ extension Color {
         static let separatorStrong = Color(hex: "D3CFC8")
         #endif
 
-        // Accent — vivid teal (same in both modes)
+        // Accent: vivid teal (same in both modes)
         static let accent = Color(hex: "00C49A")
         static let accentLight = Color(hex: "33DFBB")
         static let accentDark = Color(hex: "009977")
         static let accentSubtle = Color(hex: "00C49A").opacity(0.10)
 
-        // Secondary accent — soft violet
+        // Secondary accent: soft violet
         static let violet = Color(hex: "7C5CFC")
         static let violetLight = Color(hex: "9B82FA")
         static let violetSubtle = Color(hex: "7C5CFC").opacity(0.10)

@@ -52,7 +52,7 @@ struct SymptlyApp: App {
                     if !ids.isEmpty && !appState.hasActiveSubscription {
                         appState.activateSubscription()
                     } else if ids.isEmpty && appState.hasActiveSubscription {
-                        // Subscription expired or was revoked — lock access
+                        // Subscription expired or was revoked: lock access
                         appState.hasActiveSubscription = false
                         UserDefaults.standard.set(false, forKey: "hasActiveSubscription")
                         appState.determineFlow()
