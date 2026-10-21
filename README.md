@@ -4,7 +4,8 @@
 energy, and get a wellness score, tested trigger correlations, and a summary to bring to a doctor,
 all computed on the phone.**
 
-Live on the App Store as [Kilra](https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331).
+Live on the App Store as [Kilra](https://apps.apple.com/us/app/kilra-symptom-tracker/id6760767331), with a website at
+[kilra.vercel.app](https://kilra.vercel.app).
 The Xcode project and the code still use the app's working name, Symptly.
 
 ![Four app screens from the iOS simulator: the first onboarding page, the personalization step with daily reminders and Apple Health sync, the home screen with a wellness score of 84, today's stats, and quick actions for logging a symptom, checking in, medications, and the journal, and the empty journal](docs/screens.png)
